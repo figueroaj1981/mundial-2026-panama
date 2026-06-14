@@ -233,17 +233,49 @@ function renderMatches(matches, containerId, options = {}) {
     });
     const groupOrder = 'ABCDEFGHIJKL'.split('');
     const sortedGroups = Object.keys(byGroup).sort((a, b) => groupOrder.indexOf(a) - groupOrder.indexOf(b));
-    container.innerHTML = sortedGroups.map(grupo => {
-      const matches = byGroup[grupo];
-      const isPanGroup = grupo === 'L';
-      const cards = matches.map(m => buildMatchCard(m)).join('');
-      return `
-        <div class="group-section-header ${isPanGroup ? 'panama-group-header' : ''}">
-          ${isPanGroup ? '🇵🇦 ' : ''}Grupo ${grupo}
-        </div>
-        ${cards}
-      `;
-    }).join('');
+
+    const played = filtered.filter(m => m.estado === 'finalizado').length;
+    const pending = filtered.filter(m => m.estado === 'programado').length;
+
+    container.innerHTML = `
+      <div class="grupos-resultados-grid">
+        ${sortedGroups.map(grupo => {
+          const gMatches = byGroup[grupo];
+          const isPanGroup = grupo === 'L';
+          const finCount = gMatches.filter(m => m.estado === 'finalizado').length;
+          const rows = gMatches.map(m => {
+            const isPan = isPanamaMatch(m);
+            const scoreHtml = m.estado === 'programado'
+              ? `<div class="grupo-score-vs">VS</div><div class="grupo-score-hora">${m.hora}</div>`
+              : `<div class="grupo-score-num">${m.marcador.g1} – ${m.marcador.g2}</div>`;
+            const isPan1 = m.equipo1.panama;
+            const isPan2 = m.equipo2.panama;
+            return `
+              <div class="grupo-partido-row ${isPan ? 'is-panama' : ''}">
+                <div class="grupo-team">
+                  <span class="grupo-team-flag">${m.equipo1.flag}</span>
+                  <span class="grupo-team-name ${isPan1 ? 'panama-name' : ''}">${m.equipo1.nombre}</span>
+                </div>
+                <div class="grupo-score-center">
+                  ${scoreHtml}
+                  <div class="grupo-partido-fecha">${formatDate(m.fecha)}</div>
+                </div>
+                <div class="grupo-team right">
+                  <span class="grupo-team-flag">${m.equipo2.flag}</span>
+                  <span class="grupo-team-name ${isPan2 ? 'panama-name' : ''}">${m.equipo2.nombre}</span>
+                </div>
+              </div>`;
+          }).join('');
+          return `
+            <div class="grupo-panel ${isPanGroup ? 'panama-panel' : ''}">
+              <div class="grupo-panel-header">
+                <span class="grupo-panel-title">${isPanGroup ? '🇵🇦 ' : ''}Grupo ${grupo}</span>
+                <span class="grupo-panel-badge">${finCount}/${gMatches.length} jugados</span>
+              </div>
+              <div class="grupo-partidos-list">${rows}</div>
+            </div>`;
+        }).join('')}
+      </div>`;
     return;
   }
 
