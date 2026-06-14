@@ -4,11 +4,10 @@
 // FRASES DIARIAS PANAMÁ
 // =============================================
 const FRASES_PANAMA = [
+  { texto: "Que nadie les robe su sueño, porque quien persevera, llega lejos.", autor: "Irving Saladino — Único campeón olímpico de Panamá" },
+  { texto: "Entrena fuerte, aleja los malos vicios y siente orgullo cada vez que veas ondear tu bandera.", autor: "Irving Saladino — Campeón Olímpico Beijing 2008" },
   { texto: "Después de la infancia que tuve, ¿a quién iba a temer? Yo nunca me rendí.", autor: "Roberto Durán — Mano de Piedra" },
   { texto: "Los campeones no nacen en vecindarios ricos. Nacen del hambre, del sacrificio y del corazón.", autor: "Roberto Durán — Mano de Piedra" },
-  { texto: "Mis padres me enseñaron: para ser alguien hay que trabajar, actuar con seriedad y respetar. Eso es todo lo que necesitas.", autor: "Roberto Durán — Mano de Piedra" },
-  { texto: "Yo soy de Panamá y le enseñé al mundo de qué estamos hechos.", autor: "Roberto Durán — Mano de Piedra" },
-  { texto: "¡Vamos Panamá! Un país entero empuja cada gol.", autor: null },
   { texto: "Cada partido es una oportunidad de escribir historia.", autor: null },
   { texto: "Del Pacífico al Atlántico, todos somos uno.", autor: null },
   { texto: "Somos pequeños en mapa, enormes en corazón.", autor: null },
@@ -16,6 +15,7 @@ const FRASES_PANAMA = [
   { texto: "¡Arriba Panamá! El mundo nos está mirando.", autor: null },
   { texto: "La perseverancia vence lo que la fuerza no puede.", autor: null },
   { texto: "No hay rival que se compare con un pueblo que cree en sí mismo.", autor: null },
+  { texto: "¡Vamos Panamá! Un país entero empuja cada gol.", autor: null },
 ];
 
 const MENSAJES_EMPATE = [
