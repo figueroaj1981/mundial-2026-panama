@@ -18,11 +18,18 @@ const FRASES_PANAMA = [
   { texto: "¡Vamos Panamá! Un país entero empuja cada gol.", autor: null },
 ];
 
+const MENSAJES_PREVIA = [
+  "Que nadie les robe el sueño. ¡Llegó la hora, Panamá!",
+  "El mundo nos mira. Demostremos de qué estamos hechos.",
+  "Cada generación sueña con este momento. Este es el nuestro.",
+  "El sacrificio de años se paga en la cancha. ¡Vamos Panamá!",
+];
+
 const MENSAJES_EMPATE = [
   "¡Un punto ganado! Panamá demostró carácter.",
   "El camino continúa. El próximo partido es una nueva oportunidad.",
-  "Con garra panameña, empatar también es luchar.",
-  "Seguimos en la pelea. ¡Vamos Panamá!",
+  "Quien persevera, llega lejos. ¡Seguimos en la pelea!",
+  "No bajamos la cabeza. ¡Vamos Panamá!",
 ];
 
 const MENSAJES_VICTORIA = [
@@ -467,8 +474,8 @@ function renderPanamaSection(matches) {
   // Mensaje motivacional basado en último resultado
   const msgEl = document.getElementById('panama-message');
   if (msgEl) {
-    let msgs = MENSAJES_EMPATE;
-    let icon = '💪';
+    let msgs = MENSAJES_PREVIA;
+    let icon = '🇵🇦';
 
     if (pastMatches.length > 0) {
       const last = pastMatches[pastMatches.length - 1];
