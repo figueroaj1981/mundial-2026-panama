@@ -696,6 +696,27 @@ function initNavbar() {
   window.addEventListener('scroll', () => {
     nav?.classList.toggle('scrolled', window.scrollY > 50);
   }, { passive: true });
+
+  // Menú hamburguesa (móvil)
+  const toggle = document.getElementById('nav-toggle');
+  const links = document.getElementById('nav-links');
+  if (toggle && links && nav) {
+    const setOpen = (open) => {
+      toggle.classList.toggle('open', open);
+      links.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setOpen(!links.classList.contains('open'));
+    });
+    // Cerrar al tocar un enlace
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+    // Cerrar al tocar fuera del navbar
+    document.addEventListener('click', (e) => {
+      if (links.classList.contains('open') && !nav.contains(e.target)) setOpen(false);
+    });
+  }
 }
 
 // =============================================
