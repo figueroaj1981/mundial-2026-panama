@@ -496,6 +496,160 @@ function renderPanamaSection(matches) {
 }
 
 // =============================================
+// BRACKET — LLAVE DE ELIMINATORIAS
+// =============================================
+function computeGroupStandings(matches) {
+  const groups = {};
+  matches.forEach(m => {
+    const g = m.grupo;
+    if (!groups[g]) groups[g] = {};
+    [m.equipo1, m.equipo2].forEach(eq => {
+      if (!groups[g][eq.code]) {
+        groups[g][eq.code] = {
+          nombre: eq.nombre, flag: eq.flag, code: eq.code, panama: eq.panama,
+          pts: 0, pj: 0, pg: 0, pe: 0, pp: 0, gf: 0, gc: 0, dg: 0
+        };
+      }
+    });
+    if (m.estado === 'finalizado' && m.marcador) {
+      const e1 = groups[g][m.equipo1.code];
+      const e2 = groups[g][m.equipo2.code];
+      const g1 = m.marcador.g1, g2 = m.marcador.g2;
+      e1.pj++; e1.gf += g1; e1.gc += g2; e1.dg = e1.gf - e1.gc;
+      e2.pj++; e2.gf += g2; e2.gc += g1; e2.dg = e2.gf - e2.gc;
+      if (g1 > g2)      { e1.pts += 3; e1.pg++; e2.pp++; }
+      else if (g1 < g2) { e2.pts += 3; e2.pg++; e1.pp++; }
+      else              { e1.pts++; e1.pe++; e2.pts++; e2.pe++; }
+    }
+  });
+  const standings = {};
+  Object.keys(groups).forEach(g => {
+    standings[g] = Object.values(groups[g]).sort((a, b) => {
+      if (b.pts !== a.pts) return b.pts - a.pts;
+      if (b.dg !== a.dg) return b.dg - a.dg;
+      return b.gf - a.gf;
+    });
+  });
+  return standings;
+}
+
+function renderBracket(matches) {
+  const container = document.getElementById('bracket-container');
+  if (!container) return;
+
+  const standings = computeGroupStandings(matches);
+
+  // Count finished matches per group to know if group is complete
+  const groupDone = {};
+  matches.forEach(m => {
+    if (!groupDone[m.grupo]) groupDone[m.grupo] = 0;
+    if (m.estado === 'finalizado') groupDone[m.grupo]++;
+  });
+
+  function slot(grupo, pos, fallback) {
+    const teams = standings[grupo] || [];
+    const t = teams[pos];
+    if (!t || t.pj === 0) {
+      return `<div class="bk-team bk-empty">${fallback}</div>`;
+    }
+    const done = (groupDone[grupo] || 0) === 6;
+    const isPan = t.panama;
+    return `<div class="bk-team ${done ? 'bk-confirmed' : 'bk-provisional'} ${isPan ? 'bk-panama' : ''}">
+      <span class="bk-flag">${t.flag}</span>
+      <span class="bk-name">${t.nombre}</span>
+      ${!done ? '<span class="bk-prov">prov.</span>' : ''}
+    </div>`;
+  }
+
+  function slot3rd(label) {
+    return `<div class="bk-team bk-empty bk-third">${label}</div>`;
+  }
+
+  // Official FIFA 2026 Round of 32 matchups
+  const r32 = [
+    { id:'M73',  label:'',  a: slot('A',1,'2° Grupo A'),           b: slot('B',1,'2° Grupo B') },
+    { id:'M74',  label:'',  a: slot('E',0,'1° Grupo E'),           b: slot3rd('Mejor 3ro — A/B/C/D/F') },
+    { id:'M75',  label:'',  a: slot('F',0,'1° Grupo F'),           b: slot('C',1,'2° Grupo C') },
+    { id:'M76',  label:'',  a: slot('C',0,'1° Grupo C'),           b: slot('F',1,'2° Grupo F') },
+    { id:'M77',  label:'',  a: slot('I',0,'1° Grupo I'),           b: slot3rd('Mejor 3ro — C/D/F/G/H') },
+    { id:'M78',  label:'',  a: slot('E',1,'2° Grupo E'),           b: slot('I',1,'2° Grupo I') },
+    { id:'M79',  label:'',  a: slot('A',0,'1° Grupo A'),           b: slot3rd('Mejor 3ro — C/E/F/H/I') },
+    { id:'M80',  label:'🇵🇦', a: slot('L',0,'1° Grupo L 🇵🇦'),   b: slot3rd('Mejor 3ro — E/H/I/J/K') },
+    { id:'M81',  label:'',  a: slot('D',0,'1° Grupo D'),           b: slot3rd('Mejor 3ro — B/E/F/I/J') },
+    { id:'M82',  label:'',  a: slot('G',0,'1° Grupo G'),           b: slot3rd('Mejor 3ro — A/E/H/I/J') },
+    { id:'M83',  label:'🇵🇦', a: slot('K',1,'2° Grupo K'),        b: slot('L',1,'2° Grupo L 🇵🇦') },
+    { id:'M84',  label:'',  a: slot('H',0,'1° Grupo H'),           b: slot('J',1,'2° Grupo J') },
+    { id:'M85',  label:'',  a: slot('B',0,'1° Grupo B'),           b: slot3rd('Mejor 3ro — E/F/G/I/J') },
+    { id:'M86',  label:'',  a: slot('J',0,'1° Grupo J'),           b: slot('H',1,'2° Grupo H') },
+    { id:'M87',  label:'',  a: slot('K',0,'1° Grupo K'),           b: slot3rd('Mejor 3ro — D/E/I/J/L') },
+    { id:'M88',  label:'',  a: slot('D',1,'2° Grupo D'),           b: slot('G',1,'2° Grupo G') },
+  ];
+
+  function matchCard(m, isFinal = false) {
+    const hasPan = m.label === '🇵🇦';
+    return `
+      <div class="bk-match ${hasPan ? 'bk-match-panama' : ''} ${isFinal ? 'bk-match-final' : ''}">
+        ${m.id ? `<div class="bk-match-id">${m.id}${m.label ? ' ' + m.label : ''}</div>` : ''}
+        ${m.a}
+        <div class="bk-vs">VS</div>
+        ${m.b}
+      </div>`;
+  }
+
+  function tbdMatch(id) {
+    const empty = `<div class="bk-team bk-empty">Por definirse</div>`;
+    return `<div class="bk-match tbd"><div class="bk-match-id">${id}</div>${empty}<div class="bk-vs">VS</div>${empty}</div>`;
+  }
+
+  container.innerHTML = `
+    <div class="bracket-rounds">
+
+      <div class="bracket-round">
+        <div class="bracket-round-header">
+          <div class="bracket-round-title">16avos de Final</div>
+          <div class="bracket-round-sub">32 equipos · 29 jun – 4 jul 2026</div>
+        </div>
+        <div class="bk-grid">${r32.map(m => matchCard(m)).join('')}</div>
+      </div>
+
+      <div class="bracket-round">
+        <div class="bracket-round-header">
+          <div class="bracket-round-title">Octavos de Final</div>
+          <div class="bracket-round-sub">16 equipos · 6–9 jul 2026</div>
+        </div>
+        <div class="bk-grid">${[1,2,3,4,5,6,7,8].map(i => tbdMatch('R16-'+i)).join('')}</div>
+      </div>
+
+      <div class="bracket-round">
+        <div class="bracket-round-header">
+          <div class="bracket-round-title">Cuartos de Final</div>
+          <div class="bracket-round-sub">8 equipos · 11–12 jul 2026</div>
+        </div>
+        <div class="bk-grid">${[1,2,3,4].map(i => tbdMatch('QF-'+i)).join('')}</div>
+      </div>
+
+      <div class="bracket-round">
+        <div class="bracket-round-header">
+          <div class="bracket-round-title">Semifinales</div>
+          <div class="bracket-round-sub">4 equipos · 14–15 jul 2026</div>
+        </div>
+        <div class="bk-grid">${[1,2].map(i => tbdMatch('SF-'+i)).join('')}</div>
+      </div>
+
+      <div class="bracket-round">
+        <div class="bracket-round-header">
+          <div class="bracket-round-title">🏆 Final</div>
+          <div class="bracket-round-sub">19 jul 2026 · MetLife Stadium, Nueva York</div>
+        </div>
+        <div class="bk-grid">${matchCard({ id:'FINAL', label:'', a: `<div class="bk-team bk-empty">Por definirse</div>`, b: `<div class="bk-team bk-empty">Por definirse</div>` }, true)}</div>
+      </div>
+
+    </div>
+    <p class="bracket-note">Llave oficial FIFA 2026. Los 8 mejores terceros se asignan según combinación de grupos clasificados (495 escenarios posibles). <strong>prov.</strong> = posición provisional mientras la fase de grupos continúa.</p>
+  `;
+}
+
+// =============================================
 // TABS
 // =============================================
 function initTabs() {
@@ -643,6 +797,9 @@ async function init() {
   // Grupos
   renderGroups(groups, 'groups-container');
   initGroupFilter(groups);
+
+  // Bracket / Llave eliminatoria
+  renderBracket(matches);
 
   // Noticias
   renderNews(noticias, 'news-container');

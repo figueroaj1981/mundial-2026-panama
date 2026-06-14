@@ -1550,3 +1550,164 @@ footer {
   0% { background-position: 0% 50%; }
   100% { background-position: 200% 50%; }
 }
+
+/* ===== BRACKET / LLAVE ELIMINATORIA ===== */
+.bracket-rounds {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.bracket-round {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.bracket-round-header {
+  padding: 16px 24px;
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.bracket-round-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+}
+
+.bracket-round-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.bk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  padding: 20px;
+}
+
+.bk-match {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 0.2s;
+}
+
+.bk-match:hover {
+  border-color: rgba(255,255,255,0.15);
+}
+
+.bk-match.bk-match-panama {
+  border-color: rgba(210,16,52,0.4);
+  background: rgba(210,16,52,0.06);
+}
+
+.bk-match.bk-match-final {
+  border-color: rgba(255,215,0,0.4);
+  background: rgba(255,215,0,0.04);
+}
+
+.bk-match.tbd {
+  opacity: 0.55;
+}
+
+.bk-match-id {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.bk-team {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  min-height: 36px;
+}
+
+.bk-team.bk-empty {
+  color: var(--text-muted);
+  border: 1px dashed rgba(255,255,255,0.08);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.78rem;
+}
+
+.bk-team.bk-confirmed {
+  background: rgba(255,255,255,0.06);
+  color: var(--text-primary);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.bk-team.bk-provisional {
+  background: rgba(255,200,0,0.06);
+  color: var(--text-secondary);
+  border: 1px dashed rgba(255,200,0,0.2);
+}
+
+.bk-team.bk-panama {
+  background: rgba(210,16,52,0.12);
+  color: #ff6680;
+  border-color: rgba(210,16,52,0.3);
+  font-weight: 700;
+}
+
+.bk-team.bk-third {
+  font-size: 0.72rem;
+  color: #5a6080;
+}
+
+.bk-flag {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.bk-name {
+  flex: 1;
+}
+
+.bk-prov {
+  font-size: 0.62rem;
+  color: rgba(255,200,0,0.6);
+  background: rgba(255,200,0,0.08);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-style: normal;
+  letter-spacing: 0.5px;
+}
+
+.bk-vs {
+  text-align: center;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 0 4px;
+}
+
+.bracket-note {
+  margin-top: 20px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  text-align: center;
+  padding: 0 20px;
+}
