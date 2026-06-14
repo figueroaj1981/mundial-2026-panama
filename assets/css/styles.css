@@ -230,6 +230,18 @@ body {
   font-weight: 600;
 }
 
+.frase-autor {
+  display: block;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--panama-red);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 8px;
+  opacity: 0.85;
+}
+
 /* ===== COUNTDOWN ===== */
 .countdown-section {
   margin-bottom: 48px;

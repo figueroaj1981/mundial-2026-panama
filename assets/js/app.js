@@ -4,18 +4,18 @@
 // FRASES DIARIAS PANAMÁ
 // =============================================
 const FRASES_PANAMA = [
-  "¡Vamos Panamá! Un país entero empuja cada gol.",
-  "Hoy también creemos. Somos Panamá.",
-  "Cada partido es una oportunidad de escribir historia.",
-  "Del Pacífico al Atlántico, todos somos uno.",
-  "La garra panameña no tiene límites.",
-  "Seguimos adelante. Cada minuto jugado construye historia.",
-  "Panamá le enseña al mundo de qué está hecha.",
-  "No hay distancia que nos separe del orgullo patrio.",
-  "Con el corazón de una nación entera.",
-  "Somos pequeños en mapa, enormes en corazón.",
-  "El Canal une al mundo. Panamá une a los corazones.",
-  "¡Arriba Panamá! El mundo nos está mirando.",
+  { texto: "Después de la infancia que tuve, ¿a quién iba a temer? Yo nunca me rendí.", autor: "Roberto Durán — Mano de Piedra" },
+  { texto: "Los campeones no nacen en vecindarios ricos. Nacen del hambre, del sacrificio y del corazón.", autor: "Roberto Durán — Mano de Piedra" },
+  { texto: "Mis padres me enseñaron: para ser alguien hay que trabajar, actuar con seriedad y respetar. Eso es todo lo que necesitas.", autor: "Roberto Durán — Mano de Piedra" },
+  { texto: "Yo soy de Panamá y le enseñé al mundo de qué estamos hechos.", autor: "Roberto Durán — Mano de Piedra" },
+  { texto: "¡Vamos Panamá! Un país entero empuja cada gol.", autor: null },
+  { texto: "Cada partido es una oportunidad de escribir historia.", autor: null },
+  { texto: "Del Pacífico al Atlántico, todos somos uno.", autor: null },
+  { texto: "Somos pequeños en mapa, enormes en corazón.", autor: null },
+  { texto: "El Canal une al mundo. Panamá une a los corazones.", autor: null },
+  { texto: "¡Arriba Panamá! El mundo nos está mirando.", autor: null },
+  { texto: "La perseverancia vence lo que la fuerza no puede.", autor: null },
+  { texto: "No hay rival que se compare con un pueblo que cree en sí mismo.", autor: null },
 ];
 
 const MENSAJES_EMPATE = [
@@ -44,6 +44,14 @@ const MENSAJES_DERROTA = [
 function getFraseDelDia() {
   const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
   return FRASES_PANAMA[dayOfYear % FRASES_PANAMA.length];
+}
+
+function renderFrase(frase) {
+  if (!frase) return '';
+  if (typeof frase === 'string') return `"${frase}"`;
+  return frase.autor
+    ? `"${frase.texto}" <span class="frase-autor">— ${frase.autor}</span>`
+    : `"${frase.texto}"`;
 }
 
 function formatDate(dateStr) {
@@ -475,7 +483,7 @@ function renderPanamaSection(matches) {
     msgEl.innerHTML = `
       <div class="panama-message-icon">${icon}</div>
       <div class="panama-message-text">${msg}</div>
-      <div class="panama-message-sub">${getFraseDelDia()}</div>
+      <div class="panama-message-sub">${renderFrase(getFraseDelDia())}</div>
     `;
   }
 }
@@ -586,7 +594,7 @@ async function init() {
   // Frase del día
   const fraseEl = document.getElementById('hero-phrase');
   if (fraseEl) {
-    fraseEl.innerHTML = `"<span>${getFraseDelDia()}</span>"`;
+    fraseEl.innerHTML = renderFrase(getFraseDelDia());
   }
 
   // Cargar datos (fetch o datos embebidos)
