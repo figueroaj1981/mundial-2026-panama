@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Centro de seguimiento del Mundial FIFA 2026. Resultados, grupos, noticias y cobertura especial de Panamá en el Mundial." />
+  <meta name="keywords" content="Mundial 2026, FIFA, Panamá, fútbol, resultados, grupos, clasificación" />
+  <meta property="og:title" content="Mundial 2026 — Desde Panamá para el Mundo" />
+  <meta property="og:description" content="Sigue el Mundial FIFA 2026 con enfoque especial en la Selección de Panamá." />
+  <meta name="theme-color" content="#D21034" />
+  <title>Mundial 2026 🇵🇦 — Desde Panamá</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇵🇦</text></svg>" />
+</head>
+<body>
+
+  <!-- TOP BANNER -->
+  <div class="top-banner">
+    ⚽ FIFA WORLD CUP 2026 · USA · MEXICO · CANADA · 🇵🇦 PANAMÁ ESTÁ EN EL MUNDIAL ⚽
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="#" class="nav-brand">
+      <div class="nav-logo">⚽</div>
+      <div>
+        <div class="nav-title">Mundial 2026</div>
+        <div class="nav-subtitle">🇵🇦 Desde Panamá</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#resultados">Resultados</a></li>
+      <li><a href="#panama">Panamá</a></li>
+      <li><a href="#grupos">Grupos</a></li>
+      <li><a href="#noticias">Noticias</a></li>
+      <li><a href="#sedes">Sedes</a></li>
+      <li><a href="#historia">Historia</a></li>
+      <li><span class="nav-live-badge">🔴 En vivo</span></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg"></div>
+    <div class="hero-flag-bg"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        FIFA World Cup 2026 · En curso
+      </div>
+
+      <h1 class="hero-title">
+        <span class="hero-title-flag">🇵🇦</span><br />
+        <span class="hero-title-world">Panamá</span><br />
+        en el Mundo
+      </h1>
+
+      <p class="hero-phrase" id="hero-phrase">
+        Cargando frase del día...
+      </p>
+
+      <!-- COUNTDOWN -->
+      <div class="countdown-section">
+        <div class="countdown-label" id="countdown-label">⏱ PRÓXIMO PARTIDO DE PANAMÁ</div>
+        <div class="countdown" id="countdown-display">
+          <div class="countdown-unit">
+            <div class="countdown-number skeleton" style="width:80px;height:56px">&nbsp;</div>
+          </div>
+        </div>
+        <div class="countdown-match-info" id="countdown-match">
+          <div class="countdown-match-teams">Cargando partido...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Stats (desktop) -->
+    <div class="hero-stats">
+      <div class="hero-stat-card">
+        <div class="hero-stat-label">Equipos</div>
+        <div class="hero-stat-value">48</div>
+        <div class="hero-stat-sub">naciones compitiendo</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="hero-stat-label">Partidos totales</div>
+        <div class="hero-stat-value">104</div>
+        <div class="hero-stat-sub">en todo el torneo</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="hero-stat-label">Sedes</div>
+        <div class="hero-stat-value">16</div>
+        <div class="hero-stat-sub">estadios · 3 países</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="hero-stat-label">Final</div>
+        <div class="hero-stat-value" style="font-size:1.2rem">19 Jul</div>
+        <div class="hero-stat-sub">MetLife Stadium, NY</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANAMA SECTION -->
+  <section class="panama-section" id="panama">
+    <div class="panama-inner">
+      <div class="panama-header">
+        <div class="panama-flag-icon">🇵🇦</div>
+        <div class="panama-title-group">
+          <h2 class="panama-title">Camino de <span>Panamá</span></h2>
+          <p class="panama-subtitle">Seguimiento especial de la Selección Panameña · FIFA World Cup 2026</p>
+        </div>
+      </div>
+
+      <div class="panama-grid">
+
+        <!-- Próximo partido -->
+        <div class="panama-card">
+          <div class="panama-card-label">Próximo Partido</div>
+          <div id="panama-next-match">
+            <p style="color:var(--text-muted);text-align:center;padding:20px">Cargando...</p>
+          </div>
+          <div class="panama-position">
+            <div class="panama-pos-num">—</div>
+            <div class="panama-pos-detail">
+              <div class="panama-pos-label">Posición actual</div>
+              <div class="panama-pos-group">Grupo L · Debut el 17 jun</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resultados previos -->
+        <div class="panama-card">
+          <div class="panama-card-label">Resultados Anteriores</div>
+          <div class="panama-results" id="panama-results">
+            <p style="color:var(--text-muted);font-size:0.85rem">Cargando...</p>
+          </div>
+        </div>
+
+        <!-- Mensaje motivacional -->
+        <div class="panama-card panama-message-card">
+          <div id="panama-message">
+            <div class="panama-message-icon">⏳</div>
+            <div class="panama-message-text">Cargando mensaje...</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTADOS -->
+  <section class="section" id="resultados">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Partidos</div>
+        <h2 class="section-title">Resultados del <span>Mundial</span></h2>
+      </div>
+    </div>
+
+    <div class="tab-container">
+      <div class="tab-nav">
+        <button class="tab-btn active" data-tab="hoy">Hoy</button>
+        <button class="tab-btn" data-tab="todos">Todos</button>
+        <button class="tab-btn" data-tab="proximos">Próximos</button>
+      </div>
+
+      <div class="tab-content active" data-tab-content="hoy">
+        <div class="matches-grid" id="matches-today">
+          <div style="color:var(--text-muted);padding:40px">Cargando partidos...</div>
+        </div>
+      </div>
+
+      <div class="tab-content" data-tab-content="todos">
+        <div class="matches-grid" id="matches-all"></div>
+      </div>
+
+      <div class="tab-content" data-tab-content="proximos">
+        <div class="matches-grid" id="matches-upcoming"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- GRUPOS -->
+  <section class="section" id="grupos">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Clasificación</div>
+        <h2 class="section-title">Tabla de <span>Grupos</span></h2>
+      </div>
+      <span style="color:var(--text-muted);font-size:0.75rem">Actualizado: <strong id="last-updated" style="color:var(--success)">—</strong></span>
+    </div>
+
+    <div class="groups-filter">
+      <button class="group-filter-btn active" data-filter="all">Todos</button>
+      <button class="group-filter-btn panama-btn" data-filter="L">🇵🇦 Grupo L</button>
+      <button class="group-filter-btn" data-filter="A">A</button>
+      <button class="group-filter-btn" data-filter="B">B</button>
+      <button class="group-filter-btn" data-filter="C">C</button>
+      <button class="group-filter-btn" data-filter="D">D</button>
+      <button class="group-filter-btn" data-filter="E">E</button>
+      <button class="group-filter-btn" data-filter="F">F</button>
+      <button class="group-filter-btn" data-filter="G">G</button>
+      <button class="group-filter-btn" data-filter="H">H</button>
+      <button class="group-filter-btn" data-filter="I">I</button>
+      <button class="group-filter-btn" data-filter="J">J</button>
+      <button class="group-filter-btn" data-filter="K">K</button>
+    </div>
+
+    <div class="groups-grid" id="groups-container">
+      <div style="color:var(--text-muted);padding:40px">Cargando grupos...</div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- NOTICIAS -->
+  <section class="section" id="noticias">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Periodismo</div>
+        <h2 class="section-title">Noticias del <span>Mundial</span></h2>
+      </div>
+    </div>
+
+    <div class="news-grid" id="news-container">
+      <div style="color:var(--text-muted);padding:40px">Cargando noticias...</div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- SEDES -->
+  <section class="section" id="sedes">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Geografía</div>
+        <h2 class="section-title">Sedes del <span>Mundial</span></h2>
+      </div>
+    </div>
+
+    <div class="venues-grid">
+
+      <div class="venue-card fade-in-up">
+        <div class="venue-country-tag tag-usa">🇺🇸 USA</div>
+        <div class="venue-icon">🏟</div>
+        <div class="venue-name">MetLife Stadium</div>
+        <div class="venue-city">East Rutherford, Nueva York</div>
+        <div class="venue-capacity">👥 82,500 · Sede de la Final</div>
+      </div>
+
+      <div class="venue-card fade-in-up">
+        <div class="venue-country-tag tag-usa">🇺🇸 USA</div>
+        <div class="venue-icon">🏟</div>
+        <div class="venue-name">Rose Bowl</div>
+        <div class="venue-city">Pasadena, Los Ángeles</div>
+        <div class="venue-capacity">👥 92,500</div>
+      </div>
+
+      <div class="venue-card fade-in-up">
+        <div class="venue-country-tag tag-usa">🇺🇸 USA</div>
+        <div class="venue-icon">🏟</div>
+        <div class="venue-name">AT&T Stadium</div>
+        <div class="venue-city">Arlington, Dallas</div>
+        <div class="venue-capacity">👥 80,000</div>
+      </div>
+
+      <div class="venue-card fade-in-up">
+        <div class="venue-country-tag tag-usa">🇺🇸 USA</div>
+        <div class="venue-icon">🏟</div>
+        <div class="venue-name">Hard Rock Stadium</div>
+        <div class="venue-city">Miami, Florida</div>
+        <div class="venue-capacity">👥 65,000</div>
+      </div>
+
+      <div class="venue-card fade-in-up">
+        <div class="venue-country-tag tag-usa">🇺🇸 USA</div>
+        <div class="venue-icon">🏟</div>
+        <div class="venue-name">Allegiant Stadium</div>
+        <div class="venue-city">Las Vegas, Nevada</div>
+        <div class="venue-capacity">👥 65,000 · Sede Panamá vs Bolivia</div>
+      </div>
+
+      <div class="venue-card fade-in-up">
+        <div class="venue-country-tag tag-usa">🇺🇸 USA</div>
+        <div class="venue-icon">🏟</div>
+        <div class="venue-name">Levi's Stadium</div>
+        <div class="venue-city">Santa Clara, San Francisco</div>
+        <div class="venue-capacity">👥 68,500</div>
+      </div>
+
+      <div class="venue-card fade-in-up">
+        <div class="venue-country-tag tag-mex">🇲🇽 México</div>
+        <div class="venue-icon">🏟</div>
+        <div class="venue-name">Estadio Azteca</div>
+        <div class="venue-city">Ciudad de México</div>
+        <div class="venue-capacity">👥 87,523 · Partido inaugural</div>
+      </div>
+
+      <div class="venue-card fade-in-up">
+        <div class="venue-country-tag tag-mex">🇲🇽 México</div>
+        <div class="venue-icon">🏟</div>
+        <div class="venue-name">Estadio Akron</div>
+        <div class="venue-city">Guadalajara</div>
+        <div class="venue-capacity">👥 49,850</div>
+      </div>
+
+      <div class="venue-card fade-in-up">
+        <div class="venue-country-tag tag-can">🇨🇦 Canadá</div>
+        <div class="venue-icon">🏟</div>
+        <div class="venue-name">BC Place</div>
+        <div class="venue-city">Vancouver, BC</div>
+        <div class="venue-capacity">👥 54,500</div>
+      </div>
+
+      <div class="venue-card fade-in-up">
+        <div class="venue-country-tag tag-can">🇨🇦 Canadá</div>
+        <div class="venue-icon">🏟</div>
+        <div class="venue-name">BMO Field</div>
+        <div class="venue-city">Toronto, Ontario</div>
+        <div class="venue-capacity">👥 45,736</div>
+      </div>
+
+      <div class="venue-card fade-in-up">
+        <div class="venue-country-tag tag-usa">🇺🇸 USA</div>
+        <div class="venue-icon">🏟</div>
+        <div class="venue-name">Gillette Stadium</div>
+        <div class="venue-city">Foxborough, Boston</div>
+        <div class="venue-capacity">👥 65,878 · Sede Perú vs Panamá</div>
+      </div>
+
+      <div class="venue-card fade-in-up">
+        <div class="venue-country-tag tag-usa">🇺🇸 USA</div>
+        <div class="venue-icon">🏟</div>
+        <div class="venue-name">SoFi Stadium</div>
+        <div class="venue-city">Inglewood, Los Ángeles</div>
+        <div class="venue-capacity">👥 70,240</div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- HISTORIA -->
+  <section class="section" id="historia">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Legado</div>
+        <h2 class="section-title">Historia del <span>Mundial</span></h2>
+      </div>
+    </div>
+
+    <!-- Stats históricos -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;margin-bottom:40px">
+      <div class="hero-stat-card">
+        <div class="hero-stat-label">Edición 2026</div>
+        <div class="hero-stat-value">23ª</div>
+        <div class="hero-stat-sub">Copa del Mundo FIFA</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="hero-stat-label">Goleador histórico</div>
+        <div class="hero-stat-value" style="font-size:1.1rem">Ronaldo</div>
+        <div class="hero-stat-sub">Brasil · 15 goles</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="hero-stat-label">Más títulos</div>
+        <div class="hero-stat-value">🇧🇷</div>
+        <div class="hero-stat-sub">Brasil · 5 copas</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="hero-stat-label">Debut Panamá</div>
+        <div class="hero-stat-value" style="font-size:1.1rem">2018</div>
+        <div class="hero-stat-sub">Rusia · Primera vez</div>
+      </div>
+    </div>
+
+    <div class="history-grid">
+      <div class="history-card fade-in-up"><div class="history-year">2022 · Qatar</div><div class="history-champion-flag">🇦🇷</div><div class="history-champion-name">Argentina</div><div class="history-runner">Final vs Francia</div></div>
+      <div class="history-card fade-in-up"><div class="history-year">2018 · Rusia</div><div class="history-champion-flag">🇫🇷</div><div class="history-champion-name">Francia</div><div class="history-runner">Final vs Croacia</div></div>
+      <div class="history-card fade-in-up"><div class="history-year">2014 · Brasil</div><div class="history-champion-flag">🇩🇪</div><div class="history-champion-name">Alemania</div><div class="history-runner">Final vs Argentina</div></div>
+      <div class="history-card fade-in-up"><div class="history-year">2010 · Sudáfrica</div><div class="history-champion-flag">🇪🇸</div><div class="history-champion-name">España</div><div class="history-runner">Final vs Países Bajos</div></div>
+      <div class="history-card fade-in-up"><div class="history-year">2006 · Alemania</div><div class="history-champion-flag">🇮🇹</div><div class="history-champion-name">Italia</div><div class="history-runner">Final vs Francia</div></div>
+      <div class="history-card fade-in-up"><div class="history-year">2002 · Korea/Japón</div><div class="history-champion-flag">🇧🇷</div><div class="history-champion-name">Brasil</div><div class="history-runner">Final vs Alemania</div></div>
+      <div class="history-card fade-in-up"><div class="history-year">1998 · Francia</div><div class="history-champion-flag">🇫🇷</div><div class="history-champion-name">Francia</div><div class="history-runner">Final vs Brasil</div></div>
+      <div class="history-card fade-in-up"><div class="history-year">1994 · USA</div><div class="history-champion-flag">🇧🇷</div><div class="history-champion-name">Brasil</div><div class="history-runner">Final vs Italia</div></div>
+      <div class="history-card fade-in-up"><div class="history-year">1990 · Italia</div><div class="history-champion-flag">🇩🇪</div><div class="history-champion-name">Alemania Occ.</div><div class="history-runner">Final vs Argentina</div></div>
+      <div class="history-card fade-in-up"><div class="history-year">1986 · México</div><div class="history-champion-flag">🇦🇷</div><div class="history-champion-name">Argentina</div><div class="history-runner">Final vs Alemania</div></div>
+      <div class="history-card fade-in-up"><div class="history-year">1982 · España</div><div class="history-champion-flag">🇮🇹</div><div class="history-champion-name">Italia</div><div class="history-runner">Final vs Alemania</div></div>
+      <div class="history-card fade-in-up"><div class="history-year">1978 · Argentina</div><div class="history-champion-flag">🇦🇷</div><div class="history-champion-name">Argentina</div><div class="history-runner">Final vs Países Bajos</div></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">Mundial 2026 <span>🇵🇦</span> Panamá</div>
+    <div class="footer-flag-line">
+      <div class="footer-flag-bar bar-red"></div>
+      <div class="footer-flag-bar bar-white"></div>
+      <div class="footer-flag-bar bar-blue"></div>
+      <div class="footer-flag-bar bar-white"></div>
+      <div class="footer-flag-bar bar-red"></div>
+    </div>
+    <p class="footer-text">Sitio de seguimiento del FIFA World Cup 2026 · Con orgullo panameño</p>
+    <p class="footer-update">Actualización automática diaria · Última actualización: <strong id="footer-update-time">06:00 AM</strong></p>
+  </footer>
+
+  <script src="./assets/js/data.js"></script>
+  <script src="./assets/js/app.js"></script>
+
+</body>
+</html>

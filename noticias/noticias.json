@@ -1,0 +1,71 @@
+{
+  "lastUpdated": "2026-06-13T18:00:00-05:00",
+  "noticias": [
+    {
+      "id": "N001",
+      "titulo": "🇵🇦 Panamá debuta el 17 de junio ante Ghana — ¡La hora ha llegado!",
+      "resumen": "La Selección de Panamá hace su debut en el Mundial 2026 el próximo martes 17 de junio frente a Ghana en el Levi's Stadium de San Francisco. El Grupo L promete ser una batalla épica con Inglaterra y Croacia como los otros rivales.",
+      "imagen": null,
+      "categoria": "Panamá",
+      "fecha": "2026-06-13T18:00:00-05:00",
+      "fuente": "FEPAFUT",
+      "url": "https://www.fepafut.com",
+      "destacada": true
+    },
+    {
+      "id": "N002",
+      "titulo": "USA arrasa 4-1 a Paraguay en su debut: Pulisic brilló en Nueva York",
+      "resumen": "El combinado estadounidense goleó 4-1 a Paraguay en el MetLife Stadium ante su afición enfervorizada. Christian Pulisic lideró el ataque con una actuación memorable en el debut del anfitrión.",
+      "imagen": null,
+      "categoria": "Resultados",
+      "fecha": "2026-06-13T16:00:00-05:00",
+      "fuente": "ESPN",
+      "url": "https://www.espn.com",
+      "destacada": true
+    },
+    {
+      "id": "N003",
+      "titulo": "México derrota 2-0 a Sudáfrica en el partido inaugural del Mundial 2026",
+      "resumen": "El Tri inauguró el torneo el 11 de junio con victoria sobre Sudáfrica en el SoFi Stadium de Los Ángeles. México arrancó con pie derecho en el Grupo A que incluye a Corea del Sur y Rep. Checa.",
+      "imagen": null,
+      "categoria": "Resultados",
+      "fecha": "2026-06-11T22:00:00-05:00",
+      "fuente": "Televisa",
+      "url": "https://www.televisadeportes.com",
+      "destacada": false
+    },
+    {
+      "id": "N004",
+      "titulo": "Brasil y Marruecos empatan 1-1 en Dallas en duelo de gigantes",
+      "resumen": "La Canarinha no pudo con la aguerrida defensa de Marruecos. El Grupo C arranca parejo con Brasil, Marruecos, Haití y Escocia compitiendo por los primeros dos puestos.",
+      "imagen": null,
+      "categoria": "Resultados",
+      "fecha": "2026-06-13T22:00:00-05:00",
+      "fuente": "Marca",
+      "url": "https://www.marca.com",
+      "destacada": false
+    },
+    {
+      "id": "N005",
+      "titulo": "Grupo L: El camino de Panamá — Inglaterra y Croacia, los rivales a vencer",
+      "resumen": "Panamá comparte el Grupo L con tres selecciones de gran nivel: Inglaterra (actual subcampeón europeo), Croacia (finalista del Mundial 2022) y Ghana. Los partidos de Panamá: 17 jun vs Ghana, 23 jun vs Croacia, 27 jun vs Inglaterra.",
+      "imagen": null,
+      "categoria": "Panamá",
+      "fecha": "2026-06-12T10:00:00-05:00",
+      "fuente": "TVN Panamá",
+      "url": "https://www.tvn-2.com",
+      "destacada": true
+    },
+    {
+      "id": "N006",
+      "titulo": "Corea del Sur 2-1 Rep. Checa y Canadá 1-1 Bosnia: los otros resultados del arranque",
+      "resumen": "El Mundial sigue a ritmo frenético. Corea del Sur venció a la República Checa mientras Canadá y Bosnia igualaron en Toronto. Qatar y Suiza también empataron 1-1 en Vancouver.",
+      "imagen": null,
+      "categoria": "Resultados",
+      "fecha": "2026-06-13T10:00:00-05:00",
+      "fuente": "FIFA",
+      "url": "https://www.fifa.com/worldcup/2026",
+      "destacada": false
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "lastUpdated": "2026-06-13T18:00:00-05:00",
+  "matches": [
+    {
+      "id": "M001", "grupo": "A", "fecha": "2026-06-11", "hora": "17:00",
+      "timezone": "America/Panama",
+      "equipo1": { "nombre": "México",       "flag": "🇲🇽", "code": "MEX" },
+      "equipo2": { "nombre": "Sudáfrica",    "flag": "🇿🇦", "code": "RSA" },
+      "marcador": { "g1": 2, "g2": 0 },
+      "estado": "finalizado",
+      "estadio": "SoFi Stadium", "ciudad": "Los Ángeles"
+    },
+    {
+      "id": "M002", "grupo": "A", "fecha": "2026-06-11", "hora": "20:00",
+      "timezone": "America/Panama",
+      "equipo1": { "nombre": "Corea del Sur","flag": "🇰🇷", "code": "KOR" },
+      "equipo2": { "nombre": "Rep. Checa",   "flag": "🇨🇿", "code": "CZE" },
+      "marcador": { "g1": 2, "g2": 1 },
+      "estado": "finalizado",
+      "estadio": "Estadio Akron", "ciudad": "Guadalajara"
+    },
+    {
+      "id": "M003", "grupo": "B", "fecha": "2026-06-12", "hora": "14:00",
+      "timezone": "America/Panama",
+      "equipo1": { "nombre": "Canadá",       "flag": "🇨🇦", "code": "CAN" },
+      "equipo2": { "nombre": "Bosnia y H.",  "flag": "🇧🇦", "code": "BIH" },
+      "marcador": { "g1": 1, "g2": 1 },
+      "estado": "finalizado",
+      "estadio": "BMO Field", "ciudad": "Toronto"
+    },
+    {
+      "id": "M004", "grupo": "D", "fecha": "2026-06-13", "hora": "14:00",
+      "timezone": "America/Panama",
+      "equipo1": { "nombre": "USA",          "flag": "🇺🇸", "code": "USA" },
+      "equipo2": { "nombre": "Paraguay",     "flag": "🇵🇾", "code": "PAR" },
+      "marcador": { "g1": 4, "g2": 1 },
+      "estado": "finalizado",
+      "estadio": "MetLife Stadium", "ciudad": "Nueva York"
+    },
+    {
+      "id": "M005", "grupo": "B", "fecha": "2026-06-13", "hora": "17:00",
+      "timezone": "America/Panama",
+      "equipo1": { "nombre": "Qatar",        "flag": "🇶🇦", "code": "QAT" },
+      "equipo2": { "nombre": "Suiza",        "flag": "🇨🇭", "code": "SUI" },
+      "marcador": { "g1": 1, "g2": 1 },
+      "estado": "finalizado",
+      "estadio": "BC Place", "ciudad": "Vancouver"
+    },
+    {
+      "id": "M006", "grupo": "C", "fecha": "2026-06-13", "hora": "20:00",
+      "timezone": "America/Panama",
+      "equipo1": { "nombre": "Brasil",       "flag": "🇧🇷", "code": "BRA" },
+      "equipo2": { "nombre": "Marruecos",    "flag": "🇲🇦", "code": "MAR" },
+      "marcador": { "g1": 1, "g2": 1 },
+      "estado": "finalizado",
+      "estadio": "AT&T Stadium", "ciudad": "Dallas"
+    },
+    {
+      "id": "M007", "grupo": "L", "fecha": "2026-06-17", "hora": "19:00",
+      "timezone": "America/Panama",
+      "equipo1": { "nombre": "Ghana",        "flag": "🇬🇭", "code": "GHA" },
+      "equipo2": { "nombre": "Panamá",       "flag": "🇵🇦", "code": "PAN", "panama": true },
+      "marcador": null,
+      "estado": "programado",
+      "estadio": "Levi's Stadium", "ciudad": "San Francisco"
+    },
+    {
+      "id": "M008", "grupo": "L", "fecha": "2026-06-17", "hora": "22:00",
+      "timezone": "America/Panama",
+      "equipo1": { "nombre": "Inglaterra",   "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "code": "ENG" },
+      "equipo2": { "nombre": "Croacia",      "flag": "🇭🇷", "code": "CRO" },
+      "marcador": null,
+      "estado": "programado",
+      "estadio": "Rose Bowl", "ciudad": "Los Ángeles"
+    },
+    {
+      "id": "M009", "grupo": "L", "fecha": "2026-06-23", "hora": "19:00",
+      "timezone": "America/Panama",
+      "equipo1": { "nombre": "Panamá",       "flag": "🇵🇦", "code": "PAN", "panama": true },
+      "equipo2": { "nombre": "Croacia",      "flag": "🇭🇷", "code": "CRO" },
+      "marcador": null,
+      "estado": "programado",
+      "estadio": "AT&T Stadium", "ciudad": "Dallas"
+    },
+    {
+      "id": "M010", "grupo": "L", "fecha": "2026-06-27", "hora": "17:00",
+      "timezone": "America/Panama",
+      "equipo1": { "nombre": "Panamá",       "flag": "🇵🇦", "code": "PAN", "panama": true },
+      "equipo2": { "nombre": "Inglaterra",   "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "code": "ENG" },
+      "marcador": null,
+      "estado": "programado",
+      "estadio": "Gillette Stadium", "ciudad": "Boston"
+    },
+    {
+      "id": "M011", "grupo": "A", "fecha": "2026-06-15", "hora": "14:00",
+      "timezone": "America/Panama",
+      "equipo1": { "nombre": "Sudáfrica",    "flag": "🇿🇦", "code": "RSA" },
+      "equipo2": { "nombre": "Corea del Sur","flag": "🇰🇷", "code": "KOR" },
+      "marcador": null,
+      "estado": "programado",
+      "estadio": "AT&T Stadium", "ciudad": "Dallas"
+    },
+    {
+      "id": "M012", "grupo": "A", "fecha": "2026-06-15", "hora": "17:00",
+      "timezone": "America/Panama",
+      "equipo1": { "nombre": "México",       "flag": "🇲🇽", "code": "MEX" },
+      "equipo2": { "nombre": "Rep. Checa",   "flag": "🇨🇿", "code": "CZE" },
+      "marcador": null,
+      "estado": "programado",
+      "estadio": "Estadio Akron", "ciudad": "Guadalajara"
+    },
+    {
+      "id": "M013", "grupo": "C", "fecha": "2026-06-14", "hora": "17:00",
+      "timezone": "America/Panama",
+      "equipo1": { "nombre": "Haití",        "flag": "🇭🇹", "code": "HAI" },
+      "equipo2": { "nombre": "Escocia",      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "code": "SCO" },
+      "marcador": null,
+      "estado": "programado",
+      "estadio": "Hard Rock Stadium", "ciudad": "Miami"
+    },
+    {
+      "id": "M014", "grupo": "D", "fecha": "2026-06-14", "hora": "20:00",
+      "timezone": "America/Panama",
+      "equipo1": { "nombre": "Australia",    "flag": "🇦🇺", "code": "AUS" },
+      "equipo2": { "nombre": "Turquía",      "flag": "🇹🇷", "code": "TUR" },
+      "marcador": null,
+      "estado": "programado",
+      "estadio": "Levi's Stadium", "ciudad": "San Francisco"
+    }
+  ]
+}

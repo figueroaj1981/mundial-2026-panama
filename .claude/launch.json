@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Mundial 2026",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["scheduler/serve.js"],
+      "port": 3026
+    }
+  ]
+}
