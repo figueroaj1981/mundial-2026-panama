@@ -170,6 +170,40 @@ function startCountdown(targetDateStr, targetTimeStr, matchInfo) {
 }
 
 // =============================================
+// BUILD MATCH CARD
+// =============================================
+function buildMatchCard(m) {
+  const isPan = isPanamaMatch(m);
+  const scoreHtml = m.estado === 'programado'
+    ? `<div class="match-vs">VS</div><div style="color:var(--text-muted);font-size:0.75rem;margin-top:4px">${m.hora}</div>`
+    : `<div class="match-score">${m.marcador.g1} - ${m.marcador.g2}</div>`;
+  return `
+    <div class="match-card fade-in-up ${isPan ? 'panama-match' : ''}">
+      ${isPan ? '<div class="panama-match-tag">🇵🇦 Panamá</div>' : ''}
+      <div class="match-card-header">
+        <span class="match-group">Grupo ${m.grupo}</span>
+        <span class="match-status ${getStatusClass(m.estado)}">${getStatusLabel(m.estado)}</span>
+      </div>
+      <div class="match-teams">
+        <div class="match-team">
+          <div class="match-team-flag">${m.equipo1.flag}</div>
+          <div class="match-team-name">${m.equipo1.nombre}</div>
+        </div>
+        <div class="match-score-area">${scoreHtml}</div>
+        <div class="match-team">
+          <div class="match-team-flag">${m.equipo2.flag}</div>
+          <div class="match-team-name">${m.equipo2.nombre}</div>
+        </div>
+      </div>
+      <div class="match-card-footer">
+        <span class="match-venue">📍 ${m.estadio}</span>
+        <span class="match-time">${formatDate(m.fecha)}</span>
+      </div>
+    </div>
+  `;
+}
+
+// =============================================
 // RENDER MATCHES
 // =============================================
 function renderMatches(matches, containerId, options = {}) {
@@ -191,37 +225,29 @@ function renderMatches(matches, containerId, options = {}) {
     return;
   }
 
-  container.innerHTML = filtered.map(m => {
-    const isPan = isPanamaMatch(m);
-    const scoreHtml = m.estado === 'programado'
-      ? `<div class="match-vs">VS</div><div style="color:var(--text-muted);font-size:0.75rem;margin-top:4px">${m.hora}</div>`
-      : `<div class="match-score">${m.marcador.g1} - ${m.marcador.g2}</div>`;
+  if (options.groupBy) {
+    const byGroup = {};
+    filtered.forEach(m => {
+      if (!byGroup[m.grupo]) byGroup[m.grupo] = [];
+      byGroup[m.grupo].push(m);
+    });
+    const groupOrder = 'ABCDEFGHIJKL'.split('');
+    const sortedGroups = Object.keys(byGroup).sort((a, b) => groupOrder.indexOf(a) - groupOrder.indexOf(b));
+    container.innerHTML = sortedGroups.map(grupo => {
+      const matches = byGroup[grupo];
+      const isPanGroup = grupo === 'L';
+      const cards = matches.map(m => buildMatchCard(m)).join('');
+      return `
+        <div class="group-section-header ${isPanGroup ? 'panama-group-header' : ''}">
+          ${isPanGroup ? '🇵🇦 ' : ''}Grupo ${grupo}
+        </div>
+        ${cards}
+      `;
+    }).join('');
+    return;
+  }
 
-    return `
-      <div class="match-card fade-in-up ${isPan ? 'panama-match' : ''}">
-        ${isPan ? '<div class="panama-match-tag">🇵🇦 Panamá</div>' : ''}
-        <div class="match-card-header">
-          <span class="match-group">Grupo ${m.grupo}</span>
-          <span class="match-status ${getStatusClass(m.estado)}">${getStatusLabel(m.estado)}</span>
-        </div>
-        <div class="match-teams">
-          <div class="match-team">
-            <div class="match-team-flag">${m.equipo1.flag}</div>
-            <div class="match-team-name">${m.equipo1.nombre}</div>
-          </div>
-          <div class="match-score-area">${scoreHtml}</div>
-          <div class="match-team">
-            <div class="match-team-flag">${m.equipo2.flag}</div>
-            <div class="match-team-name">${m.equipo2.nombre}</div>
-          </div>
-        </div>
-        <div class="match-card-footer">
-          <span class="match-venue">📍 ${m.estadio}</span>
-          <span class="match-time">${formatDate(m.fecha)}</span>
-        </div>
-      </div>
-    `;
-  }).join('');
+  container.innerHTML = filtered.map(m => buildMatchCard(m)).join('');
 }
 
 // =============================================
@@ -564,7 +590,7 @@ async function init() {
 
   // Partidos de hoy (tabs)
   renderMatches(matches, 'matches-today', { filter: 'today' });
-  renderMatches(matches, 'matches-all', {});
+  renderMatches(matches, 'matches-all', { groupBy: true });
   renderMatches(matches, 'matches-upcoming', { filter: 'upcoming' });
 
   // Grupos
