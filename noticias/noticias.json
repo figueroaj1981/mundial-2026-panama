@@ -1,24 +1,24 @@
 {
-  "lastUpdated": "2026-06-14T23:00:00-05:00",
+  "lastUpdated": "2026-06-16T08:00:00-05:00",
   "noticias": [
     {
       "id": "N001",
-      "titulo": "🇵🇦 Panamá debuta el 17 de junio ante Ghana en Toronto — ¡La hora ha llegado!",
-      "resumen": "La Selección de Panamá hace su debut en el Mundial 2026 el próximo martes 17 de junio frente a Ghana en el BMO Field de Toronto, Canadá. El Grupo L promete ser una batalla épica con Inglaterra y Croacia como los otros rivales.",
+      "titulo": "🇵🇦 ¡Mañana debuta Panamá! Ghana será el rival este martes 17 en Toronto",
+      "resumen": "Llegó la cuenta regresiva final. La Selección de Panamá debuta en el Mundial 2026 mañana martes 17 de junio frente a Ghana en el BMO Field de Toronto, Canadá. El Grupo L promete ser una batalla épica con Inglaterra y Croacia como los otros rivales.",
       "imagen": null,
       "categoria": "Panamá",
-      "fecha": "2026-06-14T20:00:00-05:00",
+      "fecha": "2026-06-16T07:00:00-05:00",
       "fuente": "FEPAFUT",
       "url": "https://www.fepafut.com",
       "destacada": true
     },
     {
       "id": "N002",
-      "titulo": "Goleadas en la 4ª jornada: Alemania 7-1 y Suecia 5-1 arrancan con autoridad",
-      "resumen": "El 14 de junio dejó cifras contundentes. Alemania aplastó 7-1 a Curazao en Houston con doblete de Havertz, y Suecia goleó 5-1 a Túnez en Monterrey. En una sorpresa, Australia venció 2-0 a Turquía en Vancouver, y Costa de Marfil superó 1-0 a Ecuador con gol de Amad Diallo.",
+      "titulo": "Día de empates en el Mundial: España 0-0 con Cabo Verde y Bélgica 1-1 ante Egipto",
+      "resumen": "La jornada del 15 de junio fue de igualdades y sorpresas. La campeona España no pasó del 0-0 ante una sólida Cabo Verde; Bélgica empató 1-1 con Egipto; Uruguay 1-1 con Arabia Saudita; e Irán y Nueva Zelanda firmaron un vibrante 2-2 en Los Ángeles. El día anterior, Alemania había goleado 7-1 a Curazao y Suecia 5-1 a Túnez.",
       "imagen": null,
       "categoria": "Resultados",
-      "fecha": "2026-06-14T22:30:00-05:00",
+      "fecha": "2026-06-15T22:00:00-05:00",
       "fuente": "ESPN",
       "url": "https://www.espn.com",
       "destacada": true

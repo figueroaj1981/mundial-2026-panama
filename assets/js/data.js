@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
- * Regenerado: 2026-06-14T23:00:00-05:00
+ * Regenerado: 2026-06-16T08:00:00-05:00
  * Fuente: FIFA / NBC Sports / ESPN
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-06-14T23:00:00-05:00",
+  lastUpdated: "2026-06-16T08:00:00-05:00",
 
   grupos: [
     {
@@ -58,18 +58,18 @@ window.MUNDIAL_DATA = {
     },
     {
       id: "G", teams: [
-        { pos:1, name:"Bélgica",       flag:"🇧🇪", code:"BEL", pj:0, pg:0, pe:0, pp:0, gf:0, gc:0, dg:0, pts:0 },
-        { pos:2, name:"Egipto",        flag:"🇪🇬", code:"EGY", pj:0, pg:0, pe:0, pp:0, gf:0, gc:0, dg:0, pts:0 },
-        { pos:3, name:"Irán",          flag:"🇮🇷", code:"IRN", pj:0, pg:0, pe:0, pp:0, gf:0, gc:0, dg:0, pts:0 },
-        { pos:4, name:"Nueva Zelanda", flag:"🇳🇿", code:"NZL", pj:0, pg:0, pe:0, pp:0, gf:0, gc:0, dg:0, pts:0 }
+        { pos:1, name:"Irán",          flag:"🇮🇷", code:"IRN", pj:1, pg:0, pe:1, pp:0, gf:2, gc:2, dg:0, pts:1 },
+        { pos:2, name:"Nueva Zelanda", flag:"🇳🇿", code:"NZL", pj:1, pg:0, pe:1, pp:0, gf:2, gc:2, dg:0, pts:1 },
+        { pos:3, name:"Bélgica",       flag:"🇧🇪", code:"BEL", pj:1, pg:0, pe:1, pp:0, gf:1, gc:1, dg:0, pts:1 },
+        { pos:4, name:"Egipto",        flag:"🇪🇬", code:"EGY", pj:1, pg:0, pe:1, pp:0, gf:1, gc:1, dg:0, pts:1 }
       ]
     },
     {
       id: "H", teams: [
-        { pos:1, name:"España",        flag:"🇪🇸", code:"ESP", pj:0, pg:0, pe:0, pp:0, gf:0, gc:0, dg:0, pts:0 },
-        { pos:2, name:"Cabo Verde",    flag:"🇨🇻", code:"CPV", pj:0, pg:0, pe:0, pp:0, gf:0, gc:0, dg:0, pts:0 },
-        { pos:3, name:"Arabia Saudita",flag:"🇸🇦", code:"KSA", pj:0, pg:0, pe:0, pp:0, gf:0, gc:0, dg:0, pts:0 },
-        { pos:4, name:"Uruguay",       flag:"🇺🇾", code:"URU", pj:0, pg:0, pe:0, pp:0, gf:0, gc:0, dg:0, pts:0 }
+        { pos:1, name:"Uruguay",       flag:"🇺🇾", code:"URU", pj:1, pg:0, pe:1, pp:0, gf:1, gc:1, dg:0, pts:1 },
+        { pos:2, name:"Arabia Saudita",flag:"🇸🇦", code:"KSA", pj:1, pg:0, pe:1, pp:0, gf:1, gc:1, dg:0, pts:1 },
+        { pos:3, name:"España",        flag:"🇪🇸", code:"ESP", pj:1, pg:0, pe:1, pp:0, gf:0, gc:0, dg:0, pts:1 },
+        { pos:4, name:"Cabo Verde",    flag:"🇨🇻", code:"CPV", pj:1, pg:0, pe:1, pp:0, gf:0, gc:0, dg:0, pts:1 }
       ]
     },
     {
@@ -147,14 +147,14 @@ window.MUNDIAL_DATA = {
     {id:"M042",grupo:"G",fecha:"2026-06-21",hora:"14:00",timezone:"America/Panama",equipo1:{nombre:"Bélgica",flag:"🇧🇪",code:"BEL"},equipo2:{nombre:"Irán",flag:"🇮🇷",code:"IRN"},marcador:null,estado:"programado",estadio:"SoFi Stadium",ciudad:"Los Ángeles"},
     {id:"M043",grupo:"G",fecha:"2026-06-26",hora:"22:00",timezone:"America/Panama",equipo1:{nombre:"Bélgica",flag:"🇧🇪",code:"BEL"},equipo2:{nombre:"Nueva Zelanda",flag:"🇳🇿",code:"NZL"},marcador:null,estado:"programado",estadio:"BC Place",ciudad:"Vancouver"},
     {id:"M044",grupo:"G",fecha:"2026-06-26",hora:"22:00",timezone:"America/Panama",equipo1:{nombre:"Egipto",flag:"🇪🇬",code:"EGY"},equipo2:{nombre:"Irán",flag:"🇮🇷",code:"IRN"},marcador:null,estado:"programado",estadio:"Lumen Field",ciudad:"Seattle"},
-    {id:"M045",grupo:"G",fecha:"2026-06-15",hora:"14:00",timezone:"America/Panama",equipo1:{nombre:"Bélgica",flag:"🇧🇪",code:"BEL"},equipo2:{nombre:"Egipto",flag:"🇪🇬",code:"EGY"},marcador:null,estado:"programado",estadio:"BC Place",ciudad:"Vancouver"},
-    {id:"M046",grupo:"G",fecha:"2026-06-15",hora:"20:00",timezone:"America/Panama",equipo1:{nombre:"Irán",flag:"🇮🇷",code:"IRN"},equipo2:{nombre:"Nueva Zelanda",flag:"🇳🇿",code:"NZL"},marcador:null,estado:"programado",estadio:"SoFi Stadium",ciudad:"Los Ángeles"},
+    {id:"M045",grupo:"G",fecha:"2026-06-15",hora:"14:00",timezone:"America/Panama",equipo1:{nombre:"Bélgica",flag:"🇧🇪",code:"BEL"},equipo2:{nombre:"Egipto",flag:"🇪🇬",code:"EGY"},marcador:{g1:1,g2:1},estado:"finalizado",estadio:"BC Place",ciudad:"Vancouver"},
+    {id:"M046",grupo:"G",fecha:"2026-06-15",hora:"20:00",timezone:"America/Panama",equipo1:{nombre:"Irán",flag:"🇮🇷",code:"IRN"},equipo2:{nombre:"Nueva Zelanda",flag:"🇳🇿",code:"NZL"},marcador:{g1:2,g2:2},estado:"finalizado",estadio:"SoFi Stadium",ciudad:"Los Ángeles"},
     {id:"M047",grupo:"H",fecha:"2026-06-21",hora:"11:00",timezone:"America/Panama",equipo1:{nombre:"España",flag:"🇪🇸",code:"ESP"},equipo2:{nombre:"Arabia Saudita",flag:"🇸🇦",code:"KSA"},marcador:null,estado:"programado",estadio:"Mercedes-Benz Stadium",ciudad:"Atlanta"},
     {id:"M048",grupo:"H",fecha:"2026-06-21",hora:"17:00",timezone:"America/Panama",equipo1:{nombre:"Uruguay",flag:"🇺🇾",code:"URU"},equipo2:{nombre:"Cabo Verde",flag:"🇨🇻",code:"CPV"},marcador:null,estado:"programado",estadio:"Hard Rock Stadium",ciudad:"Miami"},
     {id:"M049",grupo:"H",fecha:"2026-06-26",hora:"19:00",timezone:"America/Panama",equipo1:{nombre:"España",flag:"🇪🇸",code:"ESP"},equipo2:{nombre:"Uruguay",flag:"🇺🇾",code:"URU"},marcador:null,estado:"programado",estadio:"Estadio Akron",ciudad:"Guadalajara"},
     {id:"M050",grupo:"H",fecha:"2026-06-26",hora:"19:00",timezone:"America/Panama",equipo1:{nombre:"Arabia Saudita",flag:"🇸🇦",code:"KSA"},equipo2:{nombre:"Cabo Verde",flag:"🇨🇻",code:"CPV"},marcador:null,estado:"programado",estadio:"NRG Stadium",ciudad:"Houston"},
-    {id:"M051",grupo:"H",fecha:"2026-06-15",hora:"11:00",timezone:"America/Panama",equipo1:{nombre:"España",flag:"🇪🇸",code:"ESP"},equipo2:{nombre:"Cabo Verde",flag:"🇨🇻",code:"CPV"},marcador:null,estado:"programado",estadio:"Mercedes-Benz Stadium",ciudad:"Atlanta"},
-    {id:"M052",grupo:"H",fecha:"2026-06-15",hora:"17:00",timezone:"America/Panama",equipo1:{nombre:"Uruguay",flag:"🇺🇾",code:"URU"},equipo2:{nombre:"Arabia Saudita",flag:"🇸🇦",code:"KSA"},marcador:null,estado:"programado",estadio:"Hard Rock Stadium",ciudad:"Miami"},
+    {id:"M051",grupo:"H",fecha:"2026-06-15",hora:"11:00",timezone:"America/Panama",equipo1:{nombre:"España",flag:"🇪🇸",code:"ESP"},equipo2:{nombre:"Cabo Verde",flag:"🇨🇻",code:"CPV"},marcador:{g1:0,g2:0},estado:"finalizado",estadio:"Mercedes-Benz Stadium",ciudad:"Atlanta"},
+    {id:"M052",grupo:"H",fecha:"2026-06-15",hora:"17:00",timezone:"America/Panama",equipo1:{nombre:"Uruguay",flag:"🇺🇾",code:"URU"},equipo2:{nombre:"Arabia Saudita",flag:"🇸🇦",code:"KSA"},marcador:{g1:1,g2:1},estado:"finalizado",estadio:"Hard Rock Stadium",ciudad:"Miami"},
     {id:"M053",grupo:"I",fecha:"2026-06-22",hora:"16:00",timezone:"America/Panama",equipo1:{nombre:"Francia",flag:"🇫🇷",code:"FRA"},equipo2:{nombre:"Irak",flag:"🇮🇶",code:"IRQ"},marcador:null,estado:"programado",estadio:"Lincoln Financial Field",ciudad:"Filadelfia"},
     {id:"M054",grupo:"I",fecha:"2026-06-22",hora:"19:00",timezone:"America/Panama",equipo1:{nombre:"Noruega",flag:"🇳🇴",code:"NOR"},equipo2:{nombre:"Senegal",flag:"🇸🇳",code:"SEN"},marcador:null,estado:"programado",estadio:"MetLife Stadium",ciudad:"Nueva York"},
     {id:"M055",grupo:"I",fecha:"2026-06-26",hora:"14:00",timezone:"America/Panama",equipo1:{nombre:"Francia",flag:"🇫🇷",code:"FRA"},equipo2:{nombre:"Noruega",flag:"🇳🇴",code:"NOR"},marcador:null,estado:"programado",estadio:"Gillette Stadium",ciudad:"Boston"},
@@ -182,13 +182,13 @@ window.MUNDIAL_DATA = {
   ],
 
   noticias: [
-    { id:"N001", titulo:"🇵🇦 Panamá debuta el 17 de junio ante Ghana en Toronto — ¡La hora ha llegado!",
-      resumen:"La Selección de Panamá hace su debut en el Mundial 2026 el próximo martes 17 de junio frente a Ghana en el BMO Field de Toronto, Canadá. El Grupo L promete ser una batalla épica con Inglaterra y Croacia como los otros rivales.",
-      imagen:null, categoria:"Panamá", fecha:"2026-06-14T20:00:00-05:00", fuente:"FEPAFUT", url:"https://www.fepafut.com", destacada:true },
+    { id:"N001", titulo:"🇵🇦 ¡Mañana debuta Panamá! Ghana será el rival este martes 17 en Toronto",
+      resumen:"Llegó la cuenta regresiva final. La Selección de Panamá debuta en el Mundial 2026 mañana martes 17 de junio frente a Ghana en el BMO Field de Toronto, Canadá. El Grupo L promete ser una batalla épica con Inglaterra y Croacia como los otros rivales.",
+      imagen:null, categoria:"Panamá", fecha:"2026-06-16T07:00:00-05:00", fuente:"FEPAFUT", url:"https://www.fepafut.com", destacada:true },
 
-    { id:"N002", titulo:"Goleadas en la 4ª jornada: Alemania 7-1 y Suecia 5-1 arrancan con autoridad",
-      resumen:"El 14 de junio dejó cifras contundentes. Alemania aplastó 7-1 a Curazao en Houston con doblete de Havertz, y Suecia goleó 5-1 a Túnez en Monterrey. En una sorpresa, Australia venció 2-0 a Turquía en Vancouver, y Costa de Marfil superó 1-0 a Ecuador con gol de Amad Diallo.",
-      imagen:null, categoria:"Resultados", fecha:"2026-06-14T22:30:00-05:00", fuente:"ESPN", url:"https://www.espn.com", destacada:true },
+    { id:"N002", titulo:"Día de empates en el Mundial: España 0-0 con Cabo Verde y Bélgica 1-1 ante Egipto",
+      resumen:"La jornada del 15 de junio fue de igualdades y sorpresas. La campeona España no pasó del 0-0 ante una sólida Cabo Verde; Bélgica empató 1-1 con Egipto; Uruguay 1-1 con Arabia Saudita; e Irán y Nueva Zelanda firmaron un vibrante 2-2 en Los Ángeles. El día anterior, Alemania había goleado 7-1 a Curazao y Suecia 5-1 a Túnez.",
+      imagen:null, categoria:"Resultados", fecha:"2026-06-15T22:00:00-05:00", fuente:"ESPN", url:"https://www.espn.com", destacada:true },
 
     { id:"N003", titulo:"Países Bajos y Japón firman un vibrante 2-2 en Dallas",
       resumen:"Japón remontó dos veces para arrancarle un empate 2-2 a Países Bajos en el AT&T Stadium. Van Dijk y Summerville marcaron para la Naranja; Nakamura y Kamada respondieron por los nipones en uno de los mejores partidos de la jornada.",

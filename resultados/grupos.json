@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-14T23:00:00-05:00",
+  "lastUpdated": "2026-06-16T08:00:00-05:00",
   "format": "12 grupos de 4 equipos · Top 2 + 8 mejores 3ros avanzan",
   "groups": [
     {
@@ -59,19 +59,19 @@
     {
       "id": "G",
       "teams": [
-        { "pos":1, "name":"Bélgica",      "flag":"🇧🇪", "code":"BEL", "pj":0, "pg":0, "pe":0, "pp":0, "gf":0, "gc":0, "dg":0,  "pts":0 },
-        { "pos":2, "name":"Egipto",       "flag":"🇪🇬", "code":"EGY", "pj":0, "pg":0, "pe":0, "pp":0, "gf":0, "gc":0, "dg":0,  "pts":0 },
-        { "pos":3, "name":"Irán",         "flag":"🇮🇷", "code":"IRN", "pj":0, "pg":0, "pe":0, "pp":0, "gf":0, "gc":0, "dg":0,  "pts":0 },
-        { "pos":4, "name":"Nueva Zelanda","flag":"🇳🇿", "code":"NZL", "pj":0, "pg":0, "pe":0, "pp":0, "gf":0, "gc":0, "dg":0,  "pts":0 }
+        { "pos":1, "name":"Irán",         "flag":"🇮🇷", "code":"IRN", "pj":1, "pg":0, "pe":1, "pp":0, "gf":2, "gc":2, "dg":0, "pts":1 },
+        { "pos":2, "name":"Nueva Zelanda","flag":"🇳🇿", "code":"NZL", "pj":1, "pg":0, "pe":1, "pp":0, "gf":2, "gc":2, "dg":0, "pts":1 },
+        { "pos":3, "name":"Bélgica",      "flag":"🇧🇪", "code":"BEL", "pj":1, "pg":0, "pe":1, "pp":0, "gf":1, "gc":1, "dg":0, "pts":1 },
+        { "pos":4, "name":"Egipto",       "flag":"🇪🇬", "code":"EGY", "pj":1, "pg":0, "pe":1, "pp":0, "gf":1, "gc":1, "dg":0, "pts":1 }
       ]
     },
     {
       "id": "H",
       "teams": [
-        { "pos":1, "name":"España",       "flag":"🇪🇸", "code":"ESP", "pj":0, "pg":0, "pe":0, "pp":0, "gf":0, "gc":0, "dg":0,  "pts":0 },
-        { "pos":2, "name":"Cabo Verde",   "flag":"🇨🇻", "code":"CPV", "pj":0, "pg":0, "pe":0, "pp":0, "gf":0, "gc":0, "dg":0,  "pts":0 },
-        { "pos":3, "name":"Arabia Saudita","flag":"🇸🇦","code":"KSA", "pj":0, "pg":0, "pe":0, "pp":0, "gf":0, "gc":0, "dg":0,  "pts":0 },
-        { "pos":4, "name":"Uruguay",      "flag":"🇺🇾", "code":"URU", "pj":0, "pg":0, "pe":0, "pp":0, "gf":0, "gc":0, "dg":0,  "pts":0 }
+        { "pos":1, "name":"Uruguay",      "flag":"🇺🇾", "code":"URU", "pj":1, "pg":0, "pe":1, "pp":0, "gf":1, "gc":1, "dg":0, "pts":1 },
+        { "pos":2, "name":"Arabia Saudita","flag":"🇸🇦","code":"KSA", "pj":1, "pg":0, "pe":1, "pp":0, "gf":1, "gc":1, "dg":0, "pts":1 },
+        { "pos":3, "name":"España",       "flag":"🇪🇸", "code":"ESP", "pj":1, "pg":0, "pe":1, "pp":0, "gf":0, "gc":0, "dg":0, "pts":1 },
+        { "pos":4, "name":"Cabo Verde",   "flag":"🇨🇻", "code":"CPV", "pj":1, "pg":0, "pe":1, "pp":0, "gf":0, "gc":0, "dg":0, "pts":1 }
       ]
     },
     {
