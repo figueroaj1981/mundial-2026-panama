@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
- * Regenerado: 2026-06-16T22:30:00-05:00
- * Fuente: FIFA / NBC Sports / ESPN
+ * Regenerado: 2026-06-16T22:45:00-05:00
+ * Fuente: FIFA / NBC Sports / ESPN / Goal.com
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-06-16T22:30:00-05:00",
+  lastUpdated: "2026-06-16T22:45:00-05:00",
 
   grupos: [
     {
@@ -182,6 +182,10 @@ window.MUNDIAL_DATA = {
   ],
 
   noticias: [
+    { id:"N007", titulo:"🇵🇦 Duda de última hora: Carrasquilla se entrena por separado antes del debut ante Ghana",
+      resumen:"A horas del debut mundialista, Adalberto Carrasquilla entrena por separado en el campamento base de Panamá en el Nottawasaga Resort (Ontario) debido a una molestia en los aductores sufrida con Pumas. El técnico Thomas Christiansen evalúa su disponibilidad para el partido de mañana ante Ghana en el BMO Field de Toronto. La 'Roja' llega a este debut tras una preparación con derrota ante Brasil, victoria sobre República Dominicana y empate con Bosnia y Herzegovina.",
+      imagen:null, categoria:"Panamá", fecha:"2026-06-16T21:30:00-05:00", fuente:"Goal.com", url:"https://www.goal.com/en-us/news/ghana-panama-world-cup-preview/bltc57f7610ee6813ff", destacada:true },
+
     { id:"N001", titulo:"🇵🇦 ¡Mañana debuta Panamá! Ghana será el rival este martes 17 en Toronto",
       resumen:"Llegó la cuenta regresiva final. La Selección de Panamá debuta en el Mundial 2026 mañana martes 17 de junio frente a Ghana en el BMO Field de Toronto, Canadá. El Grupo L promete ser una batalla épica con Inglaterra y Croacia como los otros rivales.",
       imagen:null, categoria:"Panamá", fecha:"2026-06-16T07:00:00-05:00", fuente:"FEPAFUT", url:"https://www.fepafut.com", destacada:true },
