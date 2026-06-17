@@ -1759,3 +1759,15 @@ footer {
   text-align: center;
   padding: 0 20px;
 }
+
+/* ===== POWERED BY ===== */
+.powered-by {
+  text-align: center;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  background: rgba(0,0,0,0.25);
+  padding: 5px 12px;
+  border-bottom: 1px solid var(--border);
+}
+.powered-by::before { content: "★ "; color: var(--pan-red); }
