@@ -1771,3 +1771,13 @@ footer {
   border-bottom: 1px solid var(--border);
 }
 .powered-by::before { content: "★ "; color: var(--pan-red); }
+
+/* ===== HERO CREDIT ===== */
+.hero-credit {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--gold);
+  margin: 4px 0 14px;
+  text-transform: uppercase;
+}
