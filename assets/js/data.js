@@ -190,9 +190,9 @@ window.MUNDIAL_DATA = {
       resumen:"Jornada de estrellas el 16 de junio. Francia venció 3-1 a Senegal con doblete de Mbappé; Noruega goleó 4-1 a Irak con doblete de Haaland; y Argentina aplastó 3-0 a Argelia con un hat-trick de Messi. El día anterior había sido de empates: España 0-0, Bélgica 1-1, Uruguay 1-1 e Irán 2-2.",
       imagen:null, categoria:"Resultados", fecha:"2026-06-16T22:00:00-05:00", fuente:"ESPN", url:"https://www.espn.com", destacada:true },
 
-    { id:"N003", titulo:"Países Bajos y Japón firman un vibrante 2-2 en Dallas",
-      resumen:"Japón remontó dos veces para arrancarle un empate 2-2 a Países Bajos en el AT&T Stadium. Van Dijk y Summerville marcaron para la Naranja; Nakamura y Kamada respondieron por los nipones en uno de los mejores partidos de la jornada.",
-      imagen:null, categoria:"Resultados", fecha:"2026-06-14T18:00:00-05:00", fuente:"Marca", url:"https://www.marca.com", destacada:false },
+    { id:"N003", titulo:"Messi iguala el récord histórico de goles en Mundiales con su hat-trick",
+      resumen:"Con los tres goles ante Argelia, Lionel Messi llegó a 16 goles en Copas del Mundo e igualó el récord histórico de Miroslav Klose, superando a Ronaldo Nazário (15). A sus 38 años, el capitán argentino queda a un solo tanto de convertirse en el máximo goleador de la historia de los Mundiales.",
+      imagen:null, categoria:"Mundial 2026", fecha:"2026-06-16T22:15:00-05:00", fuente:"ESPN", url:"https://www.espn.com", destacada:false },
 
     { id:"N004", titulo:"Grupo L: El camino de Panamá — Inglaterra y Croacia, los rivales a vencer",
       resumen:"Panamá comparte el Grupo L con tres selecciones de gran nivel: Inglaterra, Croacia (finalista del Mundial 2022) y Ghana. El calendario de Panamá: 17 jun vs Ghana (Toronto), 23 jun vs Croacia (Toronto), 27 jun vs Inglaterra (Nueva York).",
