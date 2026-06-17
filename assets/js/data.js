@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
- * Regenerado: 2026-06-16T22:45:00-05:00
+ * Regenerado: 2026-06-17T08:00:00-05:00
  * Fuente: FIFA / NBC Sports / ESPN / Goal.com
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-06-16T22:45:00-05:00",
+  lastUpdated: "2026-06-17T08:00:00-05:00",
 
   grupos: [
     {
@@ -83,8 +83,8 @@ window.MUNDIAL_DATA = {
     {
       id: "J", teams: [
         { pos:1, name:"Argentina",     flag:"🇦🇷", code:"ARG", pj:1, pg:1, pe:0, pp:0, gf:3, gc:0, dg:3, pts:3 },
-        { pos:2, name:"Austria",       flag:"🇦🇹", code:"AUT", pj:0, pg:0, pe:0, pp:0, gf:0, gc:0, dg:0, pts:0 },
-        { pos:3, name:"Jordania",      flag:"🇯🇴", code:"JOR", pj:0, pg:0, pe:0, pp:0, gf:0, gc:0, dg:0, pts:0 },
+        { pos:2, name:"Austria",       flag:"🇦🇹", code:"AUT", pj:1, pg:1, pe:0, pp:0, gf:3, gc:1, dg:2, pts:3 },
+        { pos:3, name:"Jordania",      flag:"🇯🇴", code:"JOR", pj:1, pg:0, pe:0, pp:1, gf:1, gc:3, dg:-2, pts:0 },
         { pos:4, name:"Argelia",       flag:"🇩🇿", code:"ALG", pj:1, pg:0, pe:0, pp:1, gf:0, gc:3, dg:-3, pts:0 }
       ]
     },
@@ -166,7 +166,7 @@ window.MUNDIAL_DATA = {
     {id:"M061",grupo:"J",fecha:"2026-06-27",hora:"21:00",timezone:"America/Panama",equipo1:{nombre:"Argentina",flag:"🇦🇷",code:"ARG"},equipo2:{nombre:"Jordania",flag:"🇯🇴",code:"JOR"},marcador:null,estado:"programado",estadio:"AT&T Stadium",ciudad:"Dallas"},
     {id:"M062",grupo:"J",fecha:"2026-06-27",hora:"21:00",timezone:"America/Panama",equipo1:{nombre:"Argelia",flag:"🇩🇿",code:"ALG"},equipo2:{nombre:"Austria",flag:"🇦🇹",code:"AUT"},marcador:null,estado:"programado",estadio:"Arrowhead Stadium",ciudad:"Kansas City"},
     {id:"M063",grupo:"J",fecha:"2026-06-16",hora:"20:00",timezone:"America/Panama",equipo1:{nombre:"Argentina",flag:"🇦🇷",code:"ARG"},equipo2:{nombre:"Argelia",flag:"🇩🇿",code:"ALG"},marcador:{g1:3,g2:0},estado:"finalizado",estadio:"Arrowhead Stadium",ciudad:"Kansas City"},
-    {id:"M064",grupo:"J",fecha:"2026-06-16",hora:"23:00",timezone:"America/Panama",equipo1:{nombre:"Austria",flag:"🇦🇹",code:"AUT"},equipo2:{nombre:"Jordania",flag:"🇯🇴",code:"JOR"},marcador:null,estado:"programado",estadio:"Levi's Stadium",ciudad:"San Francisco"},
+    {id:"M064",grupo:"J",fecha:"2026-06-16",hora:"23:00",timezone:"America/Panama",equipo1:{nombre:"Austria",flag:"🇦🇹",code:"AUT"},equipo2:{nombre:"Jordania",flag:"🇯🇴",code:"JOR"},marcador:{g1:3,g2:1},estado:"finalizado",estadio:"Levi's Stadium",ciudad:"San Francisco"},
     {id:"M065",grupo:"K",fecha:"2026-06-23",hora:"12:00",timezone:"America/Panama",equipo1:{nombre:"Portugal",flag:"🇵🇹",code:"POR"},equipo2:{nombre:"Uzbekistán",flag:"🇺🇿",code:"UZB"},marcador:null,estado:"programado",estadio:"NRG Stadium",ciudad:"Houston"},
     {id:"M066",grupo:"K",fecha:"2026-06-23",hora:"21:00",timezone:"America/Panama",equipo1:{nombre:"Colombia",flag:"🇨🇴",code:"COL"},equipo2:{nombre:"Congo DR",flag:"🇨🇩",code:"COD"},marcador:null,estado:"programado",estadio:"Estadio Akron",ciudad:"Guadalajara"},
     {id:"M067",grupo:"K",fecha:"2026-06-27",hora:"18:30",timezone:"America/Panama",equipo1:{nombre:"Portugal",flag:"🇵🇹",code:"POR"},equipo2:{nombre:"Colombia",flag:"🇨🇴",code:"COL"},marcador:null,estado:"programado",estadio:"Hard Rock Stadium",ciudad:"Miami"},

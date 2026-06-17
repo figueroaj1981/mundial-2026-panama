@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-16T22:30:00-05:00",
+  "lastUpdated": "2026-06-17T08:00:00-05:00",
   "format": "12 grupos de 4 equipos · Top 2 + 8 mejores 3ros avanzan",
   "groups": [
     {
@@ -87,8 +87,8 @@
       "id": "J",
       "teams": [
         { "pos":1, "name":"Argentina",    "flag":"🇦🇷", "code":"ARG", "pj":1, "pg":1, "pe":0, "pp":0, "gf":3, "gc":0, "dg":3,  "pts":3 },
-        { "pos":2, "name":"Austria",      "flag":"🇦🇹", "code":"AUT", "pj":0, "pg":0, "pe":0, "pp":0, "gf":0, "gc":0, "dg":0,  "pts":0 },
-        { "pos":3, "name":"Jordania",     "flag":"🇯🇴", "code":"JOR", "pj":0, "pg":0, "pe":0, "pp":0, "gf":0, "gc":0, "dg":0,  "pts":0 },
+        { "pos":2, "name":"Austria",      "flag":"🇦🇹", "code":"AUT", "pj":1, "pg":1, "pe":0, "pp":0, "gf":3, "gc":1, "dg":2,  "pts":3 },
+        { "pos":3, "name":"Jordania",     "flag":"🇯🇴", "code":"JOR", "pj":1, "pg":0, "pe":0, "pp":1, "gf":1, "gc":3, "dg":-2, "pts":0 },
         { "pos":4, "name":"Argelia",      "flag":"🇩🇿", "code":"ALG", "pj":1, "pg":0, "pe":0, "pp":1, "gf":0, "gc":3, "dg":-3, "pts":0 }
       ]
     },
