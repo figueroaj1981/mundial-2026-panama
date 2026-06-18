@@ -417,6 +417,23 @@ function renderPanamaSection(matches) {
   const nextMatch = panamaMatches.find(m => m.estado === 'programado');
   const pastMatches = panamaMatches.filter(m => m.estado === 'finalizado');
 
+  // Posición actual de Panamá en el Grupo L (dinámico)
+  const posNumEl = document.getElementById('panama-pos-num');
+  const posGroupEl = document.getElementById('panama-pos-group');
+  if (posNumEl || posGroupEl) {
+    const lTable = computeGroupStandings(matches)['L'] || [];
+    const idx = lTable.findIndex(t => t.panama);
+    const played = lTable.some(t => t.pj > 0);
+    const rivalNext = nextMatch ? (nextMatch.equipo1.panama ? nextMatch.equipo2 : nextMatch.equipo1) : null;
+    if (idx >= 0 && played) {
+      if (posNumEl) posNumEl.textContent = (idx + 1) + '°';
+      if (posGroupEl) posGroupEl.textContent = `Grupo L · ${lTable[idx].pts} pts` + (rivalNext ? ` · próx: ${rivalNext.nombre} ${formatDate(nextMatch.fecha)}` : '');
+    } else {
+      if (posNumEl) posNumEl.textContent = '—';
+      if (posGroupEl) posGroupEl.textContent = rivalNext ? `Grupo L · debut ${formatDate(nextMatch.fecha)}` : 'Grupo L';
+    }
+  }
+
   // Próximo partido
   const nextEl = document.getElementById('panama-next-match');
   if (nextEl && nextMatch) {
