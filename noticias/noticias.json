@@ -1,26 +1,26 @@
 {
-  "lastUpdated": "2026-06-16T22:45:00-05:00",
+  "lastUpdated": "2026-06-18T06:40:00-05:00",
   "noticias": [
     {
       "id": "N007",
-      "titulo": "🇵🇦 Duda de última hora: Carrasquilla se entrena por separado antes del debut ante Ghana",
-      "resumen": "A horas del debut mundialista, Adalberto Carrasquilla entrena por separado en el campamento base de Panamá en el Nottawasaga Resort (Ontario) debido a una molestia en los aductores sufrida con Pumas. El técnico Thomas Christiansen evalúa su disponibilidad para el partido de mañana ante Ghana en el BMO Field de Toronto. La 'Roja' llega a este debut tras una preparación con derrota ante Brasil, victoria sobre República Dominicana y empate con Bosnia y Herzegovina.",
+      "titulo": "🇵🇦 Panamá cae 1-0 ante Ghana en su debut, pero deja la cara en alto",
+      "resumen": "Panamá perdió 1-0 ante Ghana en su estreno del Mundial 2026 en el BMO Field de Toronto, con un gol agónico de Caleb Yirenkyi en el minuto 90+5. La 'Roja' peleó hasta el último segundo ante un rival africano de jerarquía y se fue con la frente en alto. El sueño sigue vivo: Panamá buscará su primera alegría el 23 de junio ante Croacia. ¡Vamos Panamá, esto apenas comienza!",
       "imagen": null,
       "categoria": "Panamá",
-      "fecha": "2026-06-16T21:30:00-05:00",
-      "fuente": "Goal.com",
-      "url": "https://www.goal.com/en-us/news/ghana-panama-world-cup-preview/bltc57f7610ee6813ff",
+      "fecha": "2026-06-17T21:00:00-05:00",
+      "fuente": "ESPN",
+      "url": "https://www.espn.com",
       "destacada": true
     },
     {
       "id": "N001",
-      "titulo": "🇵🇦 ¡Mañana debuta Panamá! Ghana será el rival este martes 17 en Toronto",
-      "resumen": "Llegó la cuenta regresiva final. La Selección de Panamá debuta en el Mundial 2026 mañana martes 17 de junio frente a Ghana en el BMO Field de Toronto, Canadá. El Grupo L promete ser una batalla épica con Inglaterra y Croacia como los otros rivales.",
+      "titulo": "Jornada 17-jun: Inglaterra golea 4-2 a Croacia y Ronaldo es frenado por el Congo",
+      "resumen": "Inglaterra arrancó con un 4-2 sobre Croacia (doblete de Harry Kane) en el Grupo L. En el Grupo K, Colombia venció 3-1 a Uzbekistán con gol de Luis Díaz, mientras que Portugal y la RD Congo empataron 1-1, dejando a Cristiano Ronaldo sin victoria en su debut.",
       "imagen": null,
-      "categoria": "Panamá",
-      "fecha": "2026-06-16T07:00:00-05:00",
-      "fuente": "FEPAFUT",
-      "url": "https://www.fepafut.com",
+      "categoria": "Resultados",
+      "fecha": "2026-06-17T22:00:00-05:00",
+      "fuente": "ESPN",
+      "url": "https://www.espn.com",
       "destacada": true
     },
     {

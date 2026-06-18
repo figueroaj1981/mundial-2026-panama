@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
- * Regenerado: 2026-06-17T08:00:00-05:00
+ * Regenerado: 2026-06-18T06:40:00-05:00
  * Fuente: FIFA / NBC Sports / ESPN / Goal.com
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-06-17T08:00:00-05:00",
+  lastUpdated: "2026-06-18T06:40:00-05:00",
 
   grupos: [
     {
@@ -90,18 +90,18 @@ window.MUNDIAL_DATA = {
     },
     {
       id: "K", teams: [
-        { pos:1, name:"Portugal",      flag:"🇵🇹", code:"POR", pj:0, pg:0, pe:0, pp:0, gf:0, gc:0, dg:0, pts:0 },
-        { pos:2, name:"RD Congo",      flag:"🇨🇩", code:"COD", pj:0, pg:0, pe:0, pp:0, gf:0, gc:0, dg:0, pts:0 },
-        { pos:3, name:"Uzbekistán",    flag:"🇺🇿", code:"UZB", pj:0, pg:0, pe:0, pp:0, gf:0, gc:0, dg:0, pts:0 },
-        { pos:4, name:"Colombia",      flag:"🇨🇴", code:"COL", pj:0, pg:0, pe:0, pp:0, gf:0, gc:0, dg:0, pts:0 }
+        { pos:1, name:"Colombia",      flag:"🇨🇴", code:"COL", pj:1, pg:1, pe:0, pp:0, gf:3, gc:1, dg:2, pts:3 },
+        { pos:2, name:"Portugal",      flag:"🇵🇹", code:"POR", pj:1, pg:0, pe:1, pp:0, gf:1, gc:1, dg:0, pts:1 },
+        { pos:3, name:"RD Congo",      flag:"🇨🇩", code:"COD", pj:1, pg:0, pe:1, pp:0, gf:1, gc:1, dg:0, pts:1 },
+        { pos:4, name:"Uzbekistán",    flag:"🇺🇿", code:"UZB", pj:1, pg:0, pe:0, pp:1, gf:1, gc:3, dg:-2, pts:0 }
       ]
     },
     {
       id: "L", panama: true, teams: [
-        { pos:1, name:"Inglaterra",    flag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿", code:"ENG", pj:0, pg:0, pe:0, pp:0, gf:0, gc:0, dg:0, pts:0 },
-        { pos:2, name:"Croacia",       flag:"🇭🇷", code:"CRO", pj:0, pg:0, pe:0, pp:0, gf:0, gc:0, dg:0, pts:0 },
-        { pos:3, name:"Ghana",         flag:"🇬🇭", code:"GHA", pj:0, pg:0, pe:0, pp:0, gf:0, gc:0, dg:0, pts:0 },
-        { pos:4, name:"Panamá",        flag:"🇵🇦", code:"PAN", pj:0, pg:0, pe:0, pp:0, gf:0, gc:0, dg:0, pts:0, panama:true }
+        { pos:1, name:"Inglaterra",    flag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿", code:"ENG", pj:1, pg:1, pe:0, pp:0, gf:4, gc:2, dg:2, pts:3 },
+        { pos:2, name:"Ghana",         flag:"🇬🇭", code:"GHA", pj:1, pg:1, pe:0, pp:0, gf:1, gc:0, dg:1, pts:3 },
+        { pos:3, name:"Panamá",        flag:"🇵🇦", code:"PAN", pj:1, pg:0, pe:0, pp:1, gf:0, gc:1, dg:-1, pts:0, panama:true },
+        { pos:4, name:"Croacia",       flag:"🇭🇷", code:"CRO", pj:1, pg:0, pe:0, pp:1, gf:2, gc:4, dg:-2, pts:0 }
       ]
     }
   ],
@@ -171,10 +171,10 @@ window.MUNDIAL_DATA = {
     {id:"M066",grupo:"K",fecha:"2026-06-23",hora:"21:00",timezone:"America/Panama",equipo1:{nombre:"Colombia",flag:"🇨🇴",code:"COL"},equipo2:{nombre:"Congo DR",flag:"🇨🇩",code:"COD"},marcador:null,estado:"programado",estadio:"Estadio Akron",ciudad:"Guadalajara"},
     {id:"M067",grupo:"K",fecha:"2026-06-27",hora:"18:30",timezone:"America/Panama",equipo1:{nombre:"Portugal",flag:"🇵🇹",code:"POR"},equipo2:{nombre:"Colombia",flag:"🇨🇴",code:"COL"},marcador:null,estado:"programado",estadio:"Hard Rock Stadium",ciudad:"Miami"},
     {id:"M068",grupo:"K",fecha:"2026-06-27",hora:"18:30",timezone:"America/Panama",equipo1:{nombre:"Congo DR",flag:"🇨🇩",code:"COD"},equipo2:{nombre:"Uzbekistán",flag:"🇺🇿",code:"UZB"},marcador:null,estado:"programado",estadio:"Mercedes-Benz Stadium",ciudad:"Atlanta"},
-    {id:"M069",grupo:"K",fecha:"2026-06-17",hora:"12:00",timezone:"America/Panama",equipo1:{nombre:"Portugal",flag:"🇵🇹",code:"POR"},equipo2:{nombre:"Congo DR",flag:"🇨🇩",code:"COD"},marcador:null,estado:"programado",estadio:"NRG Stadium",ciudad:"Houston"},
-    {id:"M070",grupo:"K",fecha:"2026-06-17",hora:"21:00",timezone:"America/Panama",equipo1:{nombre:"Colombia",flag:"🇨🇴",code:"COL"},equipo2:{nombre:"Uzbekistán",flag:"🇺🇿",code:"UZB"},marcador:null,estado:"programado",estadio:"Estadio Azteca",ciudad:"Ciudad de México"},
-    {id:"M007",grupo:"L",fecha:"2026-06-17",hora:"18:00",timezone:"America/Panama",equipo1:{nombre:"Ghana",flag:"🇬🇭",code:"GHA"},equipo2:{nombre:"Panamá",flag:"🇵🇦",code:"PAN",panama:true},marcador:null,estado:"programado",estadio:"BMO Field",ciudad:"Toronto"},
-    {id:"M008",grupo:"L",fecha:"2026-06-17",hora:"15:00",timezone:"America/Panama",equipo1:{nombre:"Inglaterra",flag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",code:"ENG"},equipo2:{nombre:"Croacia",flag:"🇭🇷",code:"CRO"},marcador:null,estado:"programado",estadio:"AT&T Stadium",ciudad:"Dallas"},
+    {id:"M069",grupo:"K",fecha:"2026-06-17",hora:"12:00",timezone:"America/Panama",equipo1:{nombre:"Portugal",flag:"🇵🇹",code:"POR"},equipo2:{nombre:"Congo DR",flag:"🇨🇩",code:"COD"},marcador:{g1:1,g2:1},estado:"finalizado",estadio:"NRG Stadium",ciudad:"Houston"},
+    {id:"M070",grupo:"K",fecha:"2026-06-17",hora:"21:00",timezone:"America/Panama",equipo1:{nombre:"Colombia",flag:"🇨🇴",code:"COL"},equipo2:{nombre:"Uzbekistán",flag:"🇺🇿",code:"UZB"},marcador:{g1:3,g2:1},estado:"finalizado",estadio:"Estadio Azteca",ciudad:"Ciudad de México"},
+    {id:"M007",grupo:"L",fecha:"2026-06-17",hora:"18:00",timezone:"America/Panama",equipo1:{nombre:"Ghana",flag:"🇬🇭",code:"GHA"},equipo2:{nombre:"Panamá",flag:"🇵🇦",code:"PAN",panama:true},marcador:{g1:1,g2:0},estado:"finalizado",estadio:"BMO Field",ciudad:"Toronto"},
+    {id:"M008",grupo:"L",fecha:"2026-06-17",hora:"15:00",timezone:"America/Panama",equipo1:{nombre:"Inglaterra",flag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",code:"ENG"},equipo2:{nombre:"Croacia",flag:"🇭🇷",code:"CRO"},marcador:{g1:4,g2:2},estado:"finalizado",estadio:"AT&T Stadium",ciudad:"Dallas"},
     {id:"M009",grupo:"L",fecha:"2026-06-23",hora:"18:00",timezone:"America/Panama",equipo1:{nombre:"Panamá",flag:"🇵🇦",code:"PAN",panama:true},equipo2:{nombre:"Croacia",flag:"🇭🇷",code:"CRO"},marcador:null,estado:"programado",estadio:"BMO Field",ciudad:"Toronto"},
     {id:"M071",grupo:"L",fecha:"2026-06-23",hora:"15:00",timezone:"America/Panama",equipo1:{nombre:"Inglaterra",flag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",code:"ENG"},equipo2:{nombre:"Ghana",flag:"🇬🇭",code:"GHA"},marcador:null,estado:"programado",estadio:"Gillette Stadium",ciudad:"Boston"},
     {id:"M010",grupo:"L",fecha:"2026-06-27",hora:"16:00",timezone:"America/Panama",equipo1:{nombre:"Panamá",flag:"🇵🇦",code:"PAN",panama:true},equipo2:{nombre:"Inglaterra",flag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",code:"ENG"},marcador:null,estado:"programado",estadio:"MetLife Stadium",ciudad:"Nueva York"},
@@ -182,13 +182,13 @@ window.MUNDIAL_DATA = {
   ],
 
   noticias: [
-    { id:"N007", titulo:"🇵🇦 Duda de última hora: Carrasquilla se entrena por separado antes del debut ante Ghana",
-      resumen:"A horas del debut mundialista, Adalberto Carrasquilla entrena por separado en el campamento base de Panamá en el Nottawasaga Resort (Ontario) debido a una molestia en los aductores sufrida con Pumas. El técnico Thomas Christiansen evalúa su disponibilidad para el partido de mañana ante Ghana en el BMO Field de Toronto. La 'Roja' llega a este debut tras una preparación con derrota ante Brasil, victoria sobre República Dominicana y empate con Bosnia y Herzegovina.",
-      imagen:null, categoria:"Panamá", fecha:"2026-06-16T21:30:00-05:00", fuente:"Goal.com", url:"https://www.goal.com/en-us/news/ghana-panama-world-cup-preview/bltc57f7610ee6813ff", destacada:true },
+    { id:"N007", titulo:"🇵🇦 Panamá cae 1-0 ante Ghana en su debut, pero deja la cara en alto",
+      resumen:"Panamá perdió 1-0 ante Ghana en su estreno del Mundial 2026 en el BMO Field de Toronto, con un gol agónico de Caleb Yirenkyi en el minuto 90+5. La 'Roja' peleó hasta el último segundo ante un rival africano de jerarquía y se fue con la frente en alto. El sueño sigue vivo: Panamá buscará su primera alegría el 23 de junio ante Croacia. ¡Vamos Panamá, esto apenas comienza!",
+      imagen:null, categoria:"Panamá", fecha:"2026-06-17T21:00:00-05:00", fuente:"ESPN", url:"https://www.espn.com", destacada:true },
 
-    { id:"N001", titulo:"🇵🇦 ¡Mañana debuta Panamá! Ghana será el rival este martes 17 en Toronto",
-      resumen:"Llegó la cuenta regresiva final. La Selección de Panamá debuta en el Mundial 2026 mañana martes 17 de junio frente a Ghana en el BMO Field de Toronto, Canadá. El Grupo L promete ser una batalla épica con Inglaterra y Croacia como los otros rivales.",
-      imagen:null, categoria:"Panamá", fecha:"2026-06-16T07:00:00-05:00", fuente:"FEPAFUT", url:"https://www.fepafut.com", destacada:true },
+    { id:"N001", titulo:"Jornada 17-jun: Inglaterra golea 4-2 a Croacia y Ronaldo es frenado por el Congo",
+      resumen:"Inglaterra arrancó con un 4-2 sobre Croacia (doblete de Harry Kane) en el Grupo L. En el Grupo K, Colombia venció 3-1 a Uzbekistán con gol de Luis Díaz, mientras que Portugal y la RD Congo empataron 1-1, dejando a Cristiano Ronaldo sin victoria en su debut.",
+      imagen:null, categoria:"Resultados", fecha:"2026-06-17T22:00:00-05:00", fuente:"ESPN", url:"https://www.espn.com", destacada:false },
 
     { id:"N002", titulo:"Mbappé, Haaland y Messi brillan: Francia, Noruega y Argentina arrancan con goleadas",
       resumen:"Jornada de estrellas el 16 de junio. Francia venció 3-1 a Senegal con doblete de Mbappé; Noruega goleó 4-1 a Irak con doblete de Haaland; y Argentina aplastó 3-0 a Argelia con un hat-trick de Messi. El día anterior había sido de empates: España 0-0, Bélgica 1-1, Uruguay 1-1 e Irán 2-2.",
