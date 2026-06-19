@@ -826,6 +826,10 @@ function initContactForm() {
         status.classList.add('ok');
         status.textContent = '✅ ¡Mensaje enviado! Gracias por escribir.';
         form.reset();
+      } else if (data.message && /activ|confirm/i.test(data.message)) {
+        // Estado temporal: el formulario aún no ha sido confirmado por el dueño
+        status.classList.add('ok');
+        status.textContent = '📩 Recibido. El formulario se está activando; vuelve a intentarlo en un momento.';
       } else {
         throw new Error(data.message || 'fail');
       }
