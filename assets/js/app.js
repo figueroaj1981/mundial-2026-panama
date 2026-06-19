@@ -230,6 +230,8 @@ function renderMatches(matches, containerId, options = {}) {
   const panamaDay = (off = 0) => new Date(Date.now() - 5 * 3600 * 1000 + off * 86400000).toISOString().split('T')[0];
   if (options.filter === 'today') {
     filtered = matches.filter(m => m.fecha === panamaDay(0));
+  } else if (options.filter === 'yesterday') {
+    filtered = matches.filter(m => m.fecha === panamaDay(-1));
   } else if (options.filter === 'tomorrow') {
     filtered = matches.filter(m => m.fecha === panamaDay(1));
   } else if (options.filter === 'panama') {
@@ -844,6 +846,7 @@ async function init() {
   renderPanamaSection(matches);
 
   // Partidos de hoy (tabs)
+  renderMatches(matches, 'matches-yesterday', { filter: 'yesterday' });
   renderMatches(matches, 'matches-today', { filter: 'today' });
   renderMatches(matches, 'matches-tomorrow', { filter: 'tomorrow' });
   renderMatches(matches, 'matches-all', { groupBy: true });
