@@ -1836,3 +1836,25 @@ footer {
 @media (max-width: 600px) {
   .contact-row { grid-template-columns: 1fr; }
 }
+/* ===== ENLACE A RESUMEN EN YOUTUBE ===== */
+.yt-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  transition: color 0.2s, transform 0.15s;
+}
+.yt-link:hover { color: #ff3333; transform: scale(1.05); }
+.yt-ic {
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #ff0000;
+  opacity: 0.85;
+}
+.grupo-score-num.yt-link { flex-direction: row; gap: 5px; align-items: baseline; }
+.grupo-score-num.yt-link .yt-ic { font-size: 0.6rem; }
