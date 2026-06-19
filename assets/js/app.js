@@ -789,58 +789,12 @@ function updateLastUpdated(timestamp) {
 // CONTACTO — formulario que envía al correo del dueño vía FormSubmit (sin servidor)
 // =============================================
 function initContactForm() {
-  const form = document.getElementById('contact-form');
-  if (!form) return;
+  // El formulario hace POST nativo a FormSubmit. Al volver con ?enviado=1 mostramos las gracias.
   const status = document.getElementById('cf-status');
-  const btn = document.getElementById('cf-send');
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const nombre = document.getElementById('cf-name').value.trim();
-    const email = document.getElementById('cf-email').value.trim();
-    const mensaje = document.getElementById('cf-msg').value.trim();
-
-    status.className = 'contact-status';
-    if (!nombre || !email || !mensaje) {
-      status.classList.add('err');
-      status.textContent = 'Completa tu nombre, correo y mensaje.';
-      return;
-    }
-
-    btn.disabled = true;
-    btn.textContent = 'Enviando...';
-    try {
-      const res = await fetch('https://formsubmit.co/ajax/figueroaj.1981@gmail.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          nombre,
-          email,
-          mensaje,
-          _subject: '📨 Nuevo mensaje desde Mundial 2026 🇵🇦',
-          _template: 'table'
-        })
-      });
-      const data = await res.json().catch(() => ({}));
-      if (res.ok && String(data.success) === 'true') {
-        status.classList.add('ok');
-        status.textContent = '✅ ¡Mensaje enviado! Gracias por escribir.';
-        form.reset();
-      } else if (data.message && /activ|confirm/i.test(data.message)) {
-        // Estado temporal: el formulario aún no ha sido confirmado por el dueño
-        status.classList.add('ok');
-        status.textContent = '📩 Recibido. El formulario se está activando; vuelve a intentarlo en un momento.';
-      } else {
-        throw new Error(data.message || 'fail');
-      }
-    } catch (err) {
-      status.classList.add('err');
-      status.textContent = '❌ No se pudo enviar ahora. Intenta de nuevo en un momento.';
-    } finally {
-      btn.disabled = false;
-      btn.textContent = 'Enviar mensaje';
-    }
-  });
+  if (status && /[?&]enviado=1/.test(location.search)) {
+    status.className = 'contact-status ok';
+    status.textContent = '✅ ¡Mensaje enviado! Gracias por escribir.';
+  }
 }
 
 // =============================================

@@ -432,12 +432,16 @@
       </div>
     </div>
 
-    <form id="contact-form" class="contact-form" novalidate>
+    <form id="contact-form" class="contact-form" action="https://formsubmit.co/figueroaj.1981@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Nuevo mensaje desde Mundial 2026 Panama" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://figueroaj1981.github.io/mundial-2026-panama/?enviado=1#contacto" />
       <div class="contact-row">
-        <input type="text" id="cf-name" name="nombre" placeholder="Tu nombre" autocomplete="name" required />
-        <input type="email" id="cf-email" name="email" placeholder="Tu correo (para poder responderte)" autocomplete="email" required />
+        <input type="text" name="nombre" placeholder="Tu nombre" autocomplete="name" required />
+        <input type="email" name="email" placeholder="Tu correo (para poder responderte)" autocomplete="email" required />
       </div>
-      <textarea id="cf-msg" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+      <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
       <button type="submit" class="contact-send" id="cf-send">Enviar mensaje</button>
       <div class="contact-status" id="cf-status" role="status"></div>
     </form>
