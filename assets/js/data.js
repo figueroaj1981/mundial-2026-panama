@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
  * Generado automáticamente por el scheduler.
- * Última actualización: 2026-06-19T00:59:08.027Z
+ * Última actualización: 2026-06-19T13:55:35.753Z
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-06-19T00:59:08.027Z",
+  lastUpdated: "2026-06-19T13:55:35.753Z",
   grupos: [
   {
     "id": "A",
@@ -15,27 +15,27 @@ window.MUNDIAL_DATA = {
         "name": "México",
         "flag": "🇲🇽",
         "code": "MEX",
-        "pj": 1,
-        "pg": 1,
+        "pj": 2,
+        "pg": 2,
         "pe": 0,
         "pp": 0,
-        "gf": 2,
+        "gf": 3,
         "gc": 0,
-        "dg": 2,
-        "pts": 3
+        "dg": 3,
+        "pts": 6
       },
       {
         "pos": 2,
         "name": "Corea del Sur",
         "flag": "🇰🇷",
         "code": "KOR",
-        "pj": 1,
+        "pj": 2,
         "pg": 1,
         "pe": 0,
-        "pp": 0,
+        "pp": 1,
         "gf": 2,
-        "gc": 1,
-        "dg": 1,
+        "gc": 2,
+        "dg": 0,
         "pts": 3
       },
       {
@@ -849,8 +849,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇰🇷",
       "code": "KOR"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 1,
+      "g2": 0
+    },
+    "estado": "finalizado",
     "estadio": "Estadio Akron",
     "ciudad": "Guadalajara"
   },
