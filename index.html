@@ -165,12 +165,19 @@
     <div class="tab-container">
       <div class="tab-nav">
         <button class="tab-btn active" data-tab="hoy">Hoy</button>
+        <button class="tab-btn" data-tab="manana">Mañana</button>
         <button class="tab-btn" data-tab="todos">Todos</button>
         <button class="tab-btn" data-tab="proximos">Próximos</button>
       </div>
 
       <div class="tab-content active" data-tab-content="hoy">
         <div class="matches-grid" id="matches-today">
+          <div style="color:var(--text-muted);padding:40px">Cargando partidos...</div>
+        </div>
+      </div>
+
+      <div class="tab-content" data-tab-content="manana">
+        <div class="matches-grid" id="matches-tomorrow">
           <div style="color:var(--text-muted);padding:40px">Cargando partidos...</div>
         </div>
       </div>
