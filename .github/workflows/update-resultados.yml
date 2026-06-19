@@ -1,0 +1,46 @@
+name: Actualizar resultados Mundial 2026
+
+on:
+  workflow_dispatch:
+  schedule:
+    # UTC. Panamá = UTC-5 → 6am,12pm,6pm,8pm,11pm Panamá
+    - cron: "0 1,4,11,17,23 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-resultados
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Sincronizar resultados desde football-data.org
+        env:
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+        run: node scheduler/sync_results.js
+
+      - name: Regenerar data.js embebido
+        run: node scheduler/generate_data_js.js
+
+      - name: Commit y push si hay cambios
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain resultados assets/js/data.js)" ]; then
+            git add resultados/grupos.json resultados/partidos.json assets/js/data.js
+            git commit -m "Actualización automática (cloud): resultados y tablas del Mundial 2026"
+            git push
+          else
+            echo "Sin cambios que publicar."
+          fi
