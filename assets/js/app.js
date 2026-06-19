@@ -201,12 +201,12 @@ function ytResumenUrl(m) {
   return 'https://www.youtube.com/results?search_query=' + encodeURIComponent(q);
 }
 
-// Atributos del enlace del marcador: si el partido tiene video propio -> modal incrustado; si no -> búsqueda en YouTube
-function scoreLinkAttrs(m) {
-  const vid = getVideoId(m.video);
-  return vid
-    ? `href="#" data-video="${vid}" title="Ver resumen aquí mismo"`
-    : `href="${ytResumenUrl(m)}" target="_blank" rel="noopener" title="Buscar resumen en YouTube"`;
+// Página de resúmenes de FOX Costa Rica (el usuario elige el video del partido que quiera ver)
+const FOX_CR_VIDEOS = 'https://www.youtube.com/@SomosFox_CR/videos';
+
+// El marcador de un partido finalizado enlaza (sin mostrar la URL) a los resúmenes de FOX CR
+function scoreLinkAttrs() {
+  return `href="${FOX_CR_VIDEOS}" target="_blank" rel="noopener" title="Ver resúmenes en FOX (YouTube)"`;
 }
 
 function buildMatchCard(m) {
