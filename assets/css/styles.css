@@ -1858,3 +1858,42 @@ footer {
 }
 .grupo-score-num.yt-link { flex-direction: row; gap: 5px; align-items: baseline; }
 .grupo-score-num.yt-link .yt-ic { font-size: 0.6rem; }
+/* ===== MODAL DE VIDEO (resumen incrustado) ===== */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+.video-modal.open { display: flex; }
+.video-modal-box { position: relative; width: 100%; max-width: 900px; }
+.video-modal-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+.video-modal-frame iframe { width: 100%; height: 100%; border: 0; }
+.video-modal-close {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.video-modal-close:hover { background: var(--pan-red); }

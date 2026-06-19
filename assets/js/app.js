@@ -187,17 +187,33 @@ function startCountdown(targetDateStr, targetTimeStr, matchInfo) {
 // =============================================
 // BUILD MATCH CARD
 // =============================================
+// Extrae el ID de 11 caracteres de un link de YouTube (watch, youtu.be, embed) o lo deja si ya es ID
+function getVideoId(url) {
+  if (!url) return '';
+  const s = String(url);
+  const m = s.match(/(?:v=|youtu\.be\/|embed\/)([A-Za-z0-9_-]{11})/);
+  return m ? m[1] : (/^[A-Za-z0-9_-]{11}$/.test(s) ? s : '');
+}
+
 // Enlace al resumen del partido en YouTube (búsqueda — funciona para cualquier partido)
 function ytResumenUrl(m) {
   const q = `${m.equipo1.nombre} vs ${m.equipo2.nombre} Mundial 2026 resumen highlights`;
   return 'https://www.youtube.com/results?search_query=' + encodeURIComponent(q);
 }
 
+// Atributos del enlace del marcador: si el partido tiene video propio -> modal incrustado; si no -> búsqueda en YouTube
+function scoreLinkAttrs(m) {
+  const vid = getVideoId(m.video);
+  return vid
+    ? `href="#" data-video="${vid}" title="Ver resumen aquí mismo"`
+    : `href="${ytResumenUrl(m)}" target="_blank" rel="noopener" title="Buscar resumen en YouTube"`;
+}
+
 function buildMatchCard(m) {
   const isPan = isPanamaMatch(m);
   const scoreHtml = m.estado === 'programado'
     ? `<div class="match-vs">VS</div><div style="color:var(--text-muted);font-size:0.75rem;margin-top:4px">${m.hora}</div>`
-    : `<a class="match-score yt-link" href="${ytResumenUrl(m)}" target="_blank" rel="noopener" title="Ver resumen en YouTube">${m.marcador.g1} - ${m.marcador.g2}<span class="yt-ic">▶ resumen</span></a>`;
+    : `<a class="match-score yt-link" ${scoreLinkAttrs(m)}>${m.marcador.g1} - ${m.marcador.g2}<span class="yt-ic">▶ resumen</span></a>`;
   return `
     <div class="match-card fade-in-up ${isPan ? 'panama-match' : ''}">
       ${isPan ? '<div class="panama-match-tag">🇵🇦 Panamá</div>' : ''}
@@ -273,7 +289,7 @@ function renderMatches(matches, containerId, options = {}) {
             const isPan = isPanamaMatch(m);
             const scoreHtml = m.estado === 'programado'
               ? `<div class="grupo-score-vs">VS</div><div class="grupo-score-hora">${m.hora}</div>`
-              : `<a class="grupo-score-num yt-link" href="${ytResumenUrl(m)}" target="_blank" rel="noopener" title="Ver resumen en YouTube">${m.marcador.g1} – ${m.marcador.g2}<span class="yt-ic">▶</span></a>`;
+              : `<a class="grupo-score-num yt-link" ${scoreLinkAttrs(m)}>${m.marcador.g1} – ${m.marcador.g2}<span class="yt-ic">▶</span></a>`;
             const isPan1 = m.equipo1.panama;
             const isPan2 = m.equipo2.panama;
             return `
@@ -806,6 +822,37 @@ function initContactForm() {
 }
 
 // =============================================
+// MODAL DE VIDEO — resumen incrustado en la página
+// =============================================
+function initVideoModal() {
+  const overlay = document.createElement('div');
+  overlay.className = 'video-modal';
+  overlay.innerHTML = `
+    <div class="video-modal-box">
+      <button class="video-modal-close" aria-label="Cerrar resumen">✕</button>
+      <div class="video-modal-frame" id="video-modal-frame"></div>
+    </div>`;
+  document.body.appendChild(overlay);
+  const frame = overlay.querySelector('#video-modal-frame');
+  const close = () => { overlay.classList.remove('open'); frame.innerHTML = ''; };
+
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+  overlay.querySelector('.video-modal-close').addEventListener('click', close);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+
+  // Delegación: clic en cualquier marcador con data-video abre el resumen incrustado
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('[data-video]');
+    if (!link) return;
+    e.preventDefault();
+    const id = link.getAttribute('data-video');
+    if (!id) return;
+    frame.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" title="Resumen del partido" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+    overlay.classList.add('open');
+  });
+}
+
+// =============================================
 // MAIN INIT
 // =============================================
 async function init() {
@@ -813,6 +860,7 @@ async function init() {
   initSmoothScroll();
   initTabs();
   initContactForm();
+  initVideoModal();
 
   // Frase del día
   const fraseEl = document.getElementById('hero-phrase');
