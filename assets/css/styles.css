@@ -1781,3 +1781,58 @@ footer {
   margin: 4px 0 14px;
   text-transform: uppercase;
 }
+
+/* ===== FORMULARIO DE CONTACTO ===== */
+.contact-form {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.contact-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 13px 14px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color: var(--text-muted); }
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--pan-red);
+  background: var(--bg-card-hover);
+}
+.contact-form textarea { resize: vertical; min-height: 120px; }
+.contact-send {
+  align-self: flex-start;
+  background: linear-gradient(135deg, var(--pan-red), var(--pan-blue));
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 13px 32px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.2s;
+}
+.contact-send:hover { transform: translateY(-2px); }
+.contact-send:disabled { opacity: 0.6; cursor: default; transform: none; }
+.contact-status { font-size: 0.9rem; min-height: 1.2em; }
+.contact-status.ok { color: var(--success); }
+.contact-status.err { color: var(--live-color); }
+@media (max-width: 600px) {
+  .contact-row { grid-template-columns: 1fr; }
+}

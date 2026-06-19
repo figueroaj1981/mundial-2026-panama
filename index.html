@@ -39,6 +39,7 @@
       <li><a href="#noticias">Noticias</a></li>
       <li><a href="#sedes">Sedes</a></li>
       <li><a href="#historia">Historia</a></li>
+      <li><a href="#contacto">Contacto</a></li>
       <li><span class="nav-live-badge">🔴 En vivo</span></li>
     </ul>
   </nav>
@@ -418,6 +419,28 @@
       <div class="history-card fade-in-up"><div class="history-year">1982 · España</div><div class="history-champion-flag">🇮🇹</div><div class="history-champion-name">Italia</div><div class="history-runner">Final vs Alemania</div></div>
       <div class="history-card fade-in-up"><div class="history-year">1978 · Argentina</div><div class="history-champion-flag">🇦🇷</div><div class="history-champion-name">Argentina</div><div class="history-runner">Final vs Países Bajos</div></div>
     </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- CONTACTO -->
+  <section class="section" id="contacto">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Contacto</div>
+        <h2 class="section-title">Contacta al <span>dueño</span> de la página</h2>
+      </div>
+    </div>
+
+    <form id="contact-form" class="contact-form" novalidate>
+      <div class="contact-row">
+        <input type="text" id="cf-name" name="nombre" placeholder="Tu nombre" autocomplete="name" required />
+        <input type="email" id="cf-email" name="email" placeholder="Tu correo (para poder responderte)" autocomplete="email" required />
+      </div>
+      <textarea id="cf-msg" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+      <button type="submit" class="contact-send" id="cf-send">Enviar mensaje</button>
+      <div class="contact-status" id="cf-status" role="status"></div>
+    </form>
   </section>
 
   <!-- FOOTER -->
