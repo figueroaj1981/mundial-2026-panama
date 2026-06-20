@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-20T05:15:58-05:00",
+  "lastUpdated": "2026-06-20T15:59:32-05:00",
   "matches": [
     {
       "id": "M001",
@@ -791,8 +791,11 @@
         "flag": "🇸🇪",
         "code": "SWE"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 5,
+        "g2": 1
+      },
+      "estado": "finalizado",
       "estadio": "NRG Stadium",
       "ciudad": "Houston"
     },

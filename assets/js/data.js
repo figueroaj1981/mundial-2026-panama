@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
  * Generado automáticamente por el scheduler.
- * Última actualización: 2026-06-20T16:06:50.747Z
+ * Última actualización: 2026-06-20T20:59:32.355Z
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-06-20T16:06:50.747Z",
+  lastUpdated: "2026-06-20T20:59:32.355Z",
   grupos: [
   {
     "id": "A",
@@ -317,31 +317,31 @@ window.MUNDIAL_DATA = {
     "teams": [
       {
         "pos": 1,
-        "name": "Suecia",
-        "flag": "🇸🇪",
-        "code": "SWE",
-        "pj": 1,
-        "pg": 1,
-        "pe": 0,
-        "pp": 0,
-        "gf": 5,
-        "gc": 1,
-        "dg": 4,
-        "pts": 3
-      },
-      {
-        "pos": 2,
         "name": "Países Bajos",
         "flag": "🇳🇱",
         "code": "NED",
-        "pj": 1,
-        "pg": 0,
+        "pj": 2,
+        "pg": 1,
         "pe": 1,
         "pp": 0,
-        "gf": 2,
-        "gc": 2,
+        "gf": 7,
+        "gc": 3,
+        "dg": 4,
+        "pts": 4
+      },
+      {
+        "pos": 2,
+        "name": "Suecia",
+        "flag": "🇸🇪",
+        "code": "SWE",
+        "pj": 2,
+        "pg": 1,
+        "pe": 0,
+        "pp": 1,
+        "gf": 6,
+        "gc": 6,
         "dg": 0,
-        "pts": 1
+        "pts": 3
       },
       {
         "pos": 3,
@@ -1533,8 +1533,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇸🇪",
       "code": "SWE"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 5,
+      "g2": 1
+    },
+    "estado": "finalizado",
     "estadio": "NRG Stadium",
     "ciudad": "Houston"
   },
