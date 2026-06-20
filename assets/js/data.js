@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
  * Generado automáticamente por el scheduler.
- * Última actualización: 2026-06-19T20:57:41.852Z
+ * Última actualización: 2026-06-20T10:15:58.273Z
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-06-19T20:57:41.852Z",
+  lastUpdated: "2026-06-20T10:15:58.273Z",
   grupos: [
   {
     "id": "A",
@@ -134,58 +134,58 @@ window.MUNDIAL_DATA = {
     "teams": [
       {
         "pos": 1,
-        "name": "Escocia",
-        "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-        "code": "SCO",
-        "pj": 1,
-        "pg": 1,
-        "pe": 0,
-        "pp": 0,
-        "gf": 1,
-        "gc": 0,
-        "dg": 1,
-        "pts": 3
-      },
-      {
-        "pos": 2,
         "name": "Brasil",
         "flag": "🇧🇷",
         "code": "BRA",
-        "pj": 1,
-        "pg": 0,
+        "pj": 2,
+        "pg": 1,
         "pe": 1,
         "pp": 0,
-        "gf": 1,
+        "gf": 4,
         "gc": 1,
-        "dg": 0,
-        "pts": 1
+        "dg": 3,
+        "pts": 4
       },
       {
-        "pos": 3,
+        "pos": 2,
         "name": "Marruecos",
         "flag": "🇲🇦",
         "code": "MAR",
-        "pj": 1,
-        "pg": 0,
+        "pj": 2,
+        "pg": 1,
         "pe": 1,
         "pp": 0,
+        "gf": 2,
+        "gc": 1,
+        "dg": 1,
+        "pts": 4
+      },
+      {
+        "pos": 3,
+        "name": "Escocia",
+        "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+        "code": "SCO",
+        "pj": 2,
+        "pg": 1,
+        "pe": 0,
+        "pp": 1,
         "gf": 1,
         "gc": 1,
         "dg": 0,
-        "pts": 1
+        "pts": 3
       },
       {
         "pos": 4,
         "name": "Haití",
         "flag": "🇭🇹",
         "code": "HAI",
-        "pj": 1,
+        "pj": 2,
         "pg": 0,
         "pe": 0,
-        "pp": 1,
+        "pp": 2,
         "gf": 0,
-        "gc": 1,
-        "dg": -1,
+        "gc": 4,
+        "dg": -4,
         "pts": 0
       }
     ]
@@ -198,54 +198,54 @@ window.MUNDIAL_DATA = {
         "name": "USA",
         "flag": "🇺🇸",
         "code": "USA",
-        "pj": 1,
-        "pg": 1,
+        "pj": 2,
+        "pg": 2,
         "pe": 0,
         "pp": 0,
-        "gf": 4,
+        "gf": 6,
         "gc": 1,
-        "dg": 3,
-        "pts": 3
+        "dg": 5,
+        "pts": 6
       },
       {
         "pos": 2,
         "name": "Australia",
         "flag": "🇦🇺",
         "code": "AUS",
-        "pj": 1,
+        "pj": 2,
         "pg": 1,
         "pe": 0,
-        "pp": 0,
+        "pp": 1,
         "gf": 2,
-        "gc": 0,
-        "dg": 2,
+        "gc": 2,
+        "dg": 0,
         "pts": 3
       },
       {
         "pos": 3,
-        "name": "Turquía",
-        "flag": "🇹🇷",
-        "code": "TUR",
-        "pj": 1,
-        "pg": 0,
-        "pe": 0,
-        "pp": 1,
-        "gf": 0,
-        "gc": 2,
-        "dg": -2,
-        "pts": 0
-      },
-      {
-        "pos": 4,
         "name": "Paraguay",
         "flag": "🇵🇾",
         "code": "PAR",
-        "pj": 1,
-        "pg": 0,
+        "pj": 2,
+        "pg": 1,
         "pe": 0,
         "pp": 1,
-        "gf": 1,
+        "gf": 2,
         "gc": 4,
+        "dg": -2,
+        "pts": 3
+      },
+      {
+        "pos": 4,
+        "name": "Turquía",
+        "flag": "🇹🇷",
+        "code": "TUR",
+        "pj": 2,
+        "pg": 0,
+        "pe": 0,
+        "pp": 2,
+        "gf": 0,
+        "gc": 3,
         "dg": -3,
         "pts": 0
       }
@@ -1083,8 +1083,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇭🇹",
       "code": "HAI"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 3,
+      "g2": 0
+    },
+    "estado": "finalizado",
     "estadio": "Lincoln Financial Field",
     "ciudad": "Filadelfia"
   },
@@ -1104,8 +1107,11 @@ window.MUNDIAL_DATA = {
       "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
       "code": "SCO"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 1,
+      "g2": 0
+    },
+    "estado": "finalizado",
     "estadio": "Gillette Stadium",
     "ciudad": "Boston"
   },
@@ -1215,8 +1221,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇦🇺",
       "code": "AUS"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 2,
+      "g2": 0
+    },
+    "estado": "finalizado",
     "estadio": "Lumen Field",
     "ciudad": "Seattle"
   },
@@ -1236,8 +1245,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇵🇾",
       "code": "PAR"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 0,
+      "g2": 1
+    },
+    "estado": "finalizado",
     "estadio": "Levi's Stadium",
     "ciudad": "San Francisco"
   },

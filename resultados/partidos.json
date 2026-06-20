@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-19T07:35:00-05:00",
+  "lastUpdated": "2026-06-20T05:15:58-05:00",
   "matches": [
     {
       "id": "M001",
@@ -341,8 +341,11 @@
         "flag": "🇭🇹",
         "code": "HAI"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 3,
+        "g2": 0
+      },
+      "estado": "finalizado",
       "estadio": "Lincoln Financial Field",
       "ciudad": "Filadelfia"
     },
@@ -362,8 +365,11 @@
         "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
         "code": "SCO"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 1,
+        "g2": 0
+      },
+      "estado": "finalizado",
       "estadio": "Gillette Stadium",
       "ciudad": "Boston"
     },
@@ -473,8 +479,11 @@
         "flag": "🇦🇺",
         "code": "AUS"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 2,
+        "g2": 0
+      },
+      "estado": "finalizado",
       "estadio": "Lumen Field",
       "ciudad": "Seattle"
     },
@@ -494,8 +503,11 @@
         "flag": "🇵🇾",
         "code": "PAR"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 0,
+        "g2": 1
+      },
+      "estado": "finalizado",
       "estadio": "Levi's Stadium",
       "ciudad": "San Francisco"
     },
