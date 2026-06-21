@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-21T05:56:34-05:00",
+  "lastUpdated": "2026-06-21T17:00:26-05:00",
   "matches": [
     {
       "id": "M001",
@@ -866,8 +866,11 @@
         "flag": "🇮🇷",
         "code": "IRN"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 0,
+        "g2": 0
+      },
+      "estado": "finalizado",
       "estadio": "SoFi Stadium",
       "ciudad": "Los Ángeles"
     },
@@ -977,8 +980,11 @@
         "flag": "🇸🇦",
         "code": "KSA"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 4,
+        "g2": 0
+      },
+      "estado": "finalizado",
       "estadio": "Mercedes-Benz Stadium",
       "ciudad": "Atlanta"
     },

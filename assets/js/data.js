@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
  * Generado automáticamente por el scheduler.
- * Última actualización: 2026-06-21T16:57:52.266Z
+ * Última actualización: 2026-06-21T22:00:26.230Z
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-06-21T16:57:52.266Z",
+  lastUpdated: "2026-06-21T22:00:26.230Z",
   grupos: [
   {
     "id": "A",
@@ -381,17 +381,31 @@ window.MUNDIAL_DATA = {
         "name": "Irán",
         "flag": "🇮🇷",
         "code": "IRN",
-        "pj": 1,
+        "pj": 2,
         "pg": 0,
-        "pe": 1,
+        "pe": 2,
         "pp": 0,
         "gf": 2,
         "gc": 2,
         "dg": 0,
-        "pts": 1
+        "pts": 2
       },
       {
         "pos": 2,
+        "name": "Bélgica",
+        "flag": "🇧🇪",
+        "code": "BEL",
+        "pj": 2,
+        "pg": 0,
+        "pe": 2,
+        "pp": 0,
+        "gf": 1,
+        "gc": 1,
+        "dg": 0,
+        "pts": 2
+      },
+      {
+        "pos": 3,
         "name": "Nueva Zelanda",
         "flag": "🇳🇿",
         "code": "NZL",
@@ -401,20 +415,6 @@ window.MUNDIAL_DATA = {
         "pp": 0,
         "gf": 2,
         "gc": 2,
-        "dg": 0,
-        "pts": 1
-      },
-      {
-        "pos": 3,
-        "name": "Bélgica",
-        "flag": "🇧🇪",
-        "code": "BEL",
-        "pj": 1,
-        "pg": 0,
-        "pe": 1,
-        "pp": 0,
-        "gf": 1,
-        "gc": 1,
         "dg": 0,
         "pts": 1
       },
@@ -439,6 +439,20 @@ window.MUNDIAL_DATA = {
     "teams": [
       {
         "pos": 1,
+        "name": "España",
+        "flag": "🇪🇸",
+        "code": "ESP",
+        "pj": 2,
+        "pg": 1,
+        "pe": 1,
+        "pp": 0,
+        "gf": 4,
+        "gc": 0,
+        "dg": 4,
+        "pts": 4
+      },
+      {
+        "pos": 2,
         "name": "Uruguay",
         "flag": "🇺🇾",
         "code": "URU",
@@ -452,24 +466,10 @@ window.MUNDIAL_DATA = {
         "pts": 1
       },
       {
-        "pos": 2,
-        "name": "Arabia Saudita",
-        "flag": "🇸🇦",
-        "code": "KSA",
-        "pj": 1,
-        "pg": 0,
-        "pe": 1,
-        "pp": 0,
-        "gf": 1,
-        "gc": 1,
-        "dg": 0,
-        "pts": 1
-      },
-      {
         "pos": 3,
-        "name": "España",
-        "flag": "🇪🇸",
-        "code": "ESP",
+        "name": "Cabo Verde",
+        "flag": "🇨🇻",
+        "code": "CPV",
         "pj": 1,
         "pg": 0,
         "pe": 1,
@@ -481,16 +481,16 @@ window.MUNDIAL_DATA = {
       },
       {
         "pos": 4,
-        "name": "Cabo Verde",
-        "flag": "🇨🇻",
-        "code": "CPV",
-        "pj": 1,
+        "name": "Arabia Saudita",
+        "flag": "🇸🇦",
+        "code": "KSA",
+        "pj": 2,
         "pg": 0,
         "pe": 1,
-        "pp": 0,
-        "gf": 0,
-        "gc": 0,
-        "dg": 0,
+        "pp": 1,
+        "gf": 1,
+        "gc": 5,
+        "dg": -4,
         "pts": 1
       }
     ]
@@ -1608,8 +1608,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇮🇷",
       "code": "IRN"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 0,
+      "g2": 0
+    },
+    "estado": "finalizado",
     "estadio": "SoFi Stadium",
     "ciudad": "Los Ángeles"
   },
@@ -1719,8 +1722,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇸🇦",
       "code": "KSA"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 4,
+      "g2": 0
+    },
+    "estado": "finalizado",
     "estadio": "Mercedes-Benz Stadium",
     "ciudad": "Atlanta"
   },
