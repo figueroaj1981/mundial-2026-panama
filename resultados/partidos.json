@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-20T15:59:32-05:00",
+  "lastUpdated": "2026-06-21T05:56:34-05:00",
   "matches": [
     {
       "id": "M001",
@@ -659,8 +659,11 @@
         "flag": "🇨🇮",
         "code": "CIV"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 2,
+        "g2": 1
+      },
+      "estado": "finalizado",
       "estadio": "BMO Field",
       "ciudad": "Toronto"
     },
@@ -680,8 +683,11 @@
         "flag": "🇨🇼",
         "code": "CUW"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 0,
+        "g2": 0
+      },
+      "estado": "finalizado",
       "estadio": "Arrowhead Stadium",
       "ciudad": "Kansas City"
     },
@@ -815,8 +821,11 @@
         "flag": "🇯🇵",
         "code": "JPN"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 0,
+        "g2": 4
+      },
+      "estado": "finalizado",
       "estadio": "Estadio BBVA",
       "ciudad": "Monterrey"
     },

@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
  * Generado automáticamente por el scheduler.
- * Última actualización: 2026-06-20T20:59:32.355Z
+ * Última actualización: 2026-06-21T10:56:34.454Z
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-06-20T20:59:32.355Z",
+  lastUpdated: "2026-06-21T10:56:34.454Z",
   grupos: [
   {
     "id": "A",
@@ -259,27 +259,27 @@ window.MUNDIAL_DATA = {
         "name": "Alemania",
         "flag": "🇩🇪",
         "code": "GER",
-        "pj": 1,
-        "pg": 1,
+        "pj": 2,
+        "pg": 2,
         "pe": 0,
         "pp": 0,
-        "gf": 7,
-        "gc": 1,
-        "dg": 6,
-        "pts": 3
+        "gf": 9,
+        "gc": 2,
+        "dg": 7,
+        "pts": 6
       },
       {
         "pos": 2,
         "name": "Costa de Marfil",
         "flag": "🇨🇮",
         "code": "CIV",
-        "pj": 1,
+        "pj": 2,
         "pg": 1,
         "pe": 0,
-        "pp": 0,
-        "gf": 1,
-        "gc": 0,
-        "dg": 1,
+        "pp": 1,
+        "gf": 2,
+        "gc": 2,
+        "dg": 0,
         "pts": 3
       },
       {
@@ -287,28 +287,28 @@ window.MUNDIAL_DATA = {
         "name": "Ecuador",
         "flag": "🇪🇨",
         "code": "ECU",
-        "pj": 1,
+        "pj": 2,
         "pg": 0,
-        "pe": 0,
+        "pe": 1,
         "pp": 1,
         "gf": 0,
         "gc": 1,
         "dg": -1,
-        "pts": 0
+        "pts": 1
       },
       {
         "pos": 4,
         "name": "Curazao",
         "flag": "🇨🇼",
         "code": "CUW",
-        "pj": 1,
+        "pj": 2,
         "pg": 0,
-        "pe": 0,
+        "pe": 1,
         "pp": 1,
         "gf": 1,
         "gc": 7,
         "dg": -6,
-        "pts": 0
+        "pts": 1
       }
     ]
   },
@@ -331,6 +331,20 @@ window.MUNDIAL_DATA = {
       },
       {
         "pos": 2,
+        "name": "Japón",
+        "flag": "🇯🇵",
+        "code": "JPN",
+        "pj": 2,
+        "pg": 1,
+        "pe": 1,
+        "pp": 0,
+        "gf": 6,
+        "gc": 2,
+        "dg": 4,
+        "pts": 4
+      },
+      {
+        "pos": 3,
         "name": "Suecia",
         "flag": "🇸🇪",
         "code": "SWE",
@@ -344,31 +358,17 @@ window.MUNDIAL_DATA = {
         "pts": 3
       },
       {
-        "pos": 3,
-        "name": "Japón",
-        "flag": "🇯🇵",
-        "code": "JPN",
-        "pj": 1,
-        "pg": 0,
-        "pe": 1,
-        "pp": 0,
-        "gf": 2,
-        "gc": 2,
-        "dg": 0,
-        "pts": 1
-      },
-      {
         "pos": 4,
         "name": "Túnez",
         "flag": "🇹🇳",
         "code": "TUN",
-        "pj": 1,
+        "pj": 2,
         "pg": 0,
         "pe": 0,
-        "pp": 1,
+        "pp": 2,
         "gf": 1,
-        "gc": 5,
-        "dg": -4,
+        "gc": 9,
+        "dg": -8,
         "pts": 0
       }
     ]
@@ -1401,8 +1401,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇨🇮",
       "code": "CIV"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 2,
+      "g2": 1
+    },
+    "estado": "finalizado",
     "estadio": "BMO Field",
     "ciudad": "Toronto"
   },
@@ -1422,8 +1425,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇨🇼",
       "code": "CUW"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 0,
+      "g2": 0
+    },
+    "estado": "finalizado",
     "estadio": "Arrowhead Stadium",
     "ciudad": "Kansas City"
   },
@@ -1557,8 +1563,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇯🇵",
       "code": "JPN"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 0,
+      "g2": 4
+    },
+    "estado": "finalizado",
     "estadio": "Estadio BBVA",
     "ciudad": "Monterrey"
   },

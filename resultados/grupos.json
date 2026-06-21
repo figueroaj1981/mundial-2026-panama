@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-20T15:59:32-05:00",
+  "lastUpdated": "2026-06-21T05:56:34-05:00",
   "format": "12 grupos de 4 equipos · Top 2 + 8 mejores 3ros avanzan",
   "groups": [
     {
@@ -254,27 +254,27 @@
           "name": "Alemania",
           "flag": "🇩🇪",
           "code": "GER",
-          "pj": 1,
-          "pg": 1,
+          "pj": 2,
+          "pg": 2,
           "pe": 0,
           "pp": 0,
-          "gf": 7,
-          "gc": 1,
-          "dg": 6,
-          "pts": 3
+          "gf": 9,
+          "gc": 2,
+          "dg": 7,
+          "pts": 6
         },
         {
           "pos": 2,
           "name": "Costa de Marfil",
           "flag": "🇨🇮",
           "code": "CIV",
-          "pj": 1,
+          "pj": 2,
           "pg": 1,
           "pe": 0,
-          "pp": 0,
-          "gf": 1,
-          "gc": 0,
-          "dg": 1,
+          "pp": 1,
+          "gf": 2,
+          "gc": 2,
+          "dg": 0,
           "pts": 3
         },
         {
@@ -282,28 +282,28 @@
           "name": "Ecuador",
           "flag": "🇪🇨",
           "code": "ECU",
-          "pj": 1,
+          "pj": 2,
           "pg": 0,
-          "pe": 0,
+          "pe": 1,
           "pp": 1,
           "gf": 0,
           "gc": 1,
           "dg": -1,
-          "pts": 0
+          "pts": 1
         },
         {
           "pos": 4,
           "name": "Curazao",
           "flag": "🇨🇼",
           "code": "CUW",
-          "pj": 1,
+          "pj": 2,
           "pg": 0,
-          "pe": 0,
+          "pe": 1,
           "pp": 1,
           "gf": 1,
           "gc": 7,
           "dg": -6,
-          "pts": 0
+          "pts": 1
         }
       ]
     },
@@ -326,6 +326,20 @@
         },
         {
           "pos": 2,
+          "name": "Japón",
+          "flag": "🇯🇵",
+          "code": "JPN",
+          "pj": 2,
+          "pg": 1,
+          "pe": 1,
+          "pp": 0,
+          "gf": 6,
+          "gc": 2,
+          "dg": 4,
+          "pts": 4
+        },
+        {
+          "pos": 3,
           "name": "Suecia",
           "flag": "🇸🇪",
           "code": "SWE",
@@ -339,31 +353,17 @@
           "pts": 3
         },
         {
-          "pos": 3,
-          "name": "Japón",
-          "flag": "🇯🇵",
-          "code": "JPN",
-          "pj": 1,
-          "pg": 0,
-          "pe": 1,
-          "pp": 0,
-          "gf": 2,
-          "gc": 2,
-          "dg": 0,
-          "pts": 1
-        },
-        {
           "pos": 4,
           "name": "Túnez",
           "flag": "🇹🇳",
           "code": "TUN",
-          "pj": 1,
+          "pj": 2,
           "pg": 0,
           "pe": 0,
-          "pp": 1,
+          "pp": 2,
           "gf": 1,
-          "gc": 5,
-          "dg": -4,
+          "gc": 9,
+          "dg": -8,
           "pts": 0
         }
       ]
