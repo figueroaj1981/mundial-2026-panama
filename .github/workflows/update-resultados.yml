@@ -37,8 +37,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if [ -n "$(git status --porcelain resultados assets/js/data.js)" ]; then
-            git add resultados/grupos.json resultados/partidos.json assets/js/data.js
+          if [ -n "$(git status --porcelain resultados noticias assets/js/data.js)" ]; then
+          git add resultados/grupos.json resultados/partidos.json noticias/noticias.json assets/js/data.js
             git commit -m "Actualización automática (cloud): resultados y tablas del Mundial 2026"
             git push
           else
