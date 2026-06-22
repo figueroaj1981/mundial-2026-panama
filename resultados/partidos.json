@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-21T17:00:26-05:00",
+  "lastUpdated": "2026-06-22T11:00:00-05:00",
   "matches": [
     {
       "id": "M001",
@@ -845,8 +845,11 @@
         "flag": "🇪🇬",
         "code": "EGY"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 1,
+        "g2": 3
+      },
+      "estado": "finalizado",
       "estadio": "BC Place",
       "ciudad": "Vancouver"
     },
@@ -1004,8 +1007,11 @@
         "flag": "🇨🇻",
         "code": "CPV"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 2,
+        "g2": 2
+      },
+      "estado": "finalizado",
       "estadio": "Hard Rock Stadium",
       "ciudad": "Miami"
     },

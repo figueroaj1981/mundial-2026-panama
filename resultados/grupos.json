@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-21T17:00:26-05:00",
+  "lastUpdated": "2026-06-22T11:00:00-05:00",
   "format": "12 grupos de 4 equipos · Top 2 + 8 mejores 3ros avanzan",
   "groups": [
     {
@@ -373,6 +373,20 @@
       "teams": [
         {
           "pos": 1,
+          "name": "Egipto",
+          "flag": "🇪🇬",
+          "code": "EGY",
+          "pj": 2,
+          "pg": 1,
+          "pe": 1,
+          "pp": 0,
+          "gf": 4,
+          "gc": 2,
+          "dg": 2,
+          "pts": 4
+        },
+        {
+          "pos": 2,
           "name": "Irán",
           "flag": "🇮🇷",
           "code": "IRN",
@@ -386,7 +400,7 @@
           "pts": 2
         },
         {
-          "pos": 2,
+          "pos": 3,
           "name": "Bélgica",
           "flag": "🇧🇪",
           "code": "BEL",
@@ -400,31 +414,17 @@
           "pts": 2
         },
         {
-          "pos": 3,
+          "pos": 4,
           "name": "Nueva Zelanda",
           "flag": "🇳🇿",
           "code": "NZL",
-          "pj": 1,
+          "pj": 2,
           "pg": 0,
           "pe": 1,
-          "pp": 0,
-          "gf": 2,
-          "gc": 2,
-          "dg": 0,
-          "pts": 1
-        },
-        {
-          "pos": 4,
-          "name": "Egipto",
-          "flag": "🇪🇬",
-          "code": "EGY",
-          "pj": 1,
-          "pg": 0,
-          "pe": 1,
-          "pp": 0,
-          "gf": 1,
-          "gc": 1,
-          "dg": 0,
+          "pp": 1,
+          "gf": 3,
+          "gc": 5,
+          "dg": -2,
           "pts": 1
         }
       ]
@@ -451,28 +451,28 @@
           "name": "Uruguay",
           "flag": "🇺🇾",
           "code": "URU",
-          "pj": 1,
+          "pj": 2,
           "pg": 0,
-          "pe": 1,
+          "pe": 2,
           "pp": 0,
-          "gf": 1,
-          "gc": 1,
+          "gf": 3,
+          "gc": 3,
           "dg": 0,
-          "pts": 1
+          "pts": 2
         },
         {
           "pos": 3,
           "name": "Cabo Verde",
           "flag": "🇨🇻",
           "code": "CPV",
-          "pj": 1,
+          "pj": 2,
           "pg": 0,
-          "pe": 1,
+          "pe": 2,
           "pp": 0,
-          "gf": 0,
-          "gc": 0,
+          "gf": 2,
+          "gc": 2,
           "dg": 0,
-          "pts": 1
+          "pts": 2
         },
         {
           "pos": 4,
