@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
  * Generado automáticamente por el scheduler.
- * Última actualización: 2026-06-21T22:00:26.230Z
+ * Última actualización: 2026-06-22T16:20:45.197Z
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-06-21T22:00:26.230Z",
+  lastUpdated: "2026-06-22T16:20:45.197Z",
   grupos: [
   {
     "id": "A",
@@ -378,6 +378,20 @@ window.MUNDIAL_DATA = {
     "teams": [
       {
         "pos": 1,
+        "name": "Egipto",
+        "flag": "🇪🇬",
+        "code": "EGY",
+        "pj": 2,
+        "pg": 1,
+        "pe": 1,
+        "pp": 0,
+        "gf": 4,
+        "gc": 2,
+        "dg": 2,
+        "pts": 4
+      },
+      {
+        "pos": 2,
         "name": "Irán",
         "flag": "🇮🇷",
         "code": "IRN",
@@ -391,7 +405,7 @@ window.MUNDIAL_DATA = {
         "pts": 2
       },
       {
-        "pos": 2,
+        "pos": 3,
         "name": "Bélgica",
         "flag": "🇧🇪",
         "code": "BEL",
@@ -405,31 +419,17 @@ window.MUNDIAL_DATA = {
         "pts": 2
       },
       {
-        "pos": 3,
+        "pos": 4,
         "name": "Nueva Zelanda",
         "flag": "🇳🇿",
         "code": "NZL",
-        "pj": 1,
+        "pj": 2,
         "pg": 0,
         "pe": 1,
-        "pp": 0,
-        "gf": 2,
-        "gc": 2,
-        "dg": 0,
-        "pts": 1
-      },
-      {
-        "pos": 4,
-        "name": "Egipto",
-        "flag": "🇪🇬",
-        "code": "EGY",
-        "pj": 1,
-        "pg": 0,
-        "pe": 1,
-        "pp": 0,
-        "gf": 1,
-        "gc": 1,
-        "dg": 0,
+        "pp": 1,
+        "gf": 3,
+        "gc": 5,
+        "dg": -2,
         "pts": 1
       }
     ]
@@ -456,28 +456,28 @@ window.MUNDIAL_DATA = {
         "name": "Uruguay",
         "flag": "🇺🇾",
         "code": "URU",
-        "pj": 1,
+        "pj": 2,
         "pg": 0,
-        "pe": 1,
+        "pe": 2,
         "pp": 0,
-        "gf": 1,
-        "gc": 1,
+        "gf": 3,
+        "gc": 3,
         "dg": 0,
-        "pts": 1
+        "pts": 2
       },
       {
         "pos": 3,
         "name": "Cabo Verde",
         "flag": "🇨🇻",
         "code": "CPV",
-        "pj": 1,
+        "pj": 2,
         "pg": 0,
-        "pe": 1,
+        "pe": 2,
         "pp": 0,
-        "gf": 0,
-        "gc": 0,
+        "gf": 2,
+        "gc": 2,
         "dg": 0,
-        "pts": 1
+        "pts": 2
       },
       {
         "pos": 4,
@@ -1587,8 +1587,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇪🇬",
       "code": "EGY"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 1,
+      "g2": 3
+    },
+    "estado": "finalizado",
     "estadio": "BC Place",
     "ciudad": "Vancouver"
   },
@@ -1746,8 +1749,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇨🇻",
       "code": "CPV"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 2,
+      "g2": 2
+    },
+    "estado": "finalizado",
     "estadio": "Hard Rock Stadium",
     "ciudad": "Miami"
   },
@@ -2376,22 +2382,22 @@ window.MUNDIAL_DATA = {
   noticias: [
   {
     "id": "N007",
-    "titulo": "🇵🇦 Panamá cae 1-0 ante Ghana en su debut, pero deja la cara en alto",
-    "resumen": "Panamá perdió 1-0 ante Ghana en su estreno del Mundial 2026 en el BMO Field de Toronto, con un gol agónico de Caleb Yirenkyi en el minuto 90+5. La 'Roja' peleó hasta el último segundo ante un rival africano de jerarquía y se fue con la frente en alto. El sueño sigue vivo: Panamá buscará su primera alegría el 23 de junio ante Croacia. ¡Vamos Panamá, esto apenas comienza!",
+    "titulo": "🇵🇦 ¡Mañana, partido clave! Panamá enfrenta a Croacia buscando su primer punto",
+    "resumen": "Llegó un duelo decisivo: este martes 23 de junio Panamá se mide a Croacia (finalista del Mundial 2022) en el BMO Field de Toronto. Tras la derrota ante Ghana, la 'Roja' necesita sumar para seguir con vida en el Grupo L. Croacia llega golpeada luego de caer 4-2 ante Inglaterra, así que hay opción. ¡Todo Panamá alienta — vamos por la hazaña!",
     "imagen": null,
     "categoria": "Panamá",
-    "fecha": "2026-06-17T21:00:00-05:00",
+    "fecha": "2026-06-22T08:00:00-05:00",
     "fuente": "ESPN",
     "url": "https://www.espn.com",
     "destacada": true
   },
   {
     "id": "N001",
-    "titulo": "Jornada 17-jun: Inglaterra golea 4-2 a Croacia y Ronaldo es frenado por el Congo",
-    "resumen": "Inglaterra arrancó con un 4-2 sobre Croacia (doblete de Harry Kane) en el Grupo L. En el Grupo K, Colombia venció 3-1 a Uzbekistán con gol de Luis Díaz, mientras que Portugal y la RD Congo empataron 1-1, dejando a Cristiano Ronaldo sin victoria en su debut.",
+    "titulo": "Resultados 20-21 jun: Alemania y España golean; Egipto logra su primera victoria",
+    "resumen": "Jornada intensa: México, USA y Alemania ya aseguraron su paso a 16avos. España aplastó 4-0 a Arabia Saudita, Países Bajos 5-1 a Suecia y Japón 4-0 a Túnez. Egipto, con Mohamed Salah, consiguió su primera victoria mundialista (3-1 a Nueva Zelanda) y Cabo Verde dio la sorpresa al empatar 2-2 con Uruguay.",
     "imagen": null,
     "categoria": "Resultados",
-    "fecha": "2026-06-17T22:00:00-05:00",
+    "fecha": "2026-06-21T22:30:00-05:00",
     "fuente": "ESPN",
     "url": "https://www.espn.com",
     "destacada": true
