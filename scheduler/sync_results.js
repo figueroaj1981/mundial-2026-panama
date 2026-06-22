@@ -17,7 +17,34 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const PARTIDOS = path.join(ROOT, 'resultados', 'partidos.json');
 const GRUPOS = path.join(ROOT, 'resultados', 'grupos.json');
+const NOTICIAS = path.join(ROOT, 'noticias', 'noticias.json');
 const LOG = path.join(ROOT, 'logs', 'sync.log');
+
+// Genera/actualiza una noticia automática con los resultados recién actualizados.
+// Mantiene un único item id="N-AUTO" arriba; preserva las noticias manuales.
+function updateAutoNews(updated, ts) {
+  if (!updated.length) return;
+  let noticias;
+  try { noticias = JSON.parse(fs.readFileSync(NOTICIAS, 'utf8')); } catch { return; }
+  if (!Array.isArray(noticias.noticias)) return;
+  const lista = updated.map(m => `${m.equipo1.nombre} ${m.marcador.g1}-${m.marcador.g2} ${m.equipo2.nombre}`).join(' · ');
+  const item = {
+    id: 'N-AUTO',
+    titulo: '⚽ Últimos resultados del Mundial 2026',
+    resumen: `Marcadores recién actualizados: ${lista}. Las tablas de grupos quedaron al día. (Actualización automática)`,
+    imagen: null,
+    categoria: 'Resultados',
+    fecha: ts,
+    fuente: 'Actualización automática',
+    url: 'https://www.fifa.com/es/tournaments/mens/worldcup/canadamexicousa2026',
+    destacada: false
+  };
+  noticias.noticias = noticias.noticias.filter(n => n.id !== 'N-AUTO');
+  noticias.noticias.unshift(item);
+  noticias.lastUpdated = ts;
+  fs.writeFileSync(NOTICIAS, JSON.stringify(noticias, null, 2));
+  log(`✓ Noticia automática actualizada (${updated.length} partidos).`);
+}
 
 function log(msg) {
   const line = `[${new Date().toISOString()}] SYNC: ${msg}`;
@@ -124,6 +151,7 @@ async function main() {
   log(`API devolvió ${apiList.length} partidos.`);
 
   let cambios = 0;
+  const actualizados = [];
   for (const m of partidos.matches) {
     if (m.estado === 'finalizado') continue; // ya está, no tocar
     const found = findApiMatch(apiList, m.equipo1.code, m.equipo2.code);
@@ -133,6 +161,7 @@ async function main() {
       m.marcador = e1IsHome ? { g1: found.g1, g2: found.g2 } : { g1: found.g2, g2: found.g1 };
       m.estado = 'finalizado';
       cambios++;
+      actualizados.push(m);
       log(`✓ ${m.id} ${m.equipo1.nombre} ${m.marcador.g1}-${m.marcador.g2} ${m.equipo2.nombre}`);
     }
   }
@@ -154,6 +183,7 @@ async function main() {
   grupos.lastUpdated = ts;
   fs.writeFileSync(PARTIDOS, JSON.stringify(partidos, null, 2));
   fs.writeFileSync(GRUPOS, JSON.stringify(grupos, null, 2));
+  updateAutoNews(actualizados, ts);
   log(`✓ Sincronizados ${cambios} partidos y recalculadas las tablas. Timestamp ${ts}.`);
 }
 

@@ -904,7 +904,6 @@ async function init() {
   renderMatches(matches, 'matches-today', { filter: 'today' });
   renderMatches(matches, 'matches-tomorrow', { filter: 'tomorrow' });
   renderMatches(matches, 'matches-all', { groupBy: true });
-  renderMatches(matches, 'matches-upcoming', { filter: 'upcoming' });
 
   // Grupos
   renderGroups(groups, 'groups-container');
