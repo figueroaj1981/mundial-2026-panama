@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
  * Generado automáticamente por el scheduler.
- * Última actualización: 2026-06-22T16:20:45.197Z
+ * Última actualización: 2026-06-22T22:58:39.062Z
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-06-22T16:20:45.197Z",
+  lastUpdated: "2026-06-22T22:58:39.062Z",
   grupos: [
   {
     "id": "A",
@@ -564,27 +564,27 @@ window.MUNDIAL_DATA = {
         "name": "Argentina",
         "flag": "🇦🇷",
         "code": "ARG",
-        "pj": 1,
-        "pg": 1,
+        "pj": 2,
+        "pg": 2,
         "pe": 0,
         "pp": 0,
-        "gf": 3,
+        "gf": 5,
         "gc": 0,
-        "dg": 3,
-        "pts": 3
+        "dg": 5,
+        "pts": 6
       },
       {
         "pos": 2,
         "name": "Austria",
         "flag": "🇦🇹",
         "code": "AUT",
-        "pj": 1,
+        "pj": 2,
         "pg": 1,
         "pe": 0,
-        "pp": 0,
+        "pp": 1,
         "gf": 3,
-        "gc": 1,
-        "dg": 2,
+        "gc": 3,
+        "dg": 0,
         "pts": 3
       },
       {
@@ -1995,8 +1995,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇦🇹",
       "code": "AUT"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 2,
+      "g2": 0
+    },
+    "estado": "finalizado",
     "estadio": "AT&T Stadium",
     "ciudad": "Dallas"
   },
@@ -2380,6 +2383,17 @@ window.MUNDIAL_DATA = {
   }
 ],
   noticias: [
+  {
+    "id": "N-AUTO",
+    "titulo": "⚽ Últimos resultados del Mundial 2026",
+    "resumen": "Marcadores recién actualizados: Argentina 2-0 Austria. Las tablas de grupos quedaron al día. (Actualización automática)",
+    "imagen": null,
+    "categoria": "Resultados",
+    "fecha": "2026-06-22T17:58:39-05:00",
+    "fuente": "Actualización automática",
+    "url": "https://www.fifa.com/es/tournaments/mens/worldcup/canadamexicousa2026",
+    "destacada": false
+  },
   {
     "id": "N007",
     "titulo": "🇵🇦 ¡Mañana, partido clave! Panamá enfrenta a Croacia buscando su primer punto",

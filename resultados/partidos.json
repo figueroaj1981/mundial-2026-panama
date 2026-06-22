@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-22T11:00:00-05:00",
+  "lastUpdated": "2026-06-22T17:58:39-05:00",
   "matches": [
     {
       "id": "M001",
@@ -1253,8 +1253,11 @@
         "flag": "🇦🇹",
         "code": "AUT"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 2,
+        "g2": 0
+      },
+      "estado": "finalizado",
       "estadio": "AT&T Stadium",
       "ciudad": "Dallas"
     },

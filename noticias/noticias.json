@@ -1,6 +1,17 @@
 {
-  "lastUpdated": "2026-06-22T11:00:00-05:00",
+  "lastUpdated": "2026-06-22T17:58:39-05:00",
   "noticias": [
+    {
+      "id": "N-AUTO",
+      "titulo": "⚽ Últimos resultados del Mundial 2026",
+      "resumen": "Marcadores recién actualizados: Argentina 2-0 Austria. Las tablas de grupos quedaron al día. (Actualización automática)",
+      "imagen": null,
+      "categoria": "Resultados",
+      "fecha": "2026-06-22T17:58:39-05:00",
+      "fuente": "Actualización automática",
+      "url": "https://www.fifa.com/es/tournaments/mens/worldcup/canadamexicousa2026",
+      "destacada": false
+    },
     {
       "id": "N007",
       "titulo": "🇵🇦 ¡Mañana, partido clave! Panamá enfrenta a Croacia buscando su primer punto",
