@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
  * Generado automáticamente por el scheduler.
- * Última actualización: 2026-06-22T22:58:39.062Z
+ * Última actualización: 2026-06-23T10:50:24.735Z
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-06-22T22:58:39.062Z",
+  lastUpdated: "2026-06-23T10:50:24.735Z",
   grupos: [
   {
     "id": "A",
@@ -500,44 +500,44 @@ window.MUNDIAL_DATA = {
     "teams": [
       {
         "pos": 1,
-        "name": "Noruega",
-        "flag": "🇳🇴",
-        "code": "NOR",
-        "pj": 1,
-        "pg": 1,
-        "pe": 0,
-        "pp": 0,
-        "gf": 4,
-        "gc": 1,
-        "dg": 3,
-        "pts": 3
-      },
-      {
-        "pos": 2,
         "name": "Francia",
         "flag": "🇫🇷",
         "code": "FRA",
-        "pj": 1,
-        "pg": 1,
+        "pj": 2,
+        "pg": 2,
         "pe": 0,
         "pp": 0,
-        "gf": 3,
+        "gf": 6,
         "gc": 1,
-        "dg": 2,
-        "pts": 3
+        "dg": 5,
+        "pts": 6
+      },
+      {
+        "pos": 2,
+        "name": "Noruega",
+        "flag": "🇳🇴",
+        "code": "NOR",
+        "pj": 2,
+        "pg": 2,
+        "pe": 0,
+        "pp": 0,
+        "gf": 7,
+        "gc": 3,
+        "dg": 4,
+        "pts": 6
       },
       {
         "pos": 3,
         "name": "Senegal",
         "flag": "🇸🇳",
         "code": "SEN",
-        "pj": 1,
+        "pj": 2,
         "pg": 0,
         "pe": 0,
-        "pp": 1,
-        "gf": 1,
-        "gc": 3,
-        "dg": -2,
+        "pp": 2,
+        "gf": 3,
+        "gc": 6,
+        "dg": -3,
         "pts": 0
       },
       {
@@ -545,13 +545,13 @@ window.MUNDIAL_DATA = {
         "name": "Iraq",
         "flag": "🇮🇶",
         "code": "IRQ",
-        "pj": 1,
+        "pj": 2,
         "pg": 0,
         "pe": 0,
-        "pp": 1,
+        "pp": 2,
         "gf": 1,
-        "gc": 4,
-        "dg": -3,
+        "gc": 7,
+        "dg": -6,
         "pts": 0
       }
     ]
@@ -589,29 +589,29 @@ window.MUNDIAL_DATA = {
       },
       {
         "pos": 3,
-        "name": "Jordania",
-        "flag": "🇯🇴",
-        "code": "JOR",
-        "pj": 1,
-        "pg": 0,
-        "pe": 0,
-        "pp": 1,
-        "gf": 1,
-        "gc": 3,
-        "dg": -2,
-        "pts": 0
-      },
-      {
-        "pos": 4,
         "name": "Argelia",
         "flag": "🇩🇿",
         "code": "ALG",
-        "pj": 1,
-        "pg": 0,
+        "pj": 2,
+        "pg": 1,
         "pe": 0,
         "pp": 1,
-        "gf": 0,
-        "gc": 3,
+        "gf": 2,
+        "gc": 4,
+        "dg": -2,
+        "pts": 3
+      },
+      {
+        "pos": 4,
+        "name": "Jordania",
+        "flag": "🇯🇴",
+        "code": "JOR",
+        "pj": 2,
+        "pg": 0,
+        "pe": 0,
+        "pp": 2,
+        "gf": 2,
+        "gc": 5,
         "dg": -3,
         "pts": 0
       }
@@ -1863,8 +1863,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇮🇶",
       "code": "IRQ"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 3,
+      "g2": 0
+    },
+    "estado": "finalizado",
     "estadio": "Lincoln Financial Field",
     "ciudad": "Filadelfia"
   },
@@ -1884,8 +1887,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇸🇳",
       "code": "SEN"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 3,
+      "g2": 2
+    },
+    "estado": "finalizado",
     "estadio": "MetLife Stadium",
     "ciudad": "Nueva York"
   },
@@ -2019,8 +2025,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇩🇿",
       "code": "ALG"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 1,
+      "g2": 2
+    },
+    "estado": "finalizado",
     "estadio": "Levi's Stadium",
     "ciudad": "San Francisco"
   },
@@ -2386,10 +2395,10 @@ window.MUNDIAL_DATA = {
   {
     "id": "N-AUTO",
     "titulo": "⚽ Últimos resultados del Mundial 2026",
-    "resumen": "Marcadores recién actualizados: Argentina 2-0 Austria. Las tablas de grupos quedaron al día. (Actualización automática)",
+    "resumen": "Marcadores recién actualizados: Francia 3-0 Irak · Noruega 3-2 Senegal · Jordania 1-2 Argelia. Las tablas de grupos quedaron al día. (Actualización automática)",
     "imagen": null,
     "categoria": "Resultados",
-    "fecha": "2026-06-22T17:58:39-05:00",
+    "fecha": "2026-06-23T05:50:24-05:00",
     "fuente": "Actualización automática",
     "url": "https://www.fifa.com/es/tournaments/mens/worldcup/canadamexicousa2026",
     "destacada": false

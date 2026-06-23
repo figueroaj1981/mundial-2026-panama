@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-22T17:58:39-05:00",
+  "lastUpdated": "2026-06-23T05:50:24-05:00",
   "format": "12 grupos de 4 equipos · Top 2 + 8 mejores 3ros avanzan",
   "groups": [
     {
@@ -495,44 +495,44 @@
       "teams": [
         {
           "pos": 1,
-          "name": "Noruega",
-          "flag": "🇳🇴",
-          "code": "NOR",
-          "pj": 1,
-          "pg": 1,
-          "pe": 0,
-          "pp": 0,
-          "gf": 4,
-          "gc": 1,
-          "dg": 3,
-          "pts": 3
-        },
-        {
-          "pos": 2,
           "name": "Francia",
           "flag": "🇫🇷",
           "code": "FRA",
-          "pj": 1,
-          "pg": 1,
+          "pj": 2,
+          "pg": 2,
           "pe": 0,
           "pp": 0,
-          "gf": 3,
+          "gf": 6,
           "gc": 1,
-          "dg": 2,
-          "pts": 3
+          "dg": 5,
+          "pts": 6
+        },
+        {
+          "pos": 2,
+          "name": "Noruega",
+          "flag": "🇳🇴",
+          "code": "NOR",
+          "pj": 2,
+          "pg": 2,
+          "pe": 0,
+          "pp": 0,
+          "gf": 7,
+          "gc": 3,
+          "dg": 4,
+          "pts": 6
         },
         {
           "pos": 3,
           "name": "Senegal",
           "flag": "🇸🇳",
           "code": "SEN",
-          "pj": 1,
+          "pj": 2,
           "pg": 0,
           "pe": 0,
-          "pp": 1,
-          "gf": 1,
-          "gc": 3,
-          "dg": -2,
+          "pp": 2,
+          "gf": 3,
+          "gc": 6,
+          "dg": -3,
           "pts": 0
         },
         {
@@ -540,13 +540,13 @@
           "name": "Iraq",
           "flag": "🇮🇶",
           "code": "IRQ",
-          "pj": 1,
+          "pj": 2,
           "pg": 0,
           "pe": 0,
-          "pp": 1,
+          "pp": 2,
           "gf": 1,
-          "gc": 4,
-          "dg": -3,
+          "gc": 7,
+          "dg": -6,
           "pts": 0
         }
       ]
@@ -584,29 +584,29 @@
         },
         {
           "pos": 3,
-          "name": "Jordania",
-          "flag": "🇯🇴",
-          "code": "JOR",
-          "pj": 1,
-          "pg": 0,
-          "pe": 0,
-          "pp": 1,
-          "gf": 1,
-          "gc": 3,
-          "dg": -2,
-          "pts": 0
-        },
-        {
-          "pos": 4,
           "name": "Argelia",
           "flag": "🇩🇿",
           "code": "ALG",
-          "pj": 1,
-          "pg": 0,
+          "pj": 2,
+          "pg": 1,
           "pe": 0,
           "pp": 1,
-          "gf": 0,
-          "gc": 3,
+          "gf": 2,
+          "gc": 4,
+          "dg": -2,
+          "pts": 3
+        },
+        {
+          "pos": 4,
+          "name": "Jordania",
+          "flag": "🇯🇴",
+          "code": "JOR",
+          "pj": 2,
+          "pg": 0,
+          "pe": 0,
+          "pp": 2,
+          "gf": 2,
+          "gc": 5,
           "dg": -3,
           "pts": 0
         }

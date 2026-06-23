@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-22T17:58:39-05:00",
+  "lastUpdated": "2026-06-23T05:50:24-05:00",
   "matches": [
     {
       "id": "M001",
@@ -1121,8 +1121,11 @@
         "flag": "🇮🇶",
         "code": "IRQ"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 3,
+        "g2": 0
+      },
+      "estado": "finalizado",
       "estadio": "Lincoln Financial Field",
       "ciudad": "Filadelfia"
     },
@@ -1142,8 +1145,11 @@
         "flag": "🇸🇳",
         "code": "SEN"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 3,
+        "g2": 2
+      },
+      "estado": "finalizado",
       "estadio": "MetLife Stadium",
       "ciudad": "Nueva York"
     },
@@ -1277,8 +1283,11 @@
         "flag": "🇩🇿",
         "code": "ALG"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 1,
+        "g2": 2
+      },
+      "estado": "finalizado",
       "estadio": "Levi's Stadium",
       "ciudad": "San Francisco"
     },
