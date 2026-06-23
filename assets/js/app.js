@@ -689,7 +689,7 @@ function renderBracket(matches) {
       </div>
 
     </div>
-    <p class="bracket-note">Llave oficial FIFA 2026. Los 8 mejores terceros se asignan según combinación de grupos clasificados (495 escenarios posibles). <strong>prov.</strong> = posición provisional mientras la fase de grupos continúa.</p>
+    <p class="bracket-note">Llave oficial FIFA 2026. Los 8 mejores terceros se asignan según combinación de grupos clasificados (495 escenarios posibles). 🟡 <strong>prov.</strong> = posición provisional (el grupo aún juega) · 🟢 <strong>verde ✔</strong> = clasificado confirmado (grupo finalizado).</p>
   `;
 }
 
