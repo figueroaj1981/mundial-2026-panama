@@ -590,6 +590,44 @@ function renderBracket(matches) {
     if (m.estado === 'finalizado') groupDone[m.grupo]++;
   });
 
+  // ¿Terminó toda la fase de grupos? (los terceros solo son definitivos cuando los 12 grupos acaban)
+  const allGroupsDone = Object.keys(standings).length === 12 &&
+    Object.keys(standings).every(g => (groupDone[g] || 0) === 6);
+
+  // 8 mejores terceros (criterio FIFA: pts → dif. gol → goles a favor)
+  const thirds = [];
+  Object.keys(standings).forEach(g => {
+    const t = standings[g][2];
+    if (t && t.pj > 0) thirds.push({ grupo: g, team: t });
+  });
+  thirds.sort((a, b) => b.team.pts - a.team.pts || b.team.dg - a.team.dg || b.team.gf - a.team.gf);
+  const top8Groups = thirds.slice(0, 8).map(x => x.grupo);
+
+  // Asignación de cada tercero a su llave según los grupos elegibles (matching uno-a-uno)
+  const thirdSlots = [
+    { key: 'M74', elig: ['A','B','C','D','F'] },
+    { key: 'M77', elig: ['C','D','F','G','H'] },
+    { key: 'M79', elig: ['C','E','F','H','I'] },
+    { key: 'M80', elig: ['E','H','I','J','K'] },
+    { key: 'M81', elig: ['B','E','F','I','J'] },
+    { key: 'M82', elig: ['A','E','H','I','J'] },
+    { key: 'M85', elig: ['E','F','G','I','J'] },
+    { key: 'M87', elig: ['D','E','I','J','L'] },
+  ];
+  function matchThirds(i, used, map) {
+    if (i === thirdSlots.length) return map;
+    for (const g of top8Groups) {
+      if (!used.has(g) && thirdSlots[i].elig.includes(g)) {
+        used.add(g); map[thirdSlots[i].key] = g;
+        const r = matchThirds(i + 1, used, map);
+        if (r) return r;
+        used.delete(g); delete map[thirdSlots[i].key];
+      }
+    }
+    return null;
+  }
+  const thirdAssign = (top8Groups.length === 8) ? (matchThirds(0, new Set(), {}) || {}) : {};
+
   function slot(grupo, pos, fallback) {
     const teams = standings[grupo] || [];
     const t = teams[pos];
@@ -605,27 +643,35 @@ function renderBracket(matches) {
     </div>`;
   }
 
-  function slot3rd(label) {
-    return `<div class="bk-team bk-empty bk-third">${label}</div>`;
+  function slot3rd(slotKey, fallback) {
+    const g = thirdAssign[slotKey];
+    const t = g ? standings[g][2] : null;
+    if (!t) return `<div class="bk-team bk-empty bk-third">${fallback}</div>`;
+    const isPan = t.panama;
+    return `<div class="bk-team ${allGroupsDone ? 'bk-confirmed' : 'bk-provisional'} ${isPan ? 'bk-panama' : ''}">
+      <span class="bk-flag">${t.flag}</span>
+      <span class="bk-name">${t.nombre} <small style="opacity:.65">(3° ${g})</small></span>
+      ${!allGroupsDone ? '<span class="bk-prov">prov.</span>' : ''}
+    </div>`;
   }
 
   // Official FIFA 2026 Round of 32 matchups
   const r32 = [
     { id:'M73',  label:'',  a: slot('A',1,'2° Grupo A'),           b: slot('B',1,'2° Grupo B') },
-    { id:'M74',  label:'',  a: slot('E',0,'1° Grupo E'),           b: slot3rd('Mejor 3ro — A/B/C/D/F') },
+    { id:'M74',  label:'',  a: slot('E',0,'1° Grupo E'),           b: slot3rd('M74','Mejor 3ro — A/B/C/D/F') },
     { id:'M75',  label:'',  a: slot('F',0,'1° Grupo F'),           b: slot('C',1,'2° Grupo C') },
     { id:'M76',  label:'',  a: slot('C',0,'1° Grupo C'),           b: slot('F',1,'2° Grupo F') },
-    { id:'M77',  label:'',  a: slot('I',0,'1° Grupo I'),           b: slot3rd('Mejor 3ro — C/D/F/G/H') },
+    { id:'M77',  label:'',  a: slot('I',0,'1° Grupo I'),           b: slot3rd('M77','Mejor 3ro — C/D/F/G/H') },
     { id:'M78',  label:'',  a: slot('E',1,'2° Grupo E'),           b: slot('I',1,'2° Grupo I') },
-    { id:'M79',  label:'',  a: slot('A',0,'1° Grupo A'),           b: slot3rd('Mejor 3ro — C/E/F/H/I') },
-    { id:'M80',  label:'🇵🇦', a: slot('L',0,'1° Grupo L 🇵🇦'),   b: slot3rd('Mejor 3ro — E/H/I/J/K') },
-    { id:'M81',  label:'',  a: slot('D',0,'1° Grupo D'),           b: slot3rd('Mejor 3ro — B/E/F/I/J') },
-    { id:'M82',  label:'',  a: slot('G',0,'1° Grupo G'),           b: slot3rd('Mejor 3ro — A/E/H/I/J') },
+    { id:'M79',  label:'',  a: slot('A',0,'1° Grupo A'),           b: slot3rd('M79','Mejor 3ro — C/E/F/H/I') },
+    { id:'M80',  label:'🇵🇦', a: slot('L',0,'1° Grupo L 🇵🇦'),   b: slot3rd('M80','Mejor 3ro — E/H/I/J/K') },
+    { id:'M81',  label:'',  a: slot('D',0,'1° Grupo D'),           b: slot3rd('M81','Mejor 3ro — B/E/F/I/J') },
+    { id:'M82',  label:'',  a: slot('G',0,'1° Grupo G'),           b: slot3rd('M82','Mejor 3ro — A/E/H/I/J') },
     { id:'M83',  label:'🇵🇦', a: slot('K',1,'2° Grupo K'),        b: slot('L',1,'2° Grupo L 🇵🇦') },
     { id:'M84',  label:'',  a: slot('H',0,'1° Grupo H'),           b: slot('J',1,'2° Grupo J') },
-    { id:'M85',  label:'',  a: slot('B',0,'1° Grupo B'),           b: slot3rd('Mejor 3ro — E/F/G/I/J') },
+    { id:'M85',  label:'',  a: slot('B',0,'1° Grupo B'),           b: slot3rd('M85','Mejor 3ro — E/F/G/I/J') },
     { id:'M86',  label:'',  a: slot('J',0,'1° Grupo J'),           b: slot('H',1,'2° Grupo H') },
-    { id:'M87',  label:'',  a: slot('K',0,'1° Grupo K'),           b: slot3rd('Mejor 3ro — D/E/I/J/L') },
+    { id:'M87',  label:'',  a: slot('K',0,'1° Grupo K'),           b: slot3rd('M87','Mejor 3ro — D/E/I/J/L') },
     { id:'M88',  label:'',  a: slot('D',1,'2° Grupo D'),           b: slot('G',1,'2° Grupo G') },
   ];
 
@@ -689,7 +735,7 @@ function renderBracket(matches) {
       </div>
 
     </div>
-    <p class="bracket-note">Llave oficial FIFA 2026. Los 8 mejores terceros se asignan según combinación de grupos clasificados (495 escenarios posibles). 🟡 <strong>prov.</strong> = posición provisional (el grupo aún juega) · 🟢 <strong>verde ✔</strong> = clasificado confirmado (grupo finalizado).</p>
+    <p class="bracket-note">Llave oficial FIFA 2026. Los <strong>8 mejores terceros</strong> se calculan por criterio FIFA (pts → dif. de gol → goles) y se ubican según los grupos elegibles de cada puesto; la asignación exacta entre puestos puede variar respecto a la tabla oficial (495 escenarios). 🟡 <strong>prov.</strong> = provisional (la fase de grupos sigue) · 🟢 <strong>verde ✔</strong> = confirmado.</p>
   `;
 }
 
