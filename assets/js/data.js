@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
  * Generado automáticamente por el scheduler.
- * Última actualización: 2026-06-24T10:34:46.124Z
+ * Última actualización: 2026-06-24T18:13:13.936Z
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-06-24T10:34:46.124Z",
+  lastUpdated: "2026-06-24T18:13:13.936Z",
   grupos: [
   {
     "id": "A",
