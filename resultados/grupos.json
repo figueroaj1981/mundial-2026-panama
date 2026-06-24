@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-23T05:50:24-05:00",
+  "lastUpdated": "2026-06-24T05:34:46-05:00",
   "format": "12 grupos de 4 equipos · Top 2 + 8 mejores 3ros avanzan",
   "groups": [
     {
@@ -620,41 +620,41 @@
           "name": "Colombia",
           "flag": "🇨🇴",
           "code": "COL",
-          "pj": 1,
-          "pg": 1,
+          "pj": 2,
+          "pg": 2,
           "pe": 0,
           "pp": 0,
-          "gf": 3,
+          "gf": 4,
           "gc": 1,
-          "dg": 2,
-          "pts": 3
+          "dg": 3,
+          "pts": 6
         },
         {
           "pos": 2,
           "name": "Portugal",
           "flag": "🇵🇹",
           "code": "POR",
-          "pj": 1,
-          "pg": 0,
+          "pj": 2,
+          "pg": 1,
           "pe": 1,
           "pp": 0,
-          "gf": 1,
+          "gf": 6,
           "gc": 1,
-          "dg": 0,
-          "pts": 1
+          "dg": 5,
+          "pts": 4
         },
         {
           "pos": 3,
           "name": "RD Congo",
           "flag": "🇨🇩",
           "code": "COD",
-          "pj": 1,
+          "pj": 2,
           "pg": 0,
           "pe": 1,
-          "pp": 0,
+          "pp": 1,
           "gf": 1,
-          "gc": 1,
-          "dg": 0,
+          "gc": 2,
+          "dg": -1,
           "pts": 1
         },
         {
@@ -662,13 +662,13 @@
           "name": "Uzbekistán",
           "flag": "🇺🇿",
           "code": "UZB",
-          "pj": 1,
+          "pj": 2,
           "pg": 0,
           "pe": 0,
-          "pp": 1,
+          "pp": 2,
           "gf": 1,
-          "gc": 3,
-          "dg": -2,
+          "gc": 8,
+          "dg": -7,
           "pts": 0
         }
       ]
@@ -682,57 +682,57 @@
           "name": "Inglaterra",
           "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
           "code": "ENG",
-          "pj": 1,
+          "pj": 2,
           "pg": 1,
-          "pe": 0,
+          "pe": 1,
           "pp": 0,
           "gf": 4,
           "gc": 2,
           "dg": 2,
-          "pts": 3
+          "pts": 4
         },
         {
           "pos": 2,
           "name": "Ghana",
           "flag": "🇬🇭",
           "code": "GHA",
-          "pj": 1,
+          "pj": 2,
           "pg": 1,
-          "pe": 0,
+          "pe": 1,
           "pp": 0,
           "gf": 1,
           "gc": 0,
           "dg": 1,
-          "pts": 3
+          "pts": 4
         },
         {
           "pos": 3,
-          "name": "Panamá",
-          "flag": "🇵🇦",
-          "code": "PAN",
-          "pj": 1,
-          "pg": 0,
-          "pe": 0,
-          "pp": 1,
-          "gf": 0,
-          "gc": 1,
-          "dg": -1,
-          "pts": 0,
-          "panama": true
-        },
-        {
-          "pos": 4,
           "name": "Croacia",
           "flag": "🇭🇷",
           "code": "CRO",
-          "pj": 1,
-          "pg": 0,
+          "pj": 2,
+          "pg": 1,
           "pe": 0,
           "pp": 1,
-          "gf": 2,
+          "gf": 3,
           "gc": 4,
+          "dg": -1,
+          "pts": 3
+        },
+        {
+          "pos": 4,
+          "name": "Panamá",
+          "flag": "🇵🇦",
+          "code": "PAN",
+          "pj": 2,
+          "pg": 0,
+          "pe": 0,
+          "pp": 2,
+          "gf": 0,
+          "gc": 2,
           "dg": -2,
-          "pts": 0
+          "pts": 0,
+          "panama": true
         }
       ]
     }

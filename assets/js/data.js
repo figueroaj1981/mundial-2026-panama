@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
  * Generado automáticamente por el scheduler.
- * Última actualización: 2026-06-23T17:31:36.588Z
+ * Última actualización: 2026-06-24T10:34:46.124Z
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-06-23T17:31:36.588Z",
+  lastUpdated: "2026-06-24T10:34:46.124Z",
   grupos: [
   {
     "id": "A",
@@ -625,41 +625,41 @@ window.MUNDIAL_DATA = {
         "name": "Colombia",
         "flag": "🇨🇴",
         "code": "COL",
-        "pj": 1,
-        "pg": 1,
+        "pj": 2,
+        "pg": 2,
         "pe": 0,
         "pp": 0,
-        "gf": 3,
+        "gf": 4,
         "gc": 1,
-        "dg": 2,
-        "pts": 3
+        "dg": 3,
+        "pts": 6
       },
       {
         "pos": 2,
         "name": "Portugal",
         "flag": "🇵🇹",
         "code": "POR",
-        "pj": 1,
-        "pg": 0,
+        "pj": 2,
+        "pg": 1,
         "pe": 1,
         "pp": 0,
-        "gf": 1,
+        "gf": 6,
         "gc": 1,
-        "dg": 0,
-        "pts": 1
+        "dg": 5,
+        "pts": 4
       },
       {
         "pos": 3,
         "name": "RD Congo",
         "flag": "🇨🇩",
         "code": "COD",
-        "pj": 1,
+        "pj": 2,
         "pg": 0,
         "pe": 1,
-        "pp": 0,
+        "pp": 1,
         "gf": 1,
-        "gc": 1,
-        "dg": 0,
+        "gc": 2,
+        "dg": -1,
         "pts": 1
       },
       {
@@ -667,13 +667,13 @@ window.MUNDIAL_DATA = {
         "name": "Uzbekistán",
         "flag": "🇺🇿",
         "code": "UZB",
-        "pj": 1,
+        "pj": 2,
         "pg": 0,
         "pe": 0,
-        "pp": 1,
+        "pp": 2,
         "gf": 1,
-        "gc": 3,
-        "dg": -2,
+        "gc": 8,
+        "dg": -7,
         "pts": 0
       }
     ]
@@ -687,57 +687,57 @@ window.MUNDIAL_DATA = {
         "name": "Inglaterra",
         "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
         "code": "ENG",
-        "pj": 1,
+        "pj": 2,
         "pg": 1,
-        "pe": 0,
+        "pe": 1,
         "pp": 0,
         "gf": 4,
         "gc": 2,
         "dg": 2,
-        "pts": 3
+        "pts": 4
       },
       {
         "pos": 2,
         "name": "Ghana",
         "flag": "🇬🇭",
         "code": "GHA",
-        "pj": 1,
+        "pj": 2,
         "pg": 1,
-        "pe": 0,
+        "pe": 1,
         "pp": 0,
         "gf": 1,
         "gc": 0,
         "dg": 1,
-        "pts": 3
+        "pts": 4
       },
       {
         "pos": 3,
-        "name": "Panamá",
-        "flag": "🇵🇦",
-        "code": "PAN",
-        "pj": 1,
-        "pg": 0,
-        "pe": 0,
-        "pp": 1,
-        "gf": 0,
-        "gc": 1,
-        "dg": -1,
-        "pts": 0,
-        "panama": true
-      },
-      {
-        "pos": 4,
         "name": "Croacia",
         "flag": "🇭🇷",
         "code": "CRO",
-        "pj": 1,
-        "pg": 0,
+        "pj": 2,
+        "pg": 1,
         "pe": 0,
         "pp": 1,
-        "gf": 2,
+        "gf": 3,
         "gc": 4,
+        "dg": -1,
+        "pts": 3
+      },
+      {
+        "pos": 4,
+        "name": "Panamá",
+        "flag": "🇵🇦",
+        "code": "PAN",
+        "pj": 2,
+        "pg": 0,
+        "pe": 0,
+        "pp": 2,
+        "gf": 0,
+        "gc": 2,
         "dg": -2,
-        "pts": 0
+        "pts": 0,
+        "panama": true
       }
     ]
   }
@@ -2139,8 +2139,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇺🇿",
       "code": "UZB"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 5,
+      "g2": 0
+    },
+    "estado": "finalizado",
     "estadio": "NRG Stadium",
     "ciudad": "Houston"
   },
@@ -2160,8 +2163,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇨🇩",
       "code": "COD"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 1,
+      "g2": 0
+    },
+    "estado": "finalizado",
     "estadio": "Estadio Akron",
     "ciudad": "Guadalajara"
   },
@@ -2321,8 +2327,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇭🇷",
       "code": "CRO"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 0,
+      "g2": 1
+    },
+    "estado": "finalizado",
     "estadio": "BMO Field",
     "ciudad": "Toronto"
   },
@@ -2342,8 +2351,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇬🇭",
       "code": "GHA"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 0,
+      "g2": 0
+    },
+    "estado": "finalizado",
     "estadio": "Gillette Stadium",
     "ciudad": "Boston"
   },
@@ -2395,10 +2407,10 @@ window.MUNDIAL_DATA = {
   {
     "id": "N-AUTO",
     "titulo": "⚽ Últimos resultados del Mundial 2026",
-    "resumen": "Marcadores recién actualizados: Francia 3-0 Irak · Noruega 3-2 Senegal · Jordania 1-2 Argelia. Las tablas de grupos quedaron al día. (Actualización automática)",
+    "resumen": "Marcadores recién actualizados: Portugal 5-0 Uzbekistán · Colombia 1-0 Congo DR · Panamá 0-1 Croacia · Inglaterra 0-0 Ghana. Las tablas de grupos quedaron al día. (Actualización automática)",
     "imagen": null,
     "categoria": "Resultados",
-    "fecha": "2026-06-23T05:50:24-05:00",
+    "fecha": "2026-06-24T05:34:46-05:00",
     "fuente": "Actualización automática",
     "url": "https://www.fifa.com/es/tournaments/mens/worldcup/canadamexicousa2026",
     "destacada": false
