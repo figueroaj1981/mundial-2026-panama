@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-24T05:34:46-05:00",
+  "lastUpdated": "2026-06-25T05:24:35-05:00",
   "matches": [
     {
       "id": "M001",
@@ -65,8 +65,11 @@
         "flag": "🇰🇷",
         "code": "KOR"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 1,
+        "g2": 0
+      },
+      "estado": "finalizado",
       "estadio": "Estadio BBVA",
       "ciudad": "Monterrey"
     },
@@ -86,8 +89,11 @@
         "flag": "🇨🇿",
         "code": "CZE"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 3,
+        "g2": 0
+      },
+      "estado": "finalizado",
       "estadio": "Estadio Azteca",
       "ciudad": "Ciudad de México"
     },
@@ -251,8 +257,11 @@
         "flag": "🇨🇭",
         "code": "SUI"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 1,
+        "g2": 2
+      },
+      "estado": "finalizado",
       "estadio": "BC Place",
       "ciudad": "Vancouver"
     },
@@ -272,8 +281,11 @@
         "flag": "🇶🇦",
         "code": "QAT"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 3,
+        "g2": 1
+      },
+      "estado": "finalizado",
       "estadio": "Lumen Field",
       "ciudad": "Seattle"
     },
@@ -389,8 +401,11 @@
         "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
         "code": "SCO"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 3,
+        "g2": 0
+      },
+      "estado": "finalizado",
       "estadio": "Hard Rock Stadium",
       "ciudad": "Miami"
     },
@@ -410,8 +425,11 @@
         "flag": "🇭🇹",
         "code": "HAI"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 4,
+        "g2": 2
+      },
+      "estado": "finalizado",
       "estadio": "Mercedes-Benz Stadium",
       "ciudad": "Atlanta"
     },
