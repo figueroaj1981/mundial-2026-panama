@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-25T05:24:35-05:00",
+  "lastUpdated": "2026-06-26T05:37:36-05:00",
   "matches": [
     {
       "id": "M001",
@@ -545,8 +545,11 @@
         "flag": "🇹🇷",
         "code": "TUR"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 2,
+        "g2": 3
+      },
+      "estado": "finalizado",
       "estadio": "SoFi Stadium",
       "ciudad": "Los Ángeles"
     },
@@ -566,8 +569,11 @@
         "flag": "🇦🇺",
         "code": "AUS"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 0,
+        "g2": 0
+      },
+      "estado": "finalizado",
       "estadio": "Levi's Stadium",
       "ciudad": "San Francisco"
     },
@@ -587,8 +593,11 @@
         "flag": "🇨🇮",
         "code": "CIV"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 0,
+        "g2": 2
+      },
+      "estado": "finalizado",
       "estadio": "Lincoln Financial Field",
       "ciudad": "Filadelfia"
     },
@@ -608,8 +617,11 @@
         "flag": "🇪🇨",
         "code": "ECU"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 1,
+        "g2": 2
+      },
+      "estado": "finalizado",
       "estadio": "MetLife Stadium",
       "ciudad": "Nueva York"
     },
@@ -725,8 +737,11 @@
         "flag": "🇹🇳",
         "code": "TUN"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 3,
+        "g2": 1
+      },
+      "estado": "finalizado",
       "estadio": "Arrowhead Stadium",
       "ciudad": "Kansas City"
     },
@@ -746,8 +761,11 @@
         "flag": "🇸🇪",
         "code": "SWE"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 1,
+        "g2": 1
+      },
+      "estado": "finalizado",
       "estadio": "AT&T Stadium",
       "ciudad": "Dallas"
     },
