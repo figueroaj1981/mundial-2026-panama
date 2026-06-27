@@ -3,7 +3,6 @@ name: Actualizar resultados Mundial 2026
 on:
   workflow_dispatch:
   schedule:
-    # UTC. Panamá = UTC-5 → 6am,12pm,6pm,8pm,11pm Panamá
     - cron: "0 1,4,11,17,23 * * *"
 
 permissions:
@@ -38,7 +37,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           if [ -n "$(git status --porcelain resultados noticias assets/js/data.js)" ]; then
-          git add resultados/grupos.json resultados/partidos.json noticias/noticias.json assets/js/data.js
+            git add resultados/grupos.json resultados/partidos.json resultados/knockout.json noticias/noticias.json assets/js/data.js
             git commit -m "Actualización automática (cloud): resultados y tablas del Mundial 2026"
             git push
           else
