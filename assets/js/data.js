@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
  * Generado automáticamente por el scheduler.
- * Última actualización: 2026-06-27T09:14:22.268Z
+ * Última actualización: 2026-06-27T15:50:16.512Z
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-06-27T09:14:22.268Z",
+  lastUpdated: "2026-06-27T15:50:16.512Z",
   grupos: [
   {
     "id": "A",
@@ -2471,11 +2471,11 @@ window.MUNDIAL_DATA = {
   },
   {
     "id": "N007",
-    "titulo": "🇵🇦 ¡Mañana, partido clave! Panamá enfrenta a Croacia buscando su primer punto",
-    "resumen": "Llegó un duelo decisivo: este martes 23 de junio Panamá se mide a Croacia (finalista del Mundial 2022) en el BMO Field de Toronto. Tras la derrota ante Ghana, la 'Roja' necesita sumar para seguir con vida en el Grupo L. Croacia llega golpeada luego de caer 4-2 ante Inglaterra, así que hay opción. ¡Todo Panamá alienta — vamos por la hazaña!",
+    "titulo": "🇵🇦 Hoy el cierre: Panamá se mide a Inglaterra en su último partido del Mundial",
+    "resumen": "Este 27 de junio (4:00 pm, hora Panamá) la 'Roja' cierra su participación en el Mundial 2026 ante Inglaterra en el MetLife Stadium de Nueva York. Tras dos derrotas ajustadas ante Ghana y Croacia, Panamá buscará despedirse con su mejor versión frente a una de las potencias del torneo. ¡Gracias por la entrega, Panamá — todo un país está orgulloso de su selección!",
     "imagen": null,
     "categoria": "Panamá",
-    "fecha": "2026-06-22T08:00:00-05:00",
+    "fecha": "2026-06-27T08:00:00-05:00",
     "fuente": "ESPN",
     "url": "https://www.espn.com",
     "destacada": true
@@ -2546,5 +2546,6 @@ window.MUNDIAL_DATA = {
     "url": "https://ge.globo.com",
     "destacada": false
   }
-]
+],
+  knockout: []
 };
