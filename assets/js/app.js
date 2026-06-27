@@ -639,7 +639,7 @@ function renderBracket(matches) {
     return `<div class="bk-team ${done ? 'bk-confirmed' : 'bk-provisional'} ${isPan ? 'bk-panama' : ''}">
       <span class="bk-flag">${t.flag}</span>
       <span class="bk-name">${t.nombre}</span>
-      ${!done ? '<span class="bk-prov">prov.</span>' : ''}
+      ${!done ? '<span class="bk-prov">probable</span>' : ''}
     </div>`;
   }
 
@@ -651,7 +651,7 @@ function renderBracket(matches) {
     return `<div class="bk-team ${allGroupsDone ? 'bk-confirmed' : 'bk-provisional'} ${isPan ? 'bk-panama' : ''}">
       <span class="bk-flag">${t.flag}</span>
       <span class="bk-name">${t.nombre} <small style="opacity:.65">(3° ${g})</small></span>
-      ${!allGroupsDone ? '<span class="bk-prov">prov.</span>' : ''}
+      ${!allGroupsDone ? '<span class="bk-prov">probable</span>' : ''}
     </div>`;
   }
 
@@ -674,6 +674,65 @@ function renderBracket(matches) {
     { id:'M87',  label:'',  a: slot('K',0,'1° Grupo K'),           b: slot3rd('M87','Mejor 3ro — D/E/I/J/L') },
     { id:'M88',  label:'',  a: slot('D',1,'2° Grupo D'),           b: slot('G',1,'2° Grupo G') },
   ];
+
+  // ===== PROYECCIÓN ESTADÍSTICA DE LAS RONDAS (octavos → final) =====
+  // Equipo (objeto) por puesto, para proyectar
+  const slotTeam = (grupo, pos) => { const t = (standings[grupo] || [])[pos]; return (t && t.pj > 0) ? t : null; };
+  const slot3rdTeam = (key) => { const g = thirdAssign[key]; return g ? standings[g][2] : null; };
+
+  // Equipos de cada partido de 16avos (mismos cruces que el array r32)
+  const r32teams = {
+    M73: [slotTeam('A',1), slotTeam('B',1)], M74: [slotTeam('E',0), slot3rdTeam('M74')],
+    M75: [slotTeam('F',0), slotTeam('C',1)], M76: [slotTeam('C',0), slotTeam('F',1)],
+    M77: [slotTeam('I',0), slot3rdTeam('M77')], M78: [slotTeam('E',1), slotTeam('I',1)],
+    M79: [slotTeam('A',0), slot3rdTeam('M79')], M80: [slotTeam('L',0), slot3rdTeam('M80')],
+    M81: [slotTeam('D',0), slot3rdTeam('M81')], M82: [slotTeam('G',0), slot3rdTeam('M82')],
+    M83: [slotTeam('K',1), slotTeam('L',1)], M84: [slotTeam('H',0), slotTeam('J',1)],
+    M85: [slotTeam('B',0), slot3rdTeam('M85')], M86: [slotTeam('J',0), slotTeam('H',1)],
+    M87: [slotTeam('K',0), slot3rdTeam('M87')], M88: [slotTeam('D',1), slotTeam('G',1)],
+  };
+  // "Fuerza" por desempeño de grupos: puntos, luego dif. de gol, luego goles
+  const strength = (t) => t ? (t.pts * 100 + t.dg * 10 + t.gf) : -Infinity;
+  const estWin = (a, b) => (!a || !b) ? null : (strength(a) >= strength(b) ? a : b);
+
+  const W = {};
+  Object.keys(r32teams).forEach(id => { W[id] = estWin(r32teams[id][0], r32teams[id][1]); });
+
+  // Árbol oficial FIFA 2026
+  const r16def = [
+    { id:'M89', a:'M74', b:'M77' }, { id:'M90', a:'M73', b:'M75' },
+    { id:'M91', a:'M76', b:'M78' }, { id:'M92', a:'M79', b:'M80' },
+    { id:'M93', a:'M83', b:'M84' }, { id:'M94', a:'M81', b:'M82' },
+    { id:'M95', a:'M86', b:'M88' }, { id:'M96', a:'M85', b:'M87' },
+  ];
+  const r16T = {}, W16 = {};
+  r16def.forEach(m => { const a = W[m.a], b = W[m.b]; r16T[m.id] = [a, b]; W16[m.id] = estWin(a, b); });
+
+  const qfDef = [ {id:'M97',a:'M89',b:'M90'}, {id:'M98',a:'M93',b:'M94'}, {id:'M99',a:'M91',b:'M92'}, {id:'M100',a:'M95',b:'M96'} ];
+  const qfT = {}, Wqf = {};
+  qfDef.forEach(m => { const a = W16[m.a], b = W16[m.b]; qfT[m.id] = [a, b]; Wqf[m.id] = estWin(a, b); });
+
+  const sfDef = [ {id:'M101',a:'M97',b:'M98'}, {id:'M102',a:'M99',b:'M100'} ];
+  const sfT = {}, Wsf = {};
+  sfDef.forEach(m => { const a = Wqf[m.a], b = Wqf[m.b]; sfT[m.id] = [a, b]; Wsf[m.id] = estWin(a, b); });
+
+  const finalT = [ Wsf['M101'], Wsf['M102'] ];
+  const champion = estWin(finalT[0], finalT[1]);
+
+  // Render de un equipo estimado (amarillo, "estimado")
+  function estTeam(t) {
+    if (!t) return `<div class="bk-team bk-empty">Por definirse</div>`;
+    return `<div class="bk-team bk-provisional ${t.panama ? 'bk-panama' : ''}">
+      <span class="bk-flag">${t.flag}</span>
+      <span class="bk-name">${t.nombre}</span>
+      <span class="bk-prov">estimado</span>
+    </div>`;
+  }
+  function estMatch(id, pair, isFinal = false) {
+    const pan = (pair[0] && pair[0].panama) || (pair[1] && pair[1].panama);
+    return `<div class="bk-match ${pan ? 'bk-match-panama' : ''} ${isFinal ? 'bk-match-final' : ''}">
+      <div class="bk-match-id">${id}</div>${estTeam(pair[0])}<div class="bk-vs">VS</div>${estTeam(pair[1])}</div>`;
+  }
 
   function matchCard(m, isFinal = false) {
     const hasPan = m.label === '🇵🇦';
@@ -704,38 +763,39 @@ function renderBracket(matches) {
 
       <div class="bracket-round">
         <div class="bracket-round-header">
-          <div class="bracket-round-title">Octavos de Final</div>
+          <div class="bracket-round-title">Octavos de Final <span class="bk-est-tag">estimado</span></div>
           <div class="bracket-round-sub">16 equipos · 6–9 jul 2026</div>
         </div>
-        <div class="bk-grid">${[1,2,3,4,5,6,7,8].map(i => tbdMatch('R16-'+i)).join('')}</div>
+        <div class="bk-grid">${r16def.map(m => estMatch(m.id, r16T[m.id])).join('')}</div>
       </div>
 
       <div class="bracket-round">
         <div class="bracket-round-header">
-          <div class="bracket-round-title">Cuartos de Final</div>
+          <div class="bracket-round-title">Cuartos de Final <span class="bk-est-tag">estimado</span></div>
           <div class="bracket-round-sub">8 equipos · 11–12 jul 2026</div>
         </div>
-        <div class="bk-grid">${[1,2,3,4].map(i => tbdMatch('QF-'+i)).join('')}</div>
+        <div class="bk-grid">${qfDef.map(m => estMatch(m.id, qfT[m.id])).join('')}</div>
       </div>
 
       <div class="bracket-round">
         <div class="bracket-round-header">
-          <div class="bracket-round-title">Semifinales</div>
+          <div class="bracket-round-title">Semifinales <span class="bk-est-tag">estimado</span></div>
           <div class="bracket-round-sub">4 equipos · 14–15 jul 2026</div>
         </div>
-        <div class="bk-grid">${[1,2].map(i => tbdMatch('SF-'+i)).join('')}</div>
+        <div class="bk-grid">${sfDef.map(m => estMatch(m.id, sfT[m.id])).join('')}</div>
       </div>
 
       <div class="bracket-round">
         <div class="bracket-round-header">
-          <div class="bracket-round-title">🏆 Final</div>
+          <div class="bracket-round-title">🏆 Final <span class="bk-est-tag">estimado</span></div>
           <div class="bracket-round-sub">19 jul 2026 · MetLife Stadium, Nueva York</div>
         </div>
-        <div class="bk-grid">${matchCard({ id:'FINAL', label:'', a: `<div class="bk-team bk-empty">Por definirse</div>`, b: `<div class="bk-team bk-empty">Por definirse</div>` }, true)}</div>
+        <div class="bk-grid">${estMatch('FINAL', finalT, true)}</div>
+        ${champion ? `<div class="bk-champion">🏆 Campeón estimado: <span class="bk-flag">${champion.flag}</span> <strong>${champion.nombre}</strong></div>` : ''}
       </div>
 
     </div>
-    <p class="bracket-note">Llave oficial FIFA 2026. Los <strong>8 mejores terceros</strong> se calculan por criterio FIFA (pts → dif. de gol → goles) y se ubican según los grupos elegibles de cada puesto; la asignación exacta entre puestos puede variar respecto a la tabla oficial (495 escenarios). 🟡 <strong>prov.</strong> = provisional (la fase de grupos sigue) · 🟢 <strong>verde ✔</strong> = confirmado.</p>
+    <p class="bracket-note">Llave oficial FIFA 2026. Los <strong>8 mejores terceros</strong> se calculan por criterio FIFA (pts → dif. de gol → goles). Las rondas de <strong>octavos en adelante son una proyección estadística</strong> según el desempeño en la fase de grupos (no son resultados reales). 🟡 <strong>probable / estimado</strong> = aún no definido · 🟢 <strong>verde ✔</strong> = clasificado confirmado.</p>
   `;
 }
 

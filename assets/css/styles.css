@@ -1902,3 +1902,29 @@ footer {
   transition: background 0.2s;
 }
 .video-modal-close:hover { background: var(--pan-red); }
+
+/* ===== BRACKET: etiqueta estimado y campeón ===== */
+.bk-est-tag {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #ffcc44;
+  background: rgba(255,200,0,0.12);
+  border: 1px solid rgba(255,200,0,0.35);
+  padding: 1px 8px;
+  border-radius: 10px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.bk-champion {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--gold);
+  background: rgba(255,215,0,0.08);
+  border: 1px solid rgba(255,215,0,0.35);
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+.bk-champion .bk-flag { font-size: 1.3rem; vertical-align: middle; }
