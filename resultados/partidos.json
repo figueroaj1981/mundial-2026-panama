@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-26T05:37:36-05:00",
+  "lastUpdated": "2026-06-27T04:14:22-05:00",
   "matches": [
     {
       "id": "M001",
@@ -929,8 +929,11 @@
         "flag": "🇳🇿",
         "code": "NZL"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 5,
+        "g2": 1
+      },
+      "estado": "finalizado",
       "estadio": "BC Place",
       "ciudad": "Vancouver"
     },
@@ -950,8 +953,11 @@
         "flag": "🇮🇷",
         "code": "IRN"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 1,
+        "g2": 1
+      },
+      "estado": "finalizado",
       "estadio": "Lumen Field",
       "ciudad": "Seattle"
     },
@@ -1067,8 +1073,11 @@
         "flag": "🇺🇾",
         "code": "URU"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 1,
+        "g2": 0
+      },
+      "estado": "finalizado",
       "estadio": "Estadio Akron",
       "ciudad": "Guadalajara"
     },
@@ -1088,8 +1097,11 @@
         "flag": "🇨🇻",
         "code": "CPV"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 0,
+        "g2": 0
+      },
+      "estado": "finalizado",
       "estadio": "NRG Stadium",
       "ciudad": "Houston"
     },
@@ -1205,8 +1217,11 @@
         "flag": "🇳🇴",
         "code": "NOR"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 4,
+        "g2": 1
+      },
+      "estado": "finalizado",
       "estadio": "Gillette Stadium",
       "ciudad": "Boston"
     },
@@ -1226,8 +1241,11 @@
         "flag": "🇮🇶",
         "code": "IRQ"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 5,
+        "g2": 0
+      },
+      "estado": "finalizado",
       "estadio": "BMO Field",
       "ciudad": "Toronto"
     },

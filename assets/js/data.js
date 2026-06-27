@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
  * Generado automáticamente por el scheduler.
- * Última actualización: 2026-06-26T17:21:50.780Z
+ * Última actualización: 2026-06-27T09:14:22.268Z
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-06-26T17:21:50.780Z",
+  lastUpdated: "2026-06-27T09:14:22.268Z",
   grupos: [
   {
     "id": "A",
@@ -378,58 +378,58 @@ window.MUNDIAL_DATA = {
     "teams": [
       {
         "pos": 1,
-        "name": "Egipto",
-        "flag": "🇪🇬",
-        "code": "EGY",
-        "pj": 2,
-        "pg": 1,
-        "pe": 1,
-        "pp": 0,
-        "gf": 4,
-        "gc": 2,
-        "dg": 2,
-        "pts": 4
-      },
-      {
-        "pos": 2,
-        "name": "Irán",
-        "flag": "🇮🇷",
-        "code": "IRN",
-        "pj": 2,
-        "pg": 0,
-        "pe": 2,
-        "pp": 0,
-        "gf": 2,
-        "gc": 2,
-        "dg": 0,
-        "pts": 2
-      },
-      {
-        "pos": 3,
         "name": "Bélgica",
         "flag": "🇧🇪",
         "code": "BEL",
-        "pj": 2,
-        "pg": 0,
+        "pj": 3,
+        "pg": 1,
         "pe": 2,
         "pp": 0,
-        "gf": 1,
-        "gc": 1,
+        "gf": 6,
+        "gc": 2,
+        "dg": 4,
+        "pts": 5
+      },
+      {
+        "pos": 2,
+        "name": "Egipto",
+        "flag": "🇪🇬",
+        "code": "EGY",
+        "pj": 3,
+        "pg": 1,
+        "pe": 2,
+        "pp": 0,
+        "gf": 5,
+        "gc": 3,
+        "dg": 2,
+        "pts": 5
+      },
+      {
+        "pos": 3,
+        "name": "Irán",
+        "flag": "🇮🇷",
+        "code": "IRN",
+        "pj": 3,
+        "pg": 0,
+        "pe": 3,
+        "pp": 0,
+        "gf": 3,
+        "gc": 3,
         "dg": 0,
-        "pts": 2
+        "pts": 3
       },
       {
         "pos": 4,
         "name": "Nueva Zelanda",
         "flag": "🇳🇿",
         "code": "NZL",
-        "pj": 2,
+        "pj": 3,
         "pg": 0,
         "pe": 1,
-        "pp": 1,
-        "gf": 3,
-        "gc": 5,
-        "dg": -2,
+        "pp": 2,
+        "gf": 4,
+        "gc": 10,
+        "dg": -6,
         "pts": 1
       }
     ]
@@ -442,41 +442,41 @@ window.MUNDIAL_DATA = {
         "name": "España",
         "flag": "🇪🇸",
         "code": "ESP",
-        "pj": 2,
-        "pg": 1,
+        "pj": 3,
+        "pg": 2,
         "pe": 1,
         "pp": 0,
-        "gf": 4,
+        "gf": 5,
         "gc": 0,
-        "dg": 4,
-        "pts": 4
+        "dg": 5,
+        "pts": 7
       },
       {
         "pos": 2,
-        "name": "Uruguay",
-        "flag": "🇺🇾",
-        "code": "URU",
-        "pj": 2,
-        "pg": 0,
-        "pe": 2,
-        "pp": 0,
-        "gf": 3,
-        "gc": 3,
-        "dg": 0,
-        "pts": 2
-      },
-      {
-        "pos": 3,
         "name": "Cabo Verde",
         "flag": "🇨🇻",
         "code": "CPV",
-        "pj": 2,
+        "pj": 3,
         "pg": 0,
-        "pe": 2,
+        "pe": 3,
         "pp": 0,
         "gf": 2,
         "gc": 2,
         "dg": 0,
+        "pts": 3
+      },
+      {
+        "pos": 3,
+        "name": "Uruguay",
+        "flag": "🇺🇾",
+        "code": "URU",
+        "pj": 3,
+        "pg": 0,
+        "pe": 2,
+        "pp": 1,
+        "gf": 3,
+        "gc": 4,
+        "dg": -1,
         "pts": 2
       },
       {
@@ -484,14 +484,14 @@ window.MUNDIAL_DATA = {
         "name": "Arabia Saudita",
         "flag": "🇸🇦",
         "code": "KSA",
-        "pj": 2,
+        "pj": 3,
         "pg": 0,
-        "pe": 1,
+        "pe": 2,
         "pp": 1,
         "gf": 1,
         "gc": 5,
         "dg": -4,
-        "pts": 1
+        "pts": 2
       }
     ]
   },
@@ -503,27 +503,27 @@ window.MUNDIAL_DATA = {
         "name": "Francia",
         "flag": "🇫🇷",
         "code": "FRA",
-        "pj": 2,
-        "pg": 2,
+        "pj": 3,
+        "pg": 3,
         "pe": 0,
         "pp": 0,
-        "gf": 6,
-        "gc": 1,
-        "dg": 5,
-        "pts": 6
+        "gf": 10,
+        "gc": 2,
+        "dg": 8,
+        "pts": 9
       },
       {
         "pos": 2,
         "name": "Noruega",
         "flag": "🇳🇴",
         "code": "NOR",
-        "pj": 2,
+        "pj": 3,
         "pg": 2,
         "pe": 0,
-        "pp": 0,
-        "gf": 7,
-        "gc": 3,
-        "dg": 4,
+        "pp": 1,
+        "gf": 8,
+        "gc": 7,
+        "dg": 1,
         "pts": 6
       },
       {
@@ -531,27 +531,27 @@ window.MUNDIAL_DATA = {
         "name": "Senegal",
         "flag": "🇸🇳",
         "code": "SEN",
-        "pj": 2,
-        "pg": 0,
+        "pj": 3,
+        "pg": 1,
         "pe": 0,
         "pp": 2,
-        "gf": 3,
+        "gf": 8,
         "gc": 6,
-        "dg": -3,
-        "pts": 0
+        "dg": 2,
+        "pts": 3
       },
       {
         "pos": 4,
         "name": "Iraq",
         "flag": "🇮🇶",
         "code": "IRQ",
-        "pj": 2,
+        "pj": 3,
         "pg": 0,
         "pe": 0,
-        "pp": 2,
+        "pp": 3,
         "gf": 1,
-        "gc": 7,
-        "dg": -6,
+        "gc": 12,
+        "dg": -11,
         "pts": 0
       }
     ]
@@ -1671,8 +1671,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇳🇿",
       "code": "NZL"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 5,
+      "g2": 1
+    },
+    "estado": "finalizado",
     "estadio": "BC Place",
     "ciudad": "Vancouver"
   },
@@ -1692,8 +1695,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇮🇷",
       "code": "IRN"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 1,
+      "g2": 1
+    },
+    "estado": "finalizado",
     "estadio": "Lumen Field",
     "ciudad": "Seattle"
   },
@@ -1809,8 +1815,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇺🇾",
       "code": "URU"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 1,
+      "g2": 0
+    },
+    "estado": "finalizado",
     "estadio": "Estadio Akron",
     "ciudad": "Guadalajara"
   },
@@ -1830,8 +1839,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇨🇻",
       "code": "CPV"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 0,
+      "g2": 0
+    },
+    "estado": "finalizado",
     "estadio": "NRG Stadium",
     "ciudad": "Houston"
   },
@@ -1947,8 +1959,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇳🇴",
       "code": "NOR"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 4,
+      "g2": 1
+    },
+    "estado": "finalizado",
     "estadio": "Gillette Stadium",
     "ciudad": "Boston"
   },
@@ -1968,8 +1983,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇮🇶",
       "code": "IRQ"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 5,
+      "g2": 0
+    },
+    "estado": "finalizado",
     "estadio": "BMO Field",
     "ciudad": "Toronto"
   },
@@ -2443,10 +2461,10 @@ window.MUNDIAL_DATA = {
   {
     "id": "N-AUTO",
     "titulo": "⚽ Últimos resultados del Mundial 2026",
-    "resumen": "Marcadores recién actualizados: USA 2-3 Turquía · Paraguay 0-0 Australia · Curazao 0-2 Costa de Marfil · Alemania 1-2 Ecuador · Países Bajos 3-1 Túnez · Japón 1-1 Suecia. Las tablas de grupos quedaron al día. (Actualización automática)",
+    "resumen": "Marcadores recién actualizados: Bélgica 5-1 Nueva Zelanda · Egipto 1-1 Irán · España 1-0 Uruguay · Arabia Saudita 0-0 Cabo Verde · Francia 4-1 Noruega · Senegal 5-0 Irak. Las tablas de grupos quedaron al día. (Actualización automática)",
     "imagen": null,
     "categoria": "Resultados",
-    "fecha": "2026-06-26T05:37:36-05:00",
+    "fecha": "2026-06-27T04:14:22-05:00",
     "fuente": "Actualización automática",
     "url": "https://www.fifa.com/es/tournaments/mens/worldcup/canadamexicousa2026",
     "destacada": false
