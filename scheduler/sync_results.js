@@ -18,6 +18,7 @@ const ROOT = path.join(__dirname, '..');
 const PARTIDOS = path.join(ROOT, 'resultados', 'partidos.json');
 const GRUPOS = path.join(ROOT, 'resultados', 'grupos.json');
 const NOTICIAS = path.join(ROOT, 'noticias', 'noticias.json');
+const KNOCKOUT = path.join(ROOT, 'resultados', 'knockout.json');
 const LOG = path.join(ROOT, 'logs', 'sync.log');
 
 // Genera/actualiza una noticia automática con los resultados recién actualizados.
@@ -137,6 +138,38 @@ function recomputeGroups(grupos, matches) {
   }
 }
 
+// Extrae los resultados reales de eliminatorias de la API y los guarda en knockout.json
+function syncKnockout(apiData, partidos) {
+  try {
+    const ourCodes = new Set();
+    partidos.matches.forEach(m => { ourCodes.add(m.equipo1.code); ourCodes.add(m.equipo2.code); });
+    const toOur = (tla) => {
+      if (!tla) return null;
+      if (ourCodes.has(tla)) return tla;
+      for (const oc of ourCodes) if (codeMatches(oc, tla)) return oc;
+      return null;
+    };
+    const stages = ['LAST_32', 'LAST_16', 'QUARTER_FINALS', 'SEMI_FINALS', 'THIRD_PLACE', 'FINAL'];
+    const knockout = [];
+    (apiData.matches || []).forEach(m => {
+      if (!stages.includes(m.stage) || m.status !== 'FINISHED') return;
+      const home = toOur(m.homeTeam && m.homeTeam.tla);
+      const away = toOur(m.awayTeam && m.awayTeam.tla);
+      if (!home || !away) return;
+      const ft = m.score && m.score.fullTime;
+      if (!ft || ft.home === null) return;
+      let winner = null;
+      if (m.score.winner === 'HOME_TEAM') winner = home;
+      else if (m.score.winner === 'AWAY_TEAM') winner = away;
+      else if (ft.home > ft.away) winner = home;
+      else if (ft.away > ft.home) winner = away;
+      knockout.push({ stage: m.stage, home, away, g1: ft.home, g2: ft.away, winner });
+    });
+    fs.writeFileSync(KNOCKOUT, JSON.stringify({ lastUpdated: nowPanamaISO(), knockout }, null, 2));
+    log(`✓ Eliminatorias: ${knockout.length} partidos finalizados guardados.`);
+  } catch (e) { log(`Knockout error: ${e.message}`); }
+}
+
 async function main() {
   const apiKey = process.env.FOOTBALL_DATA_API_KEY;
   if (!apiKey) { log('Sin FOOTBALL_DATA_API_KEY — no se hace nada.'); return; }
@@ -149,6 +182,9 @@ async function main() {
   if (!apiData) { log('API no disponible — sin cambios.'); return; }
   const apiList = buildApiIndex(apiData);
   log(`API devolvió ${apiList.length} partidos.`);
+
+  // Eliminatorias reales (independiente de los grupos): se escribe siempre que la API responda
+  syncKnockout(apiData, partidos);
 
   let cambios = 0;
   const actualizados = [];

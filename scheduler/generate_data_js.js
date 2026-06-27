@@ -19,9 +19,10 @@ function generateDataJs() {
   const gruposPath  = path.join(ROOT, 'resultados', 'grupos.json');
   const partidosPath = path.join(ROOT, 'resultados', 'partidos.json');
   const noticiasPath = path.join(ROOT, 'noticias', 'noticias.json');
+  const knockoutPath = path.join(ROOT, 'resultados', 'knockout.json');
   const outputPath  = path.join(ROOT, 'assets', 'js', 'data.js');
 
-  let grupos, partidos, noticias;
+  let grupos, partidos, noticias, knockout = { knockout: [] };
 
   try {
     grupos   = JSON.parse(fs.readFileSync(gruposPath, 'utf8'));
@@ -31,6 +32,7 @@ function generateDataJs() {
     log(`Error leyendo JSON: ${e.message}`);
     return false;
   }
+  try { knockout = JSON.parse(fs.readFileSync(knockoutPath, 'utf8')); } catch (e) { /* opcional */ }
 
   const now = new Date().toISOString();
 
@@ -44,7 +46,8 @@ window.MUNDIAL_DATA = {
   lastUpdated: ${JSON.stringify(now)},
   grupos: ${JSON.stringify(grupos.groups || [], null, 2)},
   partidos: ${JSON.stringify(partidos.matches || [], null, 2)},
-  noticias: ${JSON.stringify(noticias.noticias || [], null, 2)}
+  noticias: ${JSON.stringify(noticias.noticias || [], null, 2)},
+  knockout: ${JSON.stringify(knockout.knockout || [], null, 2)}
 };
 `;
 

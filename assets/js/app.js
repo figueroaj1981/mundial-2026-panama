@@ -113,11 +113,12 @@ async function loadJSON(path) {
 
 function getEmbeddedData() {
   const d = window.MUNDIAL_DATA;
-  if (!d) return { grupos: null, partidos: null, noticias: null };
+  if (!d) return { grupos: null, partidos: null, noticias: null, knockout: null };
   return {
     grupos:   { lastUpdated: d.lastUpdated, groups: d.grupos },
     partidos: { lastUpdated: d.lastUpdated, matches: d.partidos },
     noticias: { lastUpdated: d.lastUpdated, noticias: d.noticias },
+    knockout: { knockout: d.knockout || [] },
   };
 }
 
@@ -577,7 +578,7 @@ function computeGroupStandings(matches) {
   return standings;
 }
 
-function renderBracket(matches) {
+function renderBracket(matches, knockout) {
   const container = document.getElementById('bracket-container');
   if (!container) return;
 
@@ -695,8 +696,23 @@ function renderBracket(matches) {
   const strength = (t) => t ? (t.pts * 100 + t.dg * 10 + t.gf) : -Infinity;
   const estWin = (a, b) => (!a || !b) ? null : (strength(a) >= strength(b) ? a : b);
 
+  // Índice de resultados REALES de eliminatorias por etapa (si ya se jugaron)
+  const koByStage = {};
+  try { (knockout || []).forEach(k => { (koByStage[k.stage] = koByStage[k.stage] || []).push(k); }); } catch (e) {}
+  const findKO = (a, b, stage) => {
+    if (!a || !b) return null;
+    return (koByStage[stage] || []).find(k =>
+      (k.home === a.code && k.away === b.code) || (k.home === b.code && k.away === a.code)) || null;
+  };
+  // Ganador de un cruce: real si ya se jugó; si no, estimado
+  const resolve = (a, b, stage) => {
+    const k = findKO(a, b, stage);
+    if (k && k.winner) return { team: (k.winner === (a && a.code) ? a : b), real: true };
+    return { team: estWin(a, b), real: false };
+  };
+
   const W = {};
-  Object.keys(r32teams).forEach(id => { W[id] = estWin(r32teams[id][0], r32teams[id][1]); });
+  Object.keys(r32teams).forEach(id => { W[id] = resolve(r32teams[id][0], r32teams[id][1], 'LAST_32').team; });
 
   // Árbol oficial FIFA 2026
   const r16def = [
@@ -706,32 +722,36 @@ function renderBracket(matches) {
     { id:'M95', a:'M86', b:'M88' }, { id:'M96', a:'M85', b:'M87' },
   ];
   const r16T = {}, W16 = {};
-  r16def.forEach(m => { const a = W[m.a], b = W[m.b]; r16T[m.id] = [a, b]; W16[m.id] = estWin(a, b); });
+  r16def.forEach(m => { const a = W[m.a], b = W[m.b]; r16T[m.id] = [a, b]; W16[m.id] = resolve(a, b, 'LAST_16').team; });
 
   const qfDef = [ {id:'M97',a:'M89',b:'M90'}, {id:'M98',a:'M93',b:'M94'}, {id:'M99',a:'M91',b:'M92'}, {id:'M100',a:'M95',b:'M96'} ];
   const qfT = {}, Wqf = {};
-  qfDef.forEach(m => { const a = W16[m.a], b = W16[m.b]; qfT[m.id] = [a, b]; Wqf[m.id] = estWin(a, b); });
+  qfDef.forEach(m => { const a = W16[m.a], b = W16[m.b]; qfT[m.id] = [a, b]; Wqf[m.id] = resolve(a, b, 'QUARTER_FINALS').team; });
 
   const sfDef = [ {id:'M101',a:'M97',b:'M98'}, {id:'M102',a:'M99',b:'M100'} ];
   const sfT = {}, Wsf = {};
-  sfDef.forEach(m => { const a = Wqf[m.a], b = Wqf[m.b]; sfT[m.id] = [a, b]; Wsf[m.id] = estWin(a, b); });
+  sfDef.forEach(m => { const a = Wqf[m.a], b = Wqf[m.b]; sfT[m.id] = [a, b]; Wsf[m.id] = resolve(a, b, 'SEMI_FINALS').team; });
 
   const finalT = [ Wsf['M101'], Wsf['M102'] ];
-  const champion = estWin(finalT[0], finalT[1]);
+  const finalRes = resolve(finalT[0], finalT[1], 'FINAL');
+  const champion = finalRes.team;
+  const championReal = finalRes.real;
 
-  // Render de un equipo estimado (amarillo, "estimado")
-  function estTeam(t) {
-    if (!t) return `<div class="bk-team bk-empty">Por definirse</div>`;
-    return `<div class="bk-team bk-provisional ${t.panama ? 'bk-panama' : ''}">
-      <span class="bk-flag">${t.flag}</span>
-      <span class="bk-name">${t.nombre}</span>
-      <span class="bk-prov">estimado</span>
-    </div>`;
-  }
-  function estMatch(id, pair, isFinal = false) {
-    const pan = (pair[0] && pair[0].panama) || (pair[1] && pair[1].panama);
-    return `<div class="bk-match ${pan ? 'bk-match-panama' : ''} ${isFinal ? 'bk-match-final' : ''}">
-      <div class="bk-match-id">${id}</div>${estTeam(pair[0])}<div class="bk-vs">VS</div>${estTeam(pair[1])}</div>`;
+  // Render de un cruce: real (marcador + ganador en verde ✔) o estimado (amarillo)
+  function koMatch(id, pair, stage, isFinal = false) {
+    const a = pair[0], b = pair[1];
+    const k = findKO(a, b, stage);
+    const real = !!k;
+    const tHtml = (t) => {
+      if (!t) return `<div class="bk-team bk-empty">Por definirse</div>`;
+      const isWin = real && k.winner === t.code;
+      const cls = real ? (isWin ? 'bk-confirmed' : 'bk-team-out') : 'bk-provisional';
+      const tag = real ? (isWin ? '<span class="bk-prov" style="color:#7CFC9A">✔</span>' : '') : '<span class="bk-prov">estimado</span>';
+      return `<div class="bk-team ${cls} ${t.panama ? 'bk-panama' : ''}"><span class="bk-flag">${t.flag}</span><span class="bk-name">${t.nombre}</span>${tag}</div>`;
+    };
+    const mid = real ? `<div class="bk-vs">${k.g1} - ${k.g2}</div>` : `<div class="bk-vs">VS</div>`;
+    const pan = (a && a.panama) || (b && b.panama);
+    return `<div class="bk-match ${pan ? 'bk-match-panama' : ''} ${isFinal ? 'bk-match-final' : ''}"><div class="bk-match-id">${id}</div>${tHtml(a)}${mid}${tHtml(b)}</div>`;
   }
 
   function matchCard(m, isFinal = false) {
@@ -766,7 +786,7 @@ function renderBracket(matches) {
           <div class="bracket-round-title">Octavos de Final <span class="bk-est-tag">estimado</span></div>
           <div class="bracket-round-sub">16 equipos · 6–9 jul 2026</div>
         </div>
-        <div class="bk-grid">${r16def.map(m => estMatch(m.id, r16T[m.id])).join('')}</div>
+        <div class="bk-grid">${r16def.map(m => koMatch(m.id, r16T[m.id], 'LAST_16')).join('')}</div>
       </div>
 
       <div class="bracket-round">
@@ -774,7 +794,7 @@ function renderBracket(matches) {
           <div class="bracket-round-title">Cuartos de Final <span class="bk-est-tag">estimado</span></div>
           <div class="bracket-round-sub">8 equipos · 11–12 jul 2026</div>
         </div>
-        <div class="bk-grid">${qfDef.map(m => estMatch(m.id, qfT[m.id])).join('')}</div>
+        <div class="bk-grid">${qfDef.map(m => koMatch(m.id, qfT[m.id], 'QUARTER_FINALS')).join('')}</div>
       </div>
 
       <div class="bracket-round">
@@ -782,7 +802,7 @@ function renderBracket(matches) {
           <div class="bracket-round-title">Semifinales <span class="bk-est-tag">estimado</span></div>
           <div class="bracket-round-sub">4 equipos · 14–15 jul 2026</div>
         </div>
-        <div class="bk-grid">${sfDef.map(m => estMatch(m.id, sfT[m.id])).join('')}</div>
+        <div class="bk-grid">${sfDef.map(m => koMatch(m.id, sfT[m.id], 'SEMI_FINALS')).join('')}</div>
       </div>
 
       <div class="bracket-round">
@@ -790,8 +810,8 @@ function renderBracket(matches) {
           <div class="bracket-round-title">🏆 Final <span class="bk-est-tag">estimado</span></div>
           <div class="bracket-round-sub">19 jul 2026 · MetLife Stadium, Nueva York</div>
         </div>
-        <div class="bk-grid">${estMatch('FINAL', finalT, true)}</div>
-        ${champion ? `<div class="bk-champion">🏆 Campeón estimado: <span class="bk-flag">${champion.flag}</span> <strong>${champion.nombre}</strong></div>` : ''}
+        <div class="bk-grid">${koMatch('FINAL', finalT, 'FINAL', true)}</div>
+        ${champion ? `<div class="bk-champion">🏆 ${championReal ? 'Campeón' : 'Campeón estimado'}: <span class="bk-flag">${champion.flag}</span> <strong>${champion.nombre}</strong></div>` : ''}
       </div>
 
     </div>
@@ -976,14 +996,16 @@ async function init() {
 
   // Cargar datos (fetch o datos embebidos)
   const embedded = getEmbeddedData();
-  const [gruposData, partidosData, noticiasData] = await Promise.all([
+  const [gruposData, partidosData, noticiasData, knockoutData] = await Promise.all([
     loadJSON('./resultados/grupos.json'),
     loadJSON('./resultados/partidos.json'),
     loadJSON('./noticias/noticias.json'),
+    loadJSON('./resultados/knockout.json'),
   ]);
 
   const matches  = (partidosData || embedded.partidos)?.matches   || [];
   const groups   = (gruposData   || embedded.grupos)?.groups      || [];
+  const knockout = (knockoutData || embedded.knockout)?.knockout  || [];
   const noticias = (noticiasData || embedded.noticias)?.noticias  || [];
 
   // Update timestamps
@@ -1016,7 +1038,7 @@ async function init() {
   initGroupFilter(groups);
 
   // Bracket / Llave eliminatoria
-  renderBracket(matches);
+  renderBracket(matches, knockout);
 
   // Noticias
   renderNews(noticias, 'news-container');
