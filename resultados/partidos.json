@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-27T04:14:22-05:00",
+  "lastUpdated": "2026-06-27T20:20:00-05:00",
   "matches": [
     {
       "id": "M001",
@@ -1520,8 +1520,11 @@
         "flag": "🇺🇿",
         "code": "UZB"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 2,
+        "g2": 1
+      },
+      "estado": "finalizado",
       "estadio": "Mercedes-Benz Stadium",
       "ciudad": "Atlanta"
     },
@@ -1688,8 +1691,11 @@
         "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
         "code": "ENG"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 0,
+        "g2": 2
+      },
+      "estado": "finalizado",
       "estadio": "MetLife Stadium",
       "ciudad": "Nueva York"
     },
@@ -1709,8 +1715,11 @@
         "flag": "🇬🇭",
         "code": "GHA"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 2,
+        "g2": 1
+      },
+      "estado": "finalizado",
       "estadio": "Lincoln Financial Field",
       "ciudad": "Filadelfia"
     }
