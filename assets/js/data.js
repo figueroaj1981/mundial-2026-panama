@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
  * Generado automáticamente por el scheduler.
- * Última actualización: 2026-06-27T20:41:39.093Z
+ * Última actualización: 2026-06-28T10:08:46.116Z
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-06-27T20:41:39.093Z",
+  lastUpdated: "2026-06-28T10:08:46.116Z",
   grupos: [
   {
     "id": "A",
@@ -564,55 +564,55 @@ window.MUNDIAL_DATA = {
         "name": "Argentina",
         "flag": "🇦🇷",
         "code": "ARG",
-        "pj": 2,
-        "pg": 2,
+        "pj": 3,
+        "pg": 3,
         "pe": 0,
         "pp": 0,
-        "gf": 5,
-        "gc": 0,
-        "dg": 5,
-        "pts": 6
+        "gf": 8,
+        "gc": 1,
+        "dg": 7,
+        "pts": 9
       },
       {
         "pos": 2,
         "name": "Austria",
         "flag": "🇦🇹",
         "code": "AUT",
-        "pj": 2,
+        "pj": 3,
         "pg": 1,
-        "pe": 0,
+        "pe": 1,
         "pp": 1,
-        "gf": 3,
-        "gc": 3,
+        "gf": 6,
+        "gc": 6,
         "dg": 0,
-        "pts": 3
+        "pts": 4
       },
       {
         "pos": 3,
         "name": "Argelia",
         "flag": "🇩🇿",
         "code": "ALG",
-        "pj": 2,
+        "pj": 3,
         "pg": 1,
-        "pe": 0,
+        "pe": 1,
         "pp": 1,
-        "gf": 2,
-        "gc": 4,
+        "gf": 5,
+        "gc": 7,
         "dg": -2,
-        "pts": 3
+        "pts": 4
       },
       {
         "pos": 4,
         "name": "Jordania",
         "flag": "🇯🇴",
         "code": "JOR",
-        "pj": 2,
+        "pj": 3,
         "pg": 0,
         "pe": 0,
-        "pp": 2,
-        "gf": 2,
-        "gc": 5,
-        "dg": -3,
+        "pp": 3,
+        "gf": 3,
+        "gc": 8,
+        "dg": -5,
         "pts": 0
       }
     ]
@@ -625,55 +625,55 @@ window.MUNDIAL_DATA = {
         "name": "Colombia",
         "flag": "🇨🇴",
         "code": "COL",
-        "pj": 2,
+        "pj": 3,
         "pg": 2,
-        "pe": 0,
+        "pe": 1,
         "pp": 0,
         "gf": 4,
         "gc": 1,
         "dg": 3,
-        "pts": 6
+        "pts": 7
       },
       {
         "pos": 2,
         "name": "Portugal",
         "flag": "🇵🇹",
         "code": "POR",
-        "pj": 2,
+        "pj": 3,
         "pg": 1,
-        "pe": 1,
+        "pe": 2,
         "pp": 0,
         "gf": 6,
         "gc": 1,
         "dg": 5,
-        "pts": 4
+        "pts": 5
       },
       {
         "pos": 3,
         "name": "RD Congo",
         "flag": "🇨🇩",
         "code": "COD",
-        "pj": 2,
-        "pg": 0,
+        "pj": 3,
+        "pg": 1,
         "pe": 1,
         "pp": 1,
-        "gf": 1,
-        "gc": 2,
-        "dg": -1,
-        "pts": 1
+        "gf": 3,
+        "gc": 3,
+        "dg": 0,
+        "pts": 4
       },
       {
         "pos": 4,
         "name": "Uzbekistán",
         "flag": "🇺🇿",
         "code": "UZB",
-        "pj": 2,
+        "pj": 3,
         "pg": 0,
         "pe": 0,
-        "pp": 2,
-        "gf": 1,
-        "gc": 8,
-        "dg": -7,
+        "pp": 3,
+        "gf": 2,
+        "gc": 10,
+        "dg": -8,
         "pts": 0
       }
     ]
@@ -687,55 +687,55 @@ window.MUNDIAL_DATA = {
         "name": "Inglaterra",
         "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
         "code": "ENG",
-        "pj": 2,
-        "pg": 1,
+        "pj": 3,
+        "pg": 2,
         "pe": 1,
         "pp": 0,
-        "gf": 4,
+        "gf": 6,
         "gc": 2,
-        "dg": 2,
-        "pts": 4
+        "dg": 4,
+        "pts": 7
       },
       {
         "pos": 2,
-        "name": "Ghana",
-        "flag": "🇬🇭",
-        "code": "GHA",
-        "pj": 2,
-        "pg": 1,
-        "pe": 1,
-        "pp": 0,
-        "gf": 1,
-        "gc": 0,
-        "dg": 1,
-        "pts": 4
-      },
-      {
-        "pos": 3,
         "name": "Croacia",
         "flag": "🇭🇷",
         "code": "CRO",
-        "pj": 2,
-        "pg": 1,
+        "pj": 3,
+        "pg": 2,
         "pe": 0,
         "pp": 1,
-        "gf": 3,
-        "gc": 4,
-        "dg": -1,
-        "pts": 3
+        "gf": 5,
+        "gc": 5,
+        "dg": 0,
+        "pts": 6
+      },
+      {
+        "pos": 3,
+        "name": "Ghana",
+        "flag": "🇬🇭",
+        "code": "GHA",
+        "pj": 3,
+        "pg": 1,
+        "pe": 1,
+        "pp": 1,
+        "gf": 2,
+        "gc": 2,
+        "dg": 0,
+        "pts": 4
       },
       {
         "pos": 4,
         "name": "Panamá",
         "flag": "🇵🇦",
         "code": "PAN",
-        "pj": 2,
+        "pj": 3,
         "pg": 0,
         "pe": 0,
-        "pp": 2,
+        "pp": 3,
         "gf": 0,
-        "gc": 2,
-        "dg": -2,
+        "gc": 4,
+        "dg": -4,
         "pts": 0,
         "panama": true
       }
@@ -2103,8 +2103,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇯🇴",
       "code": "JOR"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 3,
+      "g2": 1
+    },
+    "estado": "finalizado",
     "estadio": "AT&T Stadium",
     "ciudad": "Dallas"
   },
@@ -2124,8 +2127,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇦🇹",
       "code": "AUT"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 3,
+      "g2": 3
+    },
+    "estado": "finalizado",
     "estadio": "Arrowhead Stadium",
     "ciudad": "Kansas City"
   },
@@ -2241,8 +2247,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇨🇴",
       "code": "COL"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 0,
+      "g2": 0
+    },
+    "estado": "finalizado",
     "estadio": "Hard Rock Stadium",
     "ciudad": "Miami"
   },
@@ -2262,8 +2271,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇺🇿",
       "code": "UZB"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 2,
+      "g2": 1
+    },
+    "estado": "finalizado",
     "estadio": "Mercedes-Benz Stadium",
     "ciudad": "Atlanta"
   },
@@ -2430,8 +2442,11 @@ window.MUNDIAL_DATA = {
       "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
       "code": "ENG"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 0,
+      "g2": 2
+    },
+    "estado": "finalizado",
     "estadio": "MetLife Stadium",
     "ciudad": "Nueva York"
   },
@@ -2451,8 +2466,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇬🇭",
       "code": "GHA"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 2,
+      "g2": 1
+    },
+    "estado": "finalizado",
     "estadio": "Lincoln Financial Field",
     "ciudad": "Filadelfia"
   }
@@ -2461,21 +2479,21 @@ window.MUNDIAL_DATA = {
   {
     "id": "N-AUTO",
     "titulo": "⚽ Últimos resultados del Mundial 2026",
-    "resumen": "Marcadores recién actualizados: Bélgica 5-1 Nueva Zelanda · Egipto 1-1 Irán · España 1-0 Uruguay · Arabia Saudita 0-0 Cabo Verde · Francia 4-1 Noruega · Senegal 5-0 Irak. Las tablas de grupos quedaron al día. (Actualización automática)",
+    "resumen": "Marcadores recién actualizados: Argentina 3-1 Jordania · Argelia 3-3 Austria · Portugal 0-0 Colombia. Las tablas de grupos quedaron al día. (Actualización automática)",
     "imagen": null,
     "categoria": "Resultados",
-    "fecha": "2026-06-27T04:14:22-05:00",
+    "fecha": "2026-06-28T05:08:46-05:00",
     "fuente": "Actualización automática",
     "url": "https://www.fifa.com/es/tournaments/mens/worldcup/canadamexicousa2026",
     "destacada": false
   },
   {
     "id": "N007",
-    "titulo": "🇵🇦 Hoy el cierre: Panamá se mide a Inglaterra en su último partido del Mundial",
-    "resumen": "Este 27 de junio (4:00 pm, hora Panamá) la 'Roja' cierra su participación en el Mundial 2026 ante Inglaterra en el MetLife Stadium de Nueva York. Tras dos derrotas ajustadas ante Ghana y Croacia, Panamá buscará despedirse con su mejor versión frente a una de las potencias del torneo. ¡Gracias por la entrega, Panamá — todo un país está orgulloso de su selección!",
+    "titulo": "🇵🇦 Panamá se despide del Mundial: 0-2 ante Inglaterra, pero con la frente en alto",
+    "resumen": "Inglaterra venció 2-0 a Panamá (goles de Bellingham y Kane) en el cierre del Grupo L en el MetLife Stadium de Nueva York. La 'Roja' culmina su Mundial 2026 sin sumar puntos, pero deja una experiencia invaluable y la ilusión de todo un país. ¡Gracias por representarnos con orgullo, Panamá — esto es parte del camino hacia un futuro aún más grande!",
     "imagen": null,
     "categoria": "Panamá",
-    "fecha": "2026-06-27T08:00:00-05:00",
+    "fecha": "2026-06-27T20:00:00-05:00",
     "fuente": "ESPN",
     "url": "https://www.espn.com",
     "destacada": true

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-27T20:20:00-05:00",
+  "lastUpdated": "2026-06-28T05:08:46-05:00",
   "matches": [
     {
       "id": "M001",
@@ -1361,8 +1361,11 @@
         "flag": "🇯🇴",
         "code": "JOR"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 3,
+        "g2": 1
+      },
+      "estado": "finalizado",
       "estadio": "AT&T Stadium",
       "ciudad": "Dallas"
     },
@@ -1382,8 +1385,11 @@
         "flag": "🇦🇹",
         "code": "AUT"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 3,
+        "g2": 3
+      },
+      "estado": "finalizado",
       "estadio": "Arrowhead Stadium",
       "ciudad": "Kansas City"
     },
@@ -1499,8 +1505,11 @@
         "flag": "🇨🇴",
         "code": "COL"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 0,
+        "g2": 0
+      },
+      "estado": "finalizado",
       "estadio": "Hard Rock Stadium",
       "ciudad": "Miami"
     },

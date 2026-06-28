@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-27T20:20:00-05:00",
+  "lastUpdated": "2026-06-28T05:08:46-05:00",
   "format": "12 grupos de 4 equipos · Top 2 + 8 mejores 3ros avanzan",
   "groups": [
     {
@@ -559,55 +559,55 @@
           "name": "Argentina",
           "flag": "🇦🇷",
           "code": "ARG",
-          "pj": 2,
-          "pg": 2,
+          "pj": 3,
+          "pg": 3,
           "pe": 0,
           "pp": 0,
-          "gf": 5,
-          "gc": 0,
-          "dg": 5,
-          "pts": 6
+          "gf": 8,
+          "gc": 1,
+          "dg": 7,
+          "pts": 9
         },
         {
           "pos": 2,
           "name": "Austria",
           "flag": "🇦🇹",
           "code": "AUT",
-          "pj": 2,
+          "pj": 3,
           "pg": 1,
-          "pe": 0,
+          "pe": 1,
           "pp": 1,
-          "gf": 3,
-          "gc": 3,
+          "gf": 6,
+          "gc": 6,
           "dg": 0,
-          "pts": 3
+          "pts": 4
         },
         {
           "pos": 3,
           "name": "Argelia",
           "flag": "🇩🇿",
           "code": "ALG",
-          "pj": 2,
+          "pj": 3,
           "pg": 1,
-          "pe": 0,
+          "pe": 1,
           "pp": 1,
-          "gf": 2,
-          "gc": 4,
+          "gf": 5,
+          "gc": 7,
           "dg": -2,
-          "pts": 3
+          "pts": 4
         },
         {
           "pos": 4,
           "name": "Jordania",
           "flag": "🇯🇴",
           "code": "JOR",
-          "pj": 2,
+          "pj": 3,
           "pg": 0,
           "pe": 0,
-          "pp": 2,
-          "gf": 2,
-          "gc": 5,
-          "dg": -3,
+          "pp": 3,
+          "gf": 3,
+          "gc": 8,
+          "dg": -5,
           "pts": 0
         }
       ]
@@ -620,28 +620,28 @@
           "name": "Colombia",
           "flag": "🇨🇴",
           "code": "COL",
-          "pj": 2,
+          "pj": 3,
           "pg": 2,
-          "pe": 0,
+          "pe": 1,
           "pp": 0,
           "gf": 4,
           "gc": 1,
           "dg": 3,
-          "pts": 6
+          "pts": 7
         },
         {
           "pos": 2,
           "name": "Portugal",
           "flag": "🇵🇹",
           "code": "POR",
-          "pj": 2,
+          "pj": 3,
           "pg": 1,
-          "pe": 1,
+          "pe": 2,
           "pp": 0,
           "gf": 6,
           "gc": 1,
           "dg": 5,
-          "pts": 4
+          "pts": 5
         },
         {
           "pos": 3,
