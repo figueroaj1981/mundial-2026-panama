@@ -739,6 +739,20 @@ function renderBracket(matches, knockout) {
   const champion = finalRes.team;
   const championReal = finalRes.real;
 
+  // Fecha/hora de cada cruce, desde los fixtures de eliminatoria que la rutina trae a la lista
+  const koByPair = {};
+  matches.forEach(m => {
+    if (!m.fase) return;
+    const c1 = m.equipo1 && m.equipo1.code, c2 = m.equipo2 && m.equipo2.code;
+    if (c1 && c2) koByPair[[c1, c2].sort().join('-')] = m;
+  });
+  function fhHtml(a, b) {
+    if (!a || !b) return '';
+    const f = koByPair[[a.code, b.code].sort().join('-')];
+    if (!f || !f.fecha) return '';
+    return `<div class="bk-match-date">📅 ${formatDate(f.fecha)}${f.hora ? ' · ' + f.hora : ''}</div>`;
+  }
+
   // Render de un cruce: real (marcador + ganador en verde ✔) o estimado (amarillo)
   function koMatch(id, pair, stage, isFinal = false) {
     const a = pair[0], b = pair[1];
@@ -753,14 +767,16 @@ function renderBracket(matches, knockout) {
     };
     const mid = real ? `<div class="bk-vs">${k.g1} - ${k.g2}</div>` : `<div class="bk-vs">VS</div>`;
     const pan = (a && a.panama) || (b && b.panama);
-    return `<div class="bk-match ${pan ? 'bk-match-panama' : ''} ${isFinal ? 'bk-match-final' : ''}"><div class="bk-match-id">${id}</div>${tHtml(a)}${mid}${tHtml(b)}</div>`;
+    return `<div class="bk-match ${pan ? 'bk-match-panama' : ''} ${isFinal ? 'bk-match-final' : ''}"><div class="bk-match-id">${id}</div>${fhHtml(a, b)}${tHtml(a)}${mid}${tHtml(b)}</div>`;
   }
 
   function matchCard(m, isFinal = false) {
     const hasPan = m.label === '🇵🇦';
+    const pr = r32teams[m.id];
     return `
       <div class="bk-match ${hasPan ? 'bk-match-panama' : ''} ${isFinal ? 'bk-match-final' : ''}">
         ${m.id ? `<div class="bk-match-id">${m.id}${m.label ? ' ' + m.label : ''}</div>` : ''}
+        ${pr ? fhHtml(pr[0], pr[1]) : ''}
         ${m.a}
         <div class="bk-vs">VS</div>
         ${m.b}
