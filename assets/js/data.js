@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
  * Generado automáticamente por el scheduler.
- * Última actualización: 2026-06-29T14:37:12.639Z
+ * Última actualización: 2026-06-29T21:56:28.659Z
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-06-29T14:37:12.639Z",
+  lastUpdated: "2026-06-29T21:56:28.659Z",
   grupos: [
   {
     "id": "A",
@@ -2473,6 +2473,348 @@ window.MUNDIAL_DATA = {
     "estado": "finalizado",
     "estadio": "Lincoln Financial Field",
     "ciudad": "Filadelfia"
+  },
+  {
+    "id": "K537417",
+    "fase": "16avos",
+    "fecha": "2026-06-28",
+    "hora": "14:00",
+    "timezone": "America/Panama",
+    "equipo1": {
+      "nombre": "Sudáfrica",
+      "flag": "🇿🇦",
+      "code": "RSA"
+    },
+    "equipo2": {
+      "nombre": "Canadá",
+      "flag": "🇨🇦",
+      "code": "CAN"
+    },
+    "marcador": {
+      "g1": 0,
+      "g2": 1
+    },
+    "estado": "finalizado",
+    "estadio": "Por confirmar",
+    "ciudad": ""
+  },
+  {
+    "id": "K537423",
+    "fase": "16avos",
+    "fecha": "2026-06-29",
+    "hora": "12:00",
+    "timezone": "America/Panama",
+    "equipo1": {
+      "nombre": "Brasil",
+      "flag": "🇧🇷",
+      "code": "BRA"
+    },
+    "equipo2": {
+      "nombre": "Japón",
+      "flag": "🇯🇵",
+      "code": "JPN"
+    },
+    "marcador": {
+      "g1": 2,
+      "g2": 1
+    },
+    "estado": "finalizado",
+    "estadio": "Por confirmar",
+    "ciudad": ""
+  },
+  {
+    "id": "K537415",
+    "fase": "16avos",
+    "fecha": "2026-06-29",
+    "hora": "15:30",
+    "timezone": "America/Panama",
+    "equipo1": {
+      "nombre": "Alemania",
+      "flag": "🇩🇪",
+      "code": "GER"
+    },
+    "equipo2": {
+      "nombre": "Paraguay",
+      "flag": "🇵🇾",
+      "code": "PAR"
+    },
+    "marcador": null,
+    "estado": "programado",
+    "estadio": "Por confirmar",
+    "ciudad": ""
+  },
+  {
+    "id": "K537418",
+    "fase": "16avos",
+    "fecha": "2026-06-29",
+    "hora": "20:00",
+    "timezone": "America/Panama",
+    "equipo1": {
+      "nombre": "Países Bajos",
+      "flag": "🇳🇱",
+      "code": "NED"
+    },
+    "equipo2": {
+      "nombre": "Marruecos",
+      "flag": "🇲🇦",
+      "code": "MAR"
+    },
+    "marcador": null,
+    "estado": "programado",
+    "estadio": "Por confirmar",
+    "ciudad": ""
+  },
+  {
+    "id": "K537424",
+    "fase": "16avos",
+    "fecha": "2026-06-30",
+    "hora": "12:00",
+    "timezone": "America/Panama",
+    "equipo1": {
+      "nombre": "Costa de Marfil",
+      "flag": "🇨🇮",
+      "code": "CIV"
+    },
+    "equipo2": {
+      "nombre": "Noruega",
+      "flag": "🇳🇴",
+      "code": "NOR"
+    },
+    "marcador": null,
+    "estado": "programado",
+    "estadio": "Por confirmar",
+    "ciudad": ""
+  },
+  {
+    "id": "K537416",
+    "fase": "16avos",
+    "fecha": "2026-06-30",
+    "hora": "16:00",
+    "timezone": "America/Panama",
+    "equipo1": {
+      "nombre": "Francia",
+      "flag": "🇫🇷",
+      "code": "FRA"
+    },
+    "equipo2": {
+      "nombre": "Suecia",
+      "flag": "🇸🇪",
+      "code": "SWE"
+    },
+    "marcador": null,
+    "estado": "programado",
+    "estadio": "Por confirmar",
+    "ciudad": ""
+  },
+  {
+    "id": "K537425",
+    "fase": "16avos",
+    "fecha": "2026-06-30",
+    "hora": "20:00",
+    "timezone": "America/Panama",
+    "equipo1": {
+      "nombre": "México",
+      "flag": "🇲🇽",
+      "code": "MEX"
+    },
+    "equipo2": {
+      "nombre": "Ecuador",
+      "flag": "🇪🇨",
+      "code": "ECU"
+    },
+    "marcador": null,
+    "estado": "programado",
+    "estadio": "Por confirmar",
+    "ciudad": ""
+  },
+  {
+    "id": "K537426",
+    "fase": "16avos",
+    "fecha": "2026-07-01",
+    "hora": "11:00",
+    "timezone": "America/Panama",
+    "equipo1": {
+      "nombre": "Inglaterra",
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "code": "ENG"
+    },
+    "equipo2": {
+      "nombre": "Congo DR",
+      "flag": "🇨🇩",
+      "code": "COD"
+    },
+    "marcador": null,
+    "estado": "programado",
+    "estadio": "Por confirmar",
+    "ciudad": ""
+  },
+  {
+    "id": "K537422",
+    "fase": "16avos",
+    "fecha": "2026-07-01",
+    "hora": "15:00",
+    "timezone": "America/Panama",
+    "equipo1": {
+      "nombre": "Bélgica",
+      "flag": "🇧🇪",
+      "code": "BEL"
+    },
+    "equipo2": {
+      "nombre": "Senegal",
+      "flag": "🇸🇳",
+      "code": "SEN"
+    },
+    "marcador": null,
+    "estado": "programado",
+    "estadio": "Por confirmar",
+    "ciudad": ""
+  },
+  {
+    "id": "K537421",
+    "fase": "16avos",
+    "fecha": "2026-07-01",
+    "hora": "19:00",
+    "timezone": "America/Panama",
+    "equipo1": {
+      "nombre": "USA",
+      "flag": "🇺🇸",
+      "code": "USA"
+    },
+    "equipo2": {
+      "nombre": "Bosnia y H.",
+      "flag": "🇧🇦",
+      "code": "BIH"
+    },
+    "marcador": null,
+    "estado": "programado",
+    "estadio": "Por confirmar",
+    "ciudad": ""
+  },
+  {
+    "id": "K537420",
+    "fase": "16avos",
+    "fecha": "2026-07-02",
+    "hora": "14:00",
+    "timezone": "America/Panama",
+    "equipo1": {
+      "nombre": "España",
+      "flag": "🇪🇸",
+      "code": "ESP"
+    },
+    "equipo2": {
+      "nombre": "Austria",
+      "flag": "🇦🇹",
+      "code": "AUT"
+    },
+    "marcador": null,
+    "estado": "programado",
+    "estadio": "Por confirmar",
+    "ciudad": ""
+  },
+  {
+    "id": "K537419",
+    "fase": "16avos",
+    "fecha": "2026-07-02",
+    "hora": "18:00",
+    "timezone": "America/Panama",
+    "equipo1": {
+      "nombre": "Portugal",
+      "flag": "🇵🇹",
+      "code": "POR"
+    },
+    "equipo2": {
+      "nombre": "Croacia",
+      "flag": "🇭🇷",
+      "code": "CRO"
+    },
+    "marcador": null,
+    "estado": "programado",
+    "estadio": "Por confirmar",
+    "ciudad": ""
+  },
+  {
+    "id": "K537429",
+    "fase": "16avos",
+    "fecha": "2026-07-02",
+    "hora": "22:00",
+    "timezone": "America/Panama",
+    "equipo1": {
+      "nombre": "Suiza",
+      "flag": "🇨🇭",
+      "code": "SUI"
+    },
+    "equipo2": {
+      "nombre": "Argelia",
+      "flag": "🇩🇿",
+      "code": "ALG"
+    },
+    "marcador": null,
+    "estado": "programado",
+    "estadio": "Por confirmar",
+    "ciudad": ""
+  },
+  {
+    "id": "K537428",
+    "fase": "16avos",
+    "fecha": "2026-07-03",
+    "hora": "13:00",
+    "timezone": "America/Panama",
+    "equipo1": {
+      "nombre": "Australia",
+      "flag": "🇦🇺",
+      "code": "AUS"
+    },
+    "equipo2": {
+      "nombre": "Egipto",
+      "flag": "🇪🇬",
+      "code": "EGY"
+    },
+    "marcador": null,
+    "estado": "programado",
+    "estadio": "Por confirmar",
+    "ciudad": ""
+  },
+  {
+    "id": "K537427",
+    "fase": "16avos",
+    "fecha": "2026-07-03",
+    "hora": "17:00",
+    "timezone": "America/Panama",
+    "equipo1": {
+      "nombre": "Argentina",
+      "flag": "🇦🇷",
+      "code": "ARG"
+    },
+    "equipo2": {
+      "nombre": "Cabo Verde",
+      "flag": "🇨🇻",
+      "code": "CPV"
+    },
+    "marcador": null,
+    "estado": "programado",
+    "estadio": "Por confirmar",
+    "ciudad": ""
+  },
+  {
+    "id": "K537430",
+    "fase": "16avos",
+    "fecha": "2026-07-03",
+    "hora": "20:30",
+    "timezone": "America/Panama",
+    "equipo1": {
+      "nombre": "Colombia",
+      "flag": "🇨🇴",
+      "code": "COL"
+    },
+    "equipo2": {
+      "nombre": "Ghana",
+      "flag": "🇬🇭",
+      "code": "GHA"
+    },
+    "marcador": null,
+    "estado": "programado",
+    "estadio": "Por confirmar",
+    "ciudad": ""
   }
 ],
   noticias: [
@@ -2573,6 +2915,14 @@ window.MUNDIAL_DATA = {
     "g1": 0,
     "g2": 1,
     "winner": "CAN"
+  },
+  {
+    "stage": "LAST_32",
+    "home": "BRA",
+    "away": "JPN",
+    "g1": 2,
+    "g2": 1,
+    "winner": "BRA"
   }
 ]
 };
