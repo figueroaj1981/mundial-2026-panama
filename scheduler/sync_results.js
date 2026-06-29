@@ -170,6 +170,59 @@ function syncKnockout(apiData, partidos) {
   } catch (e) { log(`Knockout error: ${e.message}`); }
 }
 
+// Inserta/actualiza los PARTIDOS de eliminatoria en partidos.json (para que las pestañas los muestren)
+function syncKnockoutFixtures(apiData, partidos) {
+  let changes = 0;
+  try {
+    const ourCodes = new Set();
+    const teamByCode = {};
+    partidos.matches.forEach(m => {
+      [m.equipo1, m.equipo2].forEach(e => {
+        if (e && e.code) { ourCodes.add(e.code); if (!teamByCode[e.code]) teamByCode[e.code] = { nombre: e.nombre, flag: e.flag, code: e.code }; }
+      });
+    });
+    const toOur = (tla) => { if (!tla) return null; if (ourCodes.has(tla)) return tla; for (const oc of ourCodes) if (codeMatches(oc, tla)) return oc; return null; };
+    const teamObj = (t) => {
+      const c = toOur(t && t.tla);
+      if (c && teamByCode[c]) return teamByCode[c];
+      if (t && t.name) return { nombre: t.name, flag: '🏳', code: t.tla || '' };
+      return null;
+    };
+    const stageLabel = { LAST_32: '16avos', LAST_16: 'Octavos', QUARTER_FINALS: 'Cuartos', SEMI_FINALS: 'Semifinal', THIRD_PLACE: '3er puesto', FINAL: 'Final' };
+    const utcToPanama = (utc) => {
+      const d = new Date(new Date(utc).getTime() - 5 * 3600 * 1000);
+      const p = n => String(n).padStart(2, '0');
+      return { fecha: `${d.getUTCFullYear()}-${p(d.getUTCMonth() + 1)}-${p(d.getUTCDate())}`, hora: `${p(d.getUTCHours())}:${p(d.getUTCMinutes())}` };
+    };
+    const byId = {};
+    partidos.matches.forEach(m => { byId[m.id] = m; });
+
+    (apiData.matches || []).forEach(m => {
+      const fase = stageLabel[m.stage];
+      if (!fase) return;
+      const e1 = teamObj(m.homeTeam), e2 = teamObj(m.awayTeam);
+      if (!e1 || !e2) return; // aún por definir
+      const id = 'K' + m.id;
+      const dt = m.utcDate ? utcToPanama(m.utcDate) : { fecha: '', hora: '' };
+      const ft = m.score && m.score.fullTime;
+      const finished = m.status === 'FINISHED' && ft && ft.home !== null && ft.home !== undefined;
+      const estado = finished ? 'finalizado' : 'programado';
+      const marcador = finished ? { g1: ft.home, g2: ft.away } : null;
+      const ex = byId[id];
+      if (!ex) {
+        partidos.matches.push({ id, fase, fecha: dt.fecha, hora: dt.hora, timezone: 'America/Panama', equipo1: e1, equipo2: e2, marcador, estado, estadio: m.venue || 'Por confirmar', ciudad: m.venue || '' });
+        changes++;
+      } else {
+        const before = JSON.stringify([ex.marcador, ex.estado, ex.equipo1.code, ex.equipo2.code, ex.fecha, ex.hora]);
+        ex.fase = fase; ex.fecha = dt.fecha; ex.hora = dt.hora; ex.equipo1 = e1; ex.equipo2 = e2; ex.marcador = marcador; ex.estado = estado; ex.estadio = m.venue || ex.estadio; ex.ciudad = m.venue || ex.ciudad;
+        if (before !== JSON.stringify([ex.marcador, ex.estado, ex.equipo1.code, ex.equipo2.code, ex.fecha, ex.hora])) changes++;
+      }
+    });
+    if (changes) log(`✓ Fixtures de eliminatoria: ${changes} agregados/actualizados.`);
+  } catch (e) { log(`KO fixtures error: ${e.message}`); }
+  return changes;
+}
+
 async function main() {
   const apiKey = process.env.FOOTBALL_DATA_API_KEY;
   if (!apiKey) { log('Sin FOOTBALL_DATA_API_KEY — no se hace nada.'); return; }
@@ -202,10 +255,13 @@ async function main() {
     }
   }
 
-  if (cambios === 0) { log('No hay partidos nuevos finalizados. Sin cambios.'); return; }
+  // Insertar/actualizar fixtures de eliminatoria (16avos → final) para que aparezcan en las pestañas
+  const koChanges = syncKnockoutFixtures(apiData, partidos);
 
-  // VALIDACIÓN DE SEGURIDAD antes de escribir
-  if (partidos.matches.length !== totalAntes || totalAntes < 72) {
+  if (cambios === 0 && koChanges === 0) { log('No hay partidos nuevos. Sin cambios.'); return; }
+
+  // VALIDACIÓN DE SEGURIDAD antes de escribir (la lista puede crecer por eliminatorias, nunca encoger por debajo de 72)
+  if (partidos.matches.length < 72) {
     log(`ABORT: conteo de partidos inesperado (${partidos.matches.length}).`); return;
   }
   if (!grupos.groups || grupos.groups.length !== 12 || grupos.groups.some(g => g.teams.length !== 4)) {

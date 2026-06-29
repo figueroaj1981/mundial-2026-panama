@@ -219,7 +219,7 @@ function buildMatchCard(m) {
     <div class="match-card fade-in-up ${isPan ? 'panama-match' : ''}">
       ${isPan ? '<div class="panama-match-tag">🇵🇦 Panamá</div>' : ''}
       <div class="match-card-header">
-        <span class="match-group">Grupo ${m.grupo}</span>
+        <span class="match-group">${m.fase ? m.fase : 'Grupo ' + m.grupo}</span>
         <span class="match-status ${getStatusClass(m.estado)}">${getStatusLabel(m.estado)}</span>
       </div>
       <div class="match-teams">
@@ -271,6 +271,7 @@ function renderMatches(matches, containerId, options = {}) {
   if (options.groupBy) {
     const byGroup = {};
     filtered.forEach(m => {
+      if (m.fase || !/^[A-L]$/.test(m.grupo || '')) return; // las eliminatorias no van en la vista por grupos
       if (!byGroup[m.grupo]) byGroup[m.grupo] = [];
       byGroup[m.grupo].push(m);
     });
@@ -546,6 +547,7 @@ function renderPanamaSection(matches) {
 function computeGroupStandings(matches) {
   const groups = {};
   matches.forEach(m => {
+    if (m.fase || !/^[A-L]$/.test(m.grupo || '')) return; // ignorar partidos de eliminatoria
     const g = m.grupo;
     if (!groups[g]) groups[g] = {};
     [m.equipo1, m.equipo2].forEach(eq => {
