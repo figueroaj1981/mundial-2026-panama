@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
  * Generado automáticamente por el scheduler.
- * Última actualización: 2026-06-28T20:44:40.929Z
+ * Última actualización: 2026-06-29T14:37:12.639Z
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-06-28T20:44:40.929Z",
+  lastUpdated: "2026-06-29T14:37:12.639Z",
   grupos: [
   {
     "id": "A",
@@ -2565,5 +2565,14 @@ window.MUNDIAL_DATA = {
     "destacada": false
   }
 ],
-  knockout: []
+  knockout: [
+  {
+    "stage": "LAST_32",
+    "home": "RSA",
+    "away": "CAN",
+    "g1": 0,
+    "g2": 1,
+    "winner": "CAN"
+  }
+]
 };
