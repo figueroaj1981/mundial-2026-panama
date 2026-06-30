@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
  * Generado automáticamente por el scheduler.
- * Última actualización: 2026-06-29T21:56:28.659Z
+ * Última actualización: 2026-06-30T10:44:38.824Z
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-06-29T21:56:28.659Z",
+  lastUpdated: "2026-06-30T10:44:38.824Z",
   grupos: [
   {
     "id": "A",
@@ -2538,8 +2538,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇵🇾",
       "code": "PAR"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 4,
+      "g2": 5
+    },
+    "estado": "finalizado",
     "estadio": "Por confirmar",
     "ciudad": ""
   },
@@ -2559,8 +2562,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇲🇦",
       "code": "MAR"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 3,
+      "g2": 4
+    },
+    "estado": "finalizado",
     "estadio": "Por confirmar",
     "ciudad": ""
   },
@@ -2815,16 +2821,37 @@ window.MUNDIAL_DATA = {
     "estado": "programado",
     "estadio": "Por confirmar",
     "ciudad": ""
+  },
+  {
+    "id": "K537376",
+    "fase": "Octavos",
+    "fecha": "2026-07-04",
+    "hora": "12:00",
+    "timezone": "America/Panama",
+    "equipo1": {
+      "nombre": "Canadá",
+      "flag": "🇨🇦",
+      "code": "CAN"
+    },
+    "equipo2": {
+      "nombre": "Marruecos",
+      "flag": "🇲🇦",
+      "code": "MAR"
+    },
+    "marcador": null,
+    "estado": "programado",
+    "estadio": "Por confirmar",
+    "ciudad": ""
   }
 ],
   noticias: [
   {
     "id": "N-AUTO",
     "titulo": "⚽ Últimos resultados del Mundial 2026",
-    "resumen": "Marcadores recién actualizados: Argentina 3-1 Jordania · Argelia 3-3 Austria · Portugal 0-0 Colombia. Las tablas de grupos quedaron al día. (Actualización automática)",
+    "resumen": "Marcadores recién actualizados: Alemania 4-5 Paraguay · Países Bajos 3-4 Marruecos. Las tablas de grupos quedaron al día. (Actualización automática)",
     "imagen": null,
     "categoria": "Resultados",
-    "fecha": "2026-06-28T05:08:46-05:00",
+    "fecha": "2026-06-30T05:44:38-05:00",
     "fuente": "Actualización automática",
     "url": "https://www.fifa.com/es/tournaments/mens/worldcup/canadamexicousa2026",
     "destacada": false
@@ -2923,6 +2950,22 @@ window.MUNDIAL_DATA = {
     "g1": 2,
     "g2": 1,
     "winner": "BRA"
+  },
+  {
+    "stage": "LAST_32",
+    "home": "GER",
+    "away": "PAR",
+    "g1": 4,
+    "g2": 5,
+    "winner": "PAR"
+  },
+  {
+    "stage": "LAST_32",
+    "home": "NED",
+    "away": "MAR",
+    "g1": 3,
+    "g2": 4,
+    "winner": "MAR"
   }
 ]
 };

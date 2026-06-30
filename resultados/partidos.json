@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-29T16:56:28-05:00",
+  "lastUpdated": "2026-06-30T05:44:38-05:00",
   "matches": [
     {
       "id": "M001",
@@ -1796,8 +1796,11 @@
         "flag": "🇵🇾",
         "code": "PAR"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 4,
+        "g2": 5
+      },
+      "estado": "finalizado",
       "estadio": "Por confirmar",
       "ciudad": ""
     },
@@ -1817,8 +1820,11 @@
         "flag": "🇲🇦",
         "code": "MAR"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 3,
+        "g2": 4
+      },
+      "estado": "finalizado",
       "estadio": "Por confirmar",
       "ciudad": ""
     },
@@ -2068,6 +2074,27 @@
         "nombre": "Ghana",
         "flag": "🇬🇭",
         "code": "GHA"
+      },
+      "marcador": null,
+      "estado": "programado",
+      "estadio": "Por confirmar",
+      "ciudad": ""
+    },
+    {
+      "id": "K537376",
+      "fase": "Octavos",
+      "fecha": "2026-07-04",
+      "hora": "12:00",
+      "timezone": "America/Panama",
+      "equipo1": {
+        "nombre": "Canadá",
+        "flag": "🇨🇦",
+        "code": "CAN"
+      },
+      "equipo2": {
+        "nombre": "Marruecos",
+        "flag": "🇲🇦",
+        "code": "MAR"
       },
       "marcador": null,
       "estado": "programado",
