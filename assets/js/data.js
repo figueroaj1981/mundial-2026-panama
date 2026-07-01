@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
  * Generado automáticamente por el scheduler.
- * Última actualización: 2026-06-30T17:30:21.501Z
+ * Última actualización: 2026-07-01T10:58:14.387Z
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-06-30T17:30:21.501Z",
+  lastUpdated: "2026-07-01T10:58:14.387Z",
   grupos: [
   {
     "id": "A",
@@ -2586,8 +2586,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇳🇴",
       "code": "NOR"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 1,
+      "g2": 2
+    },
+    "estado": "finalizado",
     "estadio": "Por confirmar",
     "ciudad": ""
   },
@@ -2607,8 +2610,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇸🇪",
       "code": "SWE"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 3,
+      "g2": 0
+    },
+    "estado": "finalizado",
     "estadio": "Por confirmar",
     "ciudad": ""
   },
@@ -2628,8 +2634,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇪🇨",
       "code": "ECU"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 2,
+      "g2": 0
+    },
+    "estado": "finalizado",
     "estadio": "Por confirmar",
     "ciudad": ""
   },
@@ -2842,16 +2851,58 @@ window.MUNDIAL_DATA = {
     "estado": "programado",
     "estadio": "Por confirmar",
     "ciudad": ""
+  },
+  {
+    "id": "K537375",
+    "fase": "Octavos",
+    "fecha": "2026-07-04",
+    "hora": "16:00",
+    "timezone": "America/Panama",
+    "equipo1": {
+      "nombre": "Paraguay",
+      "flag": "🇵🇾",
+      "code": "PAR"
+    },
+    "equipo2": {
+      "nombre": "Francia",
+      "flag": "🇫🇷",
+      "code": "FRA"
+    },
+    "marcador": null,
+    "estado": "programado",
+    "estadio": "Por confirmar",
+    "ciudad": ""
+  },
+  {
+    "id": "K537377",
+    "fase": "Octavos",
+    "fecha": "2026-07-05",
+    "hora": "15:00",
+    "timezone": "America/Panama",
+    "equipo1": {
+      "nombre": "Brasil",
+      "flag": "🇧🇷",
+      "code": "BRA"
+    },
+    "equipo2": {
+      "nombre": "Noruega",
+      "flag": "🇳🇴",
+      "code": "NOR"
+    },
+    "marcador": null,
+    "estado": "programado",
+    "estadio": "Por confirmar",
+    "ciudad": ""
   }
 ],
   noticias: [
   {
     "id": "N-AUTO",
     "titulo": "⚽ Últimos resultados del Mundial 2026",
-    "resumen": "Marcadores recién actualizados: Alemania 4-5 Paraguay · Países Bajos 3-4 Marruecos. Las tablas de grupos quedaron al día. (Actualización automática)",
+    "resumen": "Marcadores recién actualizados: Costa de Marfil 1-2 Noruega · Francia 3-0 Suecia · México 2-0 Ecuador. Las tablas de grupos quedaron al día. (Actualización automática)",
     "imagen": null,
     "categoria": "Resultados",
-    "fecha": "2026-06-30T05:44:38-05:00",
+    "fecha": "2026-07-01T05:58:14-05:00",
     "fuente": "Actualización automática",
     "url": "https://www.fifa.com/es/tournaments/mens/worldcup/canadamexicousa2026",
     "destacada": false
@@ -2966,6 +3017,30 @@ window.MUNDIAL_DATA = {
     "g1": 3,
     "g2": 4,
     "winner": "MAR"
+  },
+  {
+    "stage": "LAST_32",
+    "home": "CIV",
+    "away": "NOR",
+    "g1": 1,
+    "g2": 2,
+    "winner": "NOR"
+  },
+  {
+    "stage": "LAST_32",
+    "home": "FRA",
+    "away": "SWE",
+    "g1": 3,
+    "g2": 0,
+    "winner": "FRA"
+  },
+  {
+    "stage": "LAST_32",
+    "home": "MEX",
+    "away": "ECU",
+    "g1": 2,
+    "g2": 0,
+    "winner": "MEX"
   }
 ]
 };

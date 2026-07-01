@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-30T05:44:38-05:00",
+  "lastUpdated": "2026-07-01T05:58:14-05:00",
   "matches": [
     {
       "id": "M001",
@@ -1844,8 +1844,11 @@
         "flag": "🇳🇴",
         "code": "NOR"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 1,
+        "g2": 2
+      },
+      "estado": "finalizado",
       "estadio": "Por confirmar",
       "ciudad": ""
     },
@@ -1865,8 +1868,11 @@
         "flag": "🇸🇪",
         "code": "SWE"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 3,
+        "g2": 0
+      },
+      "estado": "finalizado",
       "estadio": "Por confirmar",
       "ciudad": ""
     },
@@ -1886,8 +1892,11 @@
         "flag": "🇪🇨",
         "code": "ECU"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 2,
+        "g2": 0
+      },
+      "estado": "finalizado",
       "estadio": "Por confirmar",
       "ciudad": ""
     },
@@ -2095,6 +2104,48 @@
         "nombre": "Marruecos",
         "flag": "🇲🇦",
         "code": "MAR"
+      },
+      "marcador": null,
+      "estado": "programado",
+      "estadio": "Por confirmar",
+      "ciudad": ""
+    },
+    {
+      "id": "K537375",
+      "fase": "Octavos",
+      "fecha": "2026-07-04",
+      "hora": "16:00",
+      "timezone": "America/Panama",
+      "equipo1": {
+        "nombre": "Paraguay",
+        "flag": "🇵🇾",
+        "code": "PAR"
+      },
+      "equipo2": {
+        "nombre": "Francia",
+        "flag": "🇫🇷",
+        "code": "FRA"
+      },
+      "marcador": null,
+      "estado": "programado",
+      "estadio": "Por confirmar",
+      "ciudad": ""
+    },
+    {
+      "id": "K537377",
+      "fase": "Octavos",
+      "fecha": "2026-07-05",
+      "hora": "15:00",
+      "timezone": "America/Panama",
+      "equipo1": {
+        "nombre": "Brasil",
+        "flag": "🇧🇷",
+        "code": "BRA"
+      },
+      "equipo2": {
+        "nombre": "Noruega",
+        "flag": "🇳🇴",
+        "code": "NOR"
       },
       "marcador": null,
       "estado": "programado",

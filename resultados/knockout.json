@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-30T12:30:21-05:00",
+  "lastUpdated": "2026-07-01T05:58:14-05:00",
   "knockout": [
     {
       "stage": "LAST_32",
@@ -32,6 +32,30 @@
       "g1": 3,
       "g2": 4,
       "winner": "MAR"
+    },
+    {
+      "stage": "LAST_32",
+      "home": "CIV",
+      "away": "NOR",
+      "g1": 1,
+      "g2": 2,
+      "winner": "NOR"
+    },
+    {
+      "stage": "LAST_32",
+      "home": "FRA",
+      "away": "SWE",
+      "g1": 3,
+      "g2": 0,
+      "winner": "FRA"
+    },
+    {
+      "stage": "LAST_32",
+      "home": "MEX",
+      "away": "ECU",
+      "g1": 2,
+      "g2": 0,
+      "winner": "MEX"
     }
   ]
 }
