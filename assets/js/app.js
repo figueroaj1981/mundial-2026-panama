@@ -753,40 +753,76 @@ function renderBracket(matches, knockout) {
     return `<div class="bk-match-date">📅 ${formatDate(f.fecha)}${f.hora ? ' · ' + f.hora : ''}</div>`;
   }
 
-  // Render de un cruce: real (marcador + ganador en verde ✔) o estimado (amarillo)
-  function koMatch(id, pair, stage, isFinal = false) {
+  // ===== FIXTURES REALES DE ELIMINATORIA (fuente de verdad) =====
+  // Agrupar por fase los partidos reales que trae la rutina (con equipos, fecha y marcador)
+  const stageFx = {};
+  matches.forEach(m => { if (m.fase) (stageFx[m.fase] = stageFx[m.fase] || []).push(m); });
+  const isPan = (t) => !!(t && (t.code === 'PAN' || t.panama));
+
+  // Caja de un equipo
+  function teamBox(t, opt) {
+    opt = opt || {};
+    if (!t) return `<div class="bk-team bk-empty">Por definirse</div>`;
+    let cls = 'bk-provisional', tag = '';
+    if (opt.win) { cls = 'bk-confirmed'; tag = '<span class="bk-prov" style="color:#7CFC9A">✔</span>'; }
+    else if (opt.out) { cls = 'bk-team-out'; }
+    else if (opt.confirmed) { cls = 'bk-confirmed'; }
+    else if (opt.est) { cls = 'bk-provisional'; tag = '<span class="bk-prov">estimado</span>'; }
+    return `<div class="bk-team ${cls} ${isPan(t) ? 'bk-panama' : ''}"><span class="bk-flag">${t.flag || '🏳'}</span><span class="bk-name">${t.nombre}</span>${tag}</div>`;
+  }
+
+  // Cruce REAL (ya sorteado): ambos equipos clasificados (verde); ganador con ✔ y marcador cuando se juega
+  function realMatchHtml(m) {
+    const a = m.equipo1, b = m.equipo2;
+    const fin = m.estado === 'finalizado' && m.marcador;
+    const wa = fin && m.marcador.g1 > m.marcador.g2;
+    const wb = fin && m.marcador.g2 > m.marcador.g1;
+    const dateHtml = m.fecha ? `<div class="bk-match-date">📅 ${formatDate(m.fecha)}${m.hora ? ' · ' + m.hora : ''}</div>` : '';
+    const mid = fin ? `<div class="bk-vs">${m.marcador.g1} - ${m.marcador.g2}</div>` : `<div class="bk-vs">VS</div>`;
+    const pan = isPan(a) || isPan(b);
+    return `<div class="bk-match ${pan ? 'bk-match-panama' : ''}"><div class="bk-match-id">${m.fase}</div>${dateHtml}` +
+      `${teamBox(a, { win: wa, out: fin && !wa, confirmed: !fin })}${mid}${teamBox(b, { win: wb, out: fin && !wb, confirmed: !fin })}</div>`;
+  }
+
+  // Cruce PROYECTADO (aún no sorteado): ambos estimados (amarillo)
+  function projMatchHtml(id, pair, isFinal) {
     const a = pair[0], b = pair[1];
-    const k = findKO(a, b, stage);
-    const real = !!k;
-    const tHtml = (t) => {
-      if (!t) return `<div class="bk-team bk-empty">Por definirse</div>`;
-      const isWin = real && k.winner === t.code;
-      const cls = real ? (isWin ? 'bk-confirmed' : 'bk-team-out') : 'bk-provisional';
-      const tag = real ? (isWin ? '<span class="bk-prov" style="color:#7CFC9A">✔</span>' : '') : '<span class="bk-prov">estimado</span>';
-      return `<div class="bk-team ${cls} ${t.panama ? 'bk-panama' : ''}"><span class="bk-flag">${t.flag}</span><span class="bk-name">${t.nombre}</span>${tag}</div>`;
-    };
-    const mid = real ? `<div class="bk-vs">${k.g1} - ${k.g2}</div>` : `<div class="bk-vs">VS</div>`;
-    const pan = (a && a.panama) || (b && b.panama);
-    return `<div class="bk-match ${pan ? 'bk-match-panama' : ''} ${isFinal ? 'bk-match-final' : ''}"><div class="bk-match-id">${id}</div>${fhHtml(a, b)}${tHtml(a)}${mid}${tHtml(b)}</div>`;
+    const pan = isPan(a) || isPan(b);
+    return `<div class="bk-match ${pan ? 'bk-match-panama' : ''} ${isFinal ? 'bk-match-final' : ''}"><div class="bk-match-id">${id}</div>${fhHtml(a, b)}` +
+      `${teamBox(a, { est: true })}<div class="bk-vs">VS</div>${teamBox(b, { est: true })}</div>`;
   }
 
-  function matchCard(m, isFinal = false) {
-    const hasPan = m.label === '🇵🇦';
-    const pr = r32teams[m.id];
-    return `
-      <div class="bk-match ${hasPan ? 'bk-match-panama' : ''} ${isFinal ? 'bk-match-final' : ''}">
-        ${m.id ? `<div class="bk-match-id">${m.id}${m.label ? ' ' + m.label : ''}</div>` : ''}
-        ${pr ? fhHtml(pr[0], pr[1]) : ''}
-        ${m.a}
-        <div class="bk-vs">VS</div>
-        ${m.b}
-      </div>`;
+  // Render de una ronda: primero los cruces reales; luego proyecciones para lo aún no sorteado
+  function renderStage(label, projList) {
+    const real = (stageFx[label] || []).slice()
+      .sort((x, y) => ((x.fecha || '') + (x.hora || '')).localeCompare((y.fecha || '') + (y.hora || '')));
+    const shown = new Set();
+    real.forEach(m => { if (m.equipo1) shown.add(m.equipo1.code); if (m.equipo2) shown.add(m.equipo2.code); });
+    const realHtml = real.map(realMatchHtml).join('');
+    const projHtml = (projList || []).filter(pm => {
+      const a = pm.pair[0], b = pm.pair[1];
+      if (a && shown.has(a.code)) return false;   // evita mostrar un equipo dos veces
+      if (b && shown.has(b.code)) return false;
+      return true;
+    }).map(pm => projMatchHtml(pm.id, pm.pair, pm.isFinal)).join('');
+    return realHtml + projHtml || '<div class="bk-match tbd"><div class="bk-vs">Por definirse</div></div>';
   }
 
-  function tbdMatch(id) {
-    const empty = `<div class="bk-team bk-empty">Por definirse</div>`;
-    return `<div class="bk-match tbd"><div class="bk-match-id">${id}</div>${empty}<div class="bk-vs">VS</div>${empty}</div>`;
+  // Listas de proyección (respaldo para ramas no sorteadas todavía)
+  const projR32 = Object.keys(r32teams).map(id => ({ id, pair: r32teams[id] }));
+  const projR16 = r16def.map(m => ({ id: m.id, pair: r16T[m.id] }));
+  const projQf = qfDef.map(m => ({ id: m.id, pair: qfT[m.id] }));
+  const projSf = sfDef.map(m => ({ id: m.id, pair: sfT[m.id] }));
+  const projFinal = [{ id: 'FINAL', pair: finalT, isFinal: true }];
+
+  // Campeón real (si la final ya se jugó) o estimado (proyección)
+  const finalFx = (stageFx['Final'] || [])[0];
+  let champReal = null;
+  if (finalFx && finalFx.estado === 'finalizado' && finalFx.marcador) {
+    champReal = finalFx.marcador.g1 > finalFx.marcador.g2 ? finalFx.equipo1 : finalFx.equipo2;
   }
+  const champShow = champReal || champion;
+  const champIsReal = !!champReal;
 
   container.innerHTML = `
     <div class="bracket-rounds">
@@ -794,46 +830,46 @@ function renderBracket(matches, knockout) {
       <div class="bracket-round">
         <div class="bracket-round-header">
           <div class="bracket-round-title">16avos de Final</div>
-          <div class="bracket-round-sub">32 equipos · 29 jun – 4 jul 2026</div>
+          <div class="bracket-round-sub">32 equipos · 28 jun – 4 jul 2026</div>
         </div>
-        <div class="bk-grid">${r32.map(m => matchCard(m)).join('')}</div>
+        <div class="bk-grid">${renderStage('16avos', projR32)}</div>
       </div>
 
       <div class="bracket-round">
         <div class="bracket-round-header">
-          <div class="bracket-round-title">Octavos de Final <span class="bk-est-tag">estimado</span></div>
+          <div class="bracket-round-title">Octavos de Final ${(stageFx['Octavos'] || []).length < 8 ? '<span class="bk-est-tag">parcial</span>' : ''}</div>
           <div class="bracket-round-sub">16 equipos · 6–9 jul 2026</div>
         </div>
-        <div class="bk-grid">${r16def.map(m => koMatch(m.id, r16T[m.id], 'LAST_16')).join('')}</div>
+        <div class="bk-grid">${renderStage('Octavos', projR16)}</div>
       </div>
 
       <div class="bracket-round">
         <div class="bracket-round-header">
-          <div class="bracket-round-title">Cuartos de Final <span class="bk-est-tag">estimado</span></div>
+          <div class="bracket-round-title">Cuartos de Final ${(stageFx['Cuartos'] || []).length < 4 ? '<span class="bk-est-tag">estimado</span>' : ''}</div>
           <div class="bracket-round-sub">8 equipos · 11–12 jul 2026</div>
         </div>
-        <div class="bk-grid">${qfDef.map(m => koMatch(m.id, qfT[m.id], 'QUARTER_FINALS')).join('')}</div>
+        <div class="bk-grid">${renderStage('Cuartos', projQf)}</div>
       </div>
 
       <div class="bracket-round">
         <div class="bracket-round-header">
-          <div class="bracket-round-title">Semifinales <span class="bk-est-tag">estimado</span></div>
+          <div class="bracket-round-title">Semifinales ${(stageFx['Semifinal'] || []).length < 2 ? '<span class="bk-est-tag">estimado</span>' : ''}</div>
           <div class="bracket-round-sub">4 equipos · 14–15 jul 2026</div>
         </div>
-        <div class="bk-grid">${sfDef.map(m => koMatch(m.id, sfT[m.id], 'SEMI_FINALS')).join('')}</div>
+        <div class="bk-grid">${renderStage('Semifinal', projSf)}</div>
       </div>
 
       <div class="bracket-round">
         <div class="bracket-round-header">
-          <div class="bracket-round-title">🏆 Final <span class="bk-est-tag">estimado</span></div>
+          <div class="bracket-round-title">🏆 Final ${!finalFx ? '<span class="bk-est-tag">estimado</span>' : ''}</div>
           <div class="bracket-round-sub">19 jul 2026 · MetLife Stadium, Nueva York</div>
         </div>
-        <div class="bk-grid">${koMatch('FINAL', finalT, 'FINAL', true)}</div>
-        ${champion ? `<div class="bk-champion">🏆 ${championReal ? 'Campeón' : 'Campeón estimado'}: <span class="bk-flag">${champion.flag}</span> <strong>${champion.nombre}</strong></div>` : ''}
+        <div class="bk-grid">${renderStage('Final', projFinal)}</div>
+        ${champShow ? `<div class="bk-champion">🏆 ${champIsReal ? 'Campeón' : 'Campeón estimado'}: <span class="bk-flag">${champShow.flag}</span> <strong>${champShow.nombre}</strong></div>` : ''}
       </div>
 
     </div>
-    <p class="bracket-note">Llave oficial FIFA 2026. Los <strong>8 mejores terceros</strong> se calculan por criterio FIFA (pts → dif. de gol → goles). Las rondas de <strong>octavos en adelante son una proyección estadística</strong> según el desempeño en la fase de grupos (no son resultados reales). 🟡 <strong>probable / estimado</strong> = aún no definido · 🟢 <strong>verde ✔</strong> = clasificado confirmado.</p>
+    <p class="bracket-note">Llave oficial FIFA 2026. Cada ronda muestra los <strong>cruces reales</strong> a medida que se sortean (equipos en 🟢 verde = clasificados; ganador con ✔ al jugarse). Las ramas aún no definidas se muestran como <strong>proyección estadística</strong> (🟡 estimado) según el desempeño en la fase de grupos.</p>
   `;
 }
 
