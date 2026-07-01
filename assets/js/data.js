@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
  * Generado automáticamente por el scheduler.
- * Última actualización: 2026-07-01T12:15:33.832Z
+ * Última actualización: 2026-07-01T18:21:38.164Z
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-07-01T12:15:33.832Z",
+  lastUpdated: "2026-07-01T18:21:38.164Z",
   grupos: [
   {
     "id": "A",
@@ -2658,8 +2658,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇨🇩",
       "code": "COD"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 2,
+      "g2": 1
+    },
+    "estado": "finalizado",
     "estadio": "Por confirmar",
     "ciudad": ""
   },
@@ -2899,10 +2902,10 @@ window.MUNDIAL_DATA = {
   {
     "id": "N-AUTO",
     "titulo": "⚽ Últimos resultados del Mundial 2026",
-    "resumen": "Marcadores recién actualizados: Costa de Marfil 1-2 Noruega · Francia 3-0 Suecia · México 2-0 Ecuador. Las tablas de grupos quedaron al día. (Actualización automática)",
+    "resumen": "Marcadores recién actualizados: Inglaterra 2-1 Congo DR. Las tablas de grupos quedaron al día. (Actualización automática)",
     "imagen": null,
     "categoria": "Resultados",
-    "fecha": "2026-07-01T05:58:14-05:00",
+    "fecha": "2026-07-01T13:21:38-05:00",
     "fuente": "Actualización automática",
     "url": "https://www.fifa.com/es/tournaments/mens/worldcup/canadamexicousa2026",
     "destacada": false
@@ -3041,6 +3044,14 @@ window.MUNDIAL_DATA = {
     "g1": 2,
     "g2": 0,
     "winner": "MEX"
+  },
+  {
+    "stage": "LAST_32",
+    "home": "ENG",
+    "away": "COD",
+    "g1": 2,
+    "g2": 1,
+    "winner": "ENG"
   }
 ]
 };

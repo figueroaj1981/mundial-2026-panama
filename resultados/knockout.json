@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-01T05:58:14-05:00",
+  "lastUpdated": "2026-07-01T13:21:38-05:00",
   "knockout": [
     {
       "stage": "LAST_32",
@@ -56,6 +56,14 @@
       "g1": 2,
       "g2": 0,
       "winner": "MEX"
+    },
+    {
+      "stage": "LAST_32",
+      "home": "ENG",
+      "away": "COD",
+      "g1": 2,
+      "g2": 1,
+      "winner": "ENG"
     }
   ]
 }
