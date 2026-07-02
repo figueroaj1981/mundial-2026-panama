@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-01T13:21:38-05:00",
+  "lastUpdated": "2026-07-02T05:16:05-05:00",
   "matches": [
     {
       "id": "M001",
@@ -1880,7 +1880,7 @@
       "id": "K537425",
       "fase": "16avos",
       "fecha": "2026-06-30",
-      "hora": "20:00",
+      "hora": "21:00",
       "timezone": "America/Panama",
       "equipo1": {
         "nombre": "México",
@@ -1940,8 +1940,11 @@
         "flag": "🇸🇳",
         "code": "SEN"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 3,
+        "g2": 2
+      },
+      "estado": "finalizado",
       "estadio": "Por confirmar",
       "ciudad": ""
     },
@@ -1961,8 +1964,11 @@
         "flag": "🇧🇦",
         "code": "BIH"
       },
-      "marcador": null,
-      "estado": "programado",
+      "marcador": {
+        "g1": 2,
+        "g2": 0
+      },
+      "estado": "finalizado",
       "estadio": "Por confirmar",
       "ciudad": ""
     },
@@ -2149,6 +2155,48 @@
         "nombre": "Noruega",
         "flag": "🇳🇴",
         "code": "NOR"
+      },
+      "marcador": null,
+      "estado": "programado",
+      "estadio": "Por confirmar",
+      "ciudad": ""
+    },
+    {
+      "id": "K537378",
+      "fase": "Octavos",
+      "fecha": "2026-07-05",
+      "hora": "19:00",
+      "timezone": "America/Panama",
+      "equipo1": {
+        "nombre": "México",
+        "flag": "🇲🇽",
+        "code": "MEX"
+      },
+      "equipo2": {
+        "nombre": "Inglaterra",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "code": "ENG"
+      },
+      "marcador": null,
+      "estado": "programado",
+      "estadio": "Por confirmar",
+      "ciudad": ""
+    },
+    {
+      "id": "K537380",
+      "fase": "Octavos",
+      "fecha": "2026-07-06",
+      "hora": "19:00",
+      "timezone": "America/Panama",
+      "equipo1": {
+        "nombre": "USA",
+        "flag": "🇺🇸",
+        "code": "USA"
+      },
+      "equipo2": {
+        "nombre": "Bélgica",
+        "flag": "🇧🇪",
+        "code": "BEL"
       },
       "marcador": null,
       "estado": "programado",

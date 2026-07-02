@@ -1,11 +1,11 @@
 /**
  * data.js — Datos embebidos del Mundial 2026
  * Generado automáticamente por el scheduler.
- * Última actualización: 2026-07-01T18:21:38.164Z
+ * Última actualización: 2026-07-02T10:16:05.593Z
  */
 
 window.MUNDIAL_DATA = {
-  lastUpdated: "2026-07-01T18:21:38.164Z",
+  lastUpdated: "2026-07-02T10:16:05.593Z",
   grupos: [
   {
     "id": "A",
@@ -2622,7 +2622,7 @@ window.MUNDIAL_DATA = {
     "id": "K537425",
     "fase": "16avos",
     "fecha": "2026-06-30",
-    "hora": "20:00",
+    "hora": "21:00",
     "timezone": "America/Panama",
     "equipo1": {
       "nombre": "México",
@@ -2682,8 +2682,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇸🇳",
       "code": "SEN"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 3,
+      "g2": 2
+    },
+    "estado": "finalizado",
     "estadio": "Por confirmar",
     "ciudad": ""
   },
@@ -2703,8 +2706,11 @@ window.MUNDIAL_DATA = {
       "flag": "🇧🇦",
       "code": "BIH"
     },
-    "marcador": null,
-    "estado": "programado",
+    "marcador": {
+      "g1": 2,
+      "g2": 0
+    },
+    "estado": "finalizado",
     "estadio": "Por confirmar",
     "ciudad": ""
   },
@@ -2896,16 +2902,58 @@ window.MUNDIAL_DATA = {
     "estado": "programado",
     "estadio": "Por confirmar",
     "ciudad": ""
+  },
+  {
+    "id": "K537378",
+    "fase": "Octavos",
+    "fecha": "2026-07-05",
+    "hora": "19:00",
+    "timezone": "America/Panama",
+    "equipo1": {
+      "nombre": "México",
+      "flag": "🇲🇽",
+      "code": "MEX"
+    },
+    "equipo2": {
+      "nombre": "Inglaterra",
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "code": "ENG"
+    },
+    "marcador": null,
+    "estado": "programado",
+    "estadio": "Por confirmar",
+    "ciudad": ""
+  },
+  {
+    "id": "K537380",
+    "fase": "Octavos",
+    "fecha": "2026-07-06",
+    "hora": "19:00",
+    "timezone": "America/Panama",
+    "equipo1": {
+      "nombre": "USA",
+      "flag": "🇺🇸",
+      "code": "USA"
+    },
+    "equipo2": {
+      "nombre": "Bélgica",
+      "flag": "🇧🇪",
+      "code": "BEL"
+    },
+    "marcador": null,
+    "estado": "programado",
+    "estadio": "Por confirmar",
+    "ciudad": ""
   }
 ],
   noticias: [
   {
     "id": "N-AUTO",
     "titulo": "⚽ Últimos resultados del Mundial 2026",
-    "resumen": "Marcadores recién actualizados: Inglaterra 2-1 Congo DR. Las tablas de grupos quedaron al día. (Actualización automática)",
+    "resumen": "Marcadores recién actualizados: Bélgica 3-2 Senegal · USA 2-0 Bosnia y H.. Las tablas de grupos quedaron al día. (Actualización automática)",
     "imagen": null,
     "categoria": "Resultados",
-    "fecha": "2026-07-01T13:21:38-05:00",
+    "fecha": "2026-07-02T05:16:05-05:00",
     "fuente": "Actualización automática",
     "url": "https://www.fifa.com/es/tournaments/mens/worldcup/canadamexicousa2026",
     "destacada": false
@@ -3052,6 +3100,22 @@ window.MUNDIAL_DATA = {
     "g1": 2,
     "g2": 1,
     "winner": "ENG"
+  },
+  {
+    "stage": "LAST_32",
+    "home": "BEL",
+    "away": "SEN",
+    "g1": 3,
+    "g2": 2,
+    "winner": "BEL"
+  },
+  {
+    "stage": "LAST_32",
+    "home": "USA",
+    "away": "BIH",
+    "g1": 2,
+    "g2": 0,
+    "winner": "USA"
   }
 ]
 };
